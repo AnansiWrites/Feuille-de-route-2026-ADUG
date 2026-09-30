@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Feuille de route T4 2026 – Impératifs FUG – Convention ADUG</title>
+<title>Feuille de route T4 2026 – FUG & DFPU – ADUG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -715,6 +715,28 @@ p{margin:0}
 .sctab td.colb{background:rgba(217,242,234,.35)}
 .sctab tfoot td,.sctab tfoot th{font-weight:800;border-top:2px solid var(--green);border-bottom:0}
 @media (max-width:1023px){.sccards{grid-template-columns:minmax(0,1fr)}}
+.mflips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mflip{perspective:1100px;background:none;border:0;padding:0;text-align:left;cursor:pointer;font:inherit;color:inherit}
+.mf-in{display:grid;height:100%;transition:transform .7s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d}
+.mflip:hover .mf-in,.mflip:focus-visible .mf-in,.mflip.on .mf-in{transform:rotateY(180deg)}
+.mf{grid-area:1 / 1;border-radius:var(--radius-l);padding:20px;display:flex;flex-direction:column;gap:10px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.mf.front{background:var(--surface);border:1px solid var(--line)}
+.mf.back{background:var(--forest);color:#fff;transform:rotateY(180deg)}
+.mf .mh{font-size:16px;font-weight:700;display:flex;gap:10px;align-items:center}
+.mf .mh .ico{color:var(--green)}
+.mf ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.mf .turn{margin-top:auto;font-size:12px;font-weight:700;color:var(--green-ink);display:flex;align-items:center;gap:6px}
+.mf .turn svg{width:14px;height:14px}
+.mf.back .lblj{font-size:11px;font-weight:800;color:var(--leaf)}
+.mf .mq{display:block;padding-left:12px;border-left:3px solid var(--leaf);font-size:14px;line-height:1.55}
+.mf .mq.miss{border-left-style:dashed;color:#cfe9dd;font-style:italic}
+.mf .msrc{margin-top:auto;font-size:11.5px;color:#cfe9dd;display:flex;gap:6px;align-items:center}
+.mf .msrc svg{width:14px;height:14px}
+@media (max-width:760px){.mflips{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){.mflip:hover .mf-in,.mflip.on .mf-in,.mflip:focus-visible .mf-in{transform:none}.mf.back{transform:none;visibility:hidden}.mflip:hover .mf.back,.mflip.on .mf.back,.mflip:focus-visible .mf.back{visibility:visible}.mflip:hover .mf.front,.mflip.on .mf.front,.mflip:focus-visible .mf.front{visibility:hidden}}
+.pubchips{display:flex;flex-wrap:wrap;gap:8px}
+.pubchips .chip{background:var(--mint);color:var(--green-ink);white-space:normal}
+.pubbig{font-size:40px;font-weight:800;color:var(--green-ink);line-height:1;font-variant-numeric:tabular-nums}
 /* ---------- Responsive ---------- */
 @media (max-width:1100px){
   .oct-grid{grid-template-columns:minmax(0,1fr)}
@@ -948,21 +970,13 @@ p{margin:0}
         <button class="tab" role="tab" aria-selected="false" aria-controls="m4" id="mt4"><svg class="ico"><use href="#i-cap"/></svg>Publics</button>
       </div>
       <div class="tabpanel" role="tabpanel" id="m1" aria-labelledby="mt1">
-        <div class="grid-2">
-          <div class="card"><h3><svg class="ico"><use href="#i-heart"/></svg>Chargé(e) de mission marketing et communication, volet Mécénat</h3>
-            <ul><li>Campagnes de marketing et de communication pour la levée de fonds</li><li>Cahiers des charges, choix des prestataires, suivi des livrables</li><li>Réseaux sociaux, site web, newsletter, événements</li><li>Base de donateurs et indicateurs de performance</li></ul></div>
-          <div class="card"><h3><svg class="ico"><use href="#i-cap"/></svg>Chargé(e) de communication, volet FPC</h3>
-            <ul><li>Stratégie de communication de la formation continue</li><li>Supports : fiches produits, catalogues, films, dossiers de presse</li><li>Analyse de l'impact commercial des actions</li><li>Veille sur le marché et la concurrence</li></ul></div>
-        </div>
+        <span class="hint" style="margin-bottom:14px"><span class="pulse"></span>Survolez ou touchez une carte pour lire la référence du dossier</span>
+        <div class="mflips two"><button class="mflip" aria-label="Chargé(e) de mission marketing et communication, volet Mécénat. Référence : « Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter, création de contenus et déploiement des campagnes de communication »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg>Chargé(e) de mission marketing et communication, volet Mécénat</span><ul><li>Campagnes de marketing et de communication pour la levée de fonds</li><li>Cahiers des charges, choix des prestataires, suivi des livrables</li><li>Réseaux sociaux, site web, newsletter, événements</li><li>Base de donateurs et indicateurs de performance</li></ul><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter, création de contenus et déploiement des campagnes de communication »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, missions du poste, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Chargé(e) de communication, volet FPC. Référence : dossier ADUG, page 8"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>Chargé(e) de communication, volet FPC</span><ul><li>Stratégie de communication de la formation continue</li><li>Supports : fiches produits, catalogues, films, dossiers de presse</li><li>Analyse de l'impact commercial des actions</li><li>Veille sur le marché et la concurrence</li></ul><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« À cet effet, le recrutement d'un chargé de développement de projets de formation, d'un responsable en ingénierie de la formation et d'un chargé de communication viendra renforcer les capacités commerciales et marketing des équipes déjà en place. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, page 8</span></span></span></button></div>
         <p class="note" style="margin-top:14px">Deux postes de communication dans un même projet : une charte, un calendrier et une base de contacts communs évitent les doublons.</p>
       </div>
       <div class="tabpanel" role="tabpanel" id="m2" aria-labelledby="mt2" hidden>
-        <div class="cards">
-          <div class="card"><h3><svg class="ico"><use href="#i-web"/></svg>Site web et dons en ligne</h3><p class="note">« Animation du site web » figure dans les missions du poste.</p><span class="status st-miss">Absent à ce jour</span></div>
-          <div class="card"><h3><svg class="ico"><use href="#i-db"/></svg>Logiciel de gestion de la relation (CRM)</h3><p class="note">Prévu dans les actions structurantes.</p><span class="status st-miss">Non déployé</span></div>
-          <div class="card"><h3><svg class="ico"><use href="#i-hand"/></svg>Plateforme de financement participatif</h3><p class="note">Dons défiscalisés, lien avec les diplômés.</p><span class="status st-unk">À confirmer</span></div>
-          <div class="card"><h3><svg class="ico"><use href="#i-doc"/></svg>Outil de documents partagés</h3><p class="note">Pour rendre l'information du projet accessible à tous.</p><span class="status st-unk">À confirmer</span></div>
-        </div>
+        <span class="hint" style="margin-bottom:14px"><span class="pulse"></span>Survolez ou touchez une carte pour lire la référence du dossier</span>
+        <div class="mflips"><button class="mflip" aria-label="Site web et dons en ligne. Référence : « Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter […] »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-web"/></svg>Site web et dons en ligne</span><p class="note">« Animation du site web » figure dans les missions du poste.</p><span class="status st-eng">À créer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter […] »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, missions du poste, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Logiciel de gestion de la relation (CRM). Référence : dossier ADUG, page 11"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg>Logiciel de gestion de la relation (CRM)</span><p class="note">Prévu dans les actions structurantes.</p><span class="status st-eng">À déployer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Mettre en œuvre un logiciel chargé des relations clientèle (CRM) »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, tableau des actions structurantes, page 11</span></span></span></button><button class="mflip" aria-label="Plateforme de financement participatif. Référence : « Le développement de cette plateforme de financement participatif permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg>Plateforme de financement participatif</span><p class="note">Dons défiscalisés, lien avec les diplômés.</p><span class="status st-unk">À confirmer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Le développement de cette plateforme de financement participatif permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Outil de documents partagés. Référence : à reporter"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Outil de documents partagés</span><p class="note">Pour rendre l'information du projet accessible à tous.</p><span class="status st-unk">À confirmer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">"Mettre en oeuvre d’un outil de gestion de documents partagés (page 11)"</span><span class="msrc">Dossier ADUG, tableau des actions structurantes, page 11</span></span></span></button></div>
       </div>
       <div class="tabpanel" role="tabpanel" id="m3" aria-labelledby="mt3" hidden>
         <div class="panel money" id="money">
@@ -974,11 +988,8 @@ p{margin:0}
         </div>
       </div>
       <div class="tabpanel" role="tabpanel" id="m4" aria-labelledby="mt4" hidden>
-        <div class="counters">
-          <div class="counter"><b data-count="162">0</b><span>personnels de recherche des six unités de l'UG</span></div>
-          <div class="counter"><b data-count="1000">0</b><span>étudiants de L3 et plus</span></div>
-          <div class="counter" style="background:var(--surface-2)"><b style="font-size:24px;color:var(--ink)">Sensibiliser et associer</b><span>aux campagnes de financement participatif et aux projets de la Fondation</span></div>
-        </div>
+        <span class="hint" style="margin-bottom:14px"><span class="pulse"></span>Survolez ou touchez une carte pour lire la référence du dossier</span>
+        <div class="mflips"><button class="mflip" aria-label="Mécènes ciblés en priorité"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>Mécènes ciblés en priorité</span><div class="pubchips"><span class="chip">Fondations d'entreprises hors de Guyane</span><span class="chip">Entreprises locales</span><span class="chip">Grand public : particuliers, chercheurs, alumni</span></div><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Le volet Mécénat ciblera en priorité les fondations d'entreprises situées hors du territoire guyanais ainsi que les entreprises locales et le grand public (particuliers, chercheurs, alumni). »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Réseaux des partenaires du consortium"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg>Réseaux des partenaires du consortium</span><p class="note">La CCIG et le GPM animent un réseau d'acteurs économiques, relais naturel vers les entreprises.</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Créent un réseau d'acteurs avec rencontres régulières, cycle de conférences, groupes de travail thématiques autour des activités de la fondation. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, rôle de la CCIG et du GPM</span></span></span></button><button class="mflip" aria-label="Personnels de recherche"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-bulb"/></svg>Personnels de recherche</span><span class="pubbig" data-count="162">0</span><p class="note">personnels de recherche des six unités de l'UG, à sensibiliser et associer aux campagnes de financement participatif et aux projets de la Fondation</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">"Tous les chercheurs, enseignants-chercheurs et personnels d’appui des six unités de recherche de l’UG (soit un total de 162 personnels de recherche) ainsi que les étudiants de niveau Licence 3 et plus (soit un total d’environ 1000 étudiants) seront sensibilisés et impliqués dans le volet Mécénat afin qu’ils contribuent au lancement de campagnes de financement participatif et participent aux projets retenus ou proposés par la Fondation en préfiguration et ses donateurs. (page9)"</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG</span></span></span></button><button class="mflip" aria-label="Étudiants"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>Étudiants</span><span class="pubbig" data-count="1000">0</span><p class="note">étudiants de L3 et plus, à sensibiliser et associer aux campagnes de financement participatif et aux projets de la Fondation</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">"Tous les chercheurs, enseignants-chercheurs et personnels d’appui des six unités de recherche de l’UG (soit un total de 162 personnels de recherche) ainsi que les étudiants de niveau Licence 3 et plus (soit un total d’environ 1000 étudiants) seront sensibilisés et impliqués dans le volet Mécénat afin qu’ils contribuent au lancement de campagnes de financement participatif et participent aux projets retenus ou proposés par la Fondation en préfiguration et ses donateurs."</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG</span></span></span></button></div>
       </div>
     </div>
   </div>
@@ -1441,7 +1452,7 @@ p{margin:0}
         <div class="checks" id="checks"></div>
       </div>
     </div>
-    <div class="endsign"><span><b>Stratégie Communication & Levée de Fonds FUG – Convention ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · octobre 2026</span></div>
+    <div class="endsign"><span><b>FUG & DFPU – ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · octobre 2026</span></div>
   </div>
 </section>
 
@@ -2079,6 +2090,9 @@ var SC3=[
   function badges(p,c){$("#sc"+p+"-ok").textContent=c.ok?c.ok+" couverts":"";$("#sc"+p+"-part").textContent=c.part?c.part+" partiels":"";$("#sc"+p+"-no").textContent=c.no?c.no+" non couverts":""}
   badges("A",ca);badges("B",cb);
 })();
+
+/* ---------- Moyens : flip cards ---------- */
+$$(".mflip").forEach(function(b){b.addEventListener("click",function(){b.classList.toggle("on")})});
 
 /* ---------- Calendar ---------- */
 var ET={pil:["Pilotage","e-pil","var(--navy)"],con:["Faire connaître","e-con","var(--amber)"],aim:["Faire aimer","e-aim","var(--leaf)"],agi:["Faire agir","e-agi","var(--green)"]};
