@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Feuille de route T4 2026 – Engagements FUG & DFPU – ADUG</title>
+<title>Feuille de route T4 2026 – Impératifs FUG – Convention ADUG</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -695,6 +695,26 @@ p{margin:0}
 .sitebar .url{margin-left:10px;background:rgba(255,255,255,.12);border-radius:999px;padding:3px 12px;font-size:12px;font-weight:700;color:#e8f6ef}
 .siteinner{padding:14px}
 .sitehome{font-size:12px;font-weight:700;color:var(--green-ink);background:var(--mint);border-radius:10px;padding:8px 12px;margin-bottom:12px;text-align:center}
+.st-no{background:rgba(194,65,12,.1);color:var(--danger)}
+.sccards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.sccard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-l);padding:20px 22px;display:flex;flex-direction:column;gap:8px}
+.sccard.b{background:var(--forest);color:#fff;border-color:var(--forest)}
+.sccard .scl{font-size:12px;font-weight:800;color:var(--green-ink)}
+.sccard.b .scl{color:var(--leaf)}
+.sccard h3{font-size:20px;font-weight:800}
+.sccard p{font-size:14px;color:var(--muted)}
+.sccard.b p{color:#d7ede3}
+.scsum{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.scsum .status:empty{display:none}
+.sctab th,.sctab td{text-align:left}
+.sctab tbody th{min-width:260px}
+.sctab td{font-size:13.5px;min-width:220px}
+.sctab td .status{display:inline-block;margin-bottom:4px}
+.sctab td small{display:block;color:var(--muted);font-size:12.5px}
+.sctab thead th.colb{color:var(--green-ink)}
+.sctab td.colb{background:rgba(217,242,234,.35)}
+.sctab tfoot td,.sctab tfoot th{font-weight:800;border-top:2px solid var(--green);border-bottom:0}
+@media (max-width:1023px){.sccards{grid-template-columns:minmax(0,1fr)}}
 /* ---------- Responsive ---------- */
 @media (max-width:1100px){
   .oct-grid{grid-template-columns:minmax(0,1fr)}
@@ -1167,10 +1187,35 @@ p{margin:0}
 </section>
 
 <!-- ============ 8. ECOSYSTEME DIGITAL ============ -->
+<section class="slide" id="s-scenarios" data-title="Deux scénarios comparés" data-group="8. Écosystème digital">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><span class="dot"></span>8. Écosystème digital · le choix</span>
+      <h2 class="title wide">Deux scénarios face aux exigences de la convention</h2>
+      <p class="lead">Deux options sont possibles pour le site : un site propre à la Fondation, ou un site unique partagé avec la DFPU. Leur coût en 2026 est du même ordre ; c'est leur couverture des engagements ADUG qui les distingue.</p>
+    </div>
+    <div class="sccards">
+      <div class="sccard"><span class="scl">Scénario A</span><h3>Site FUG seul</h3><p>Site institutionnel, pages projets, don en ligne. La DFPU développe son portail entreprises à part.</p><div class="scsum"><span class="status st-ok" id="scA-ok"></span><span class="status st-part" id="scA-part"></span><span class="status st-no" id="scA-no"></span></div></div>
+      <div class="sccard b"><span class="scl">Scénario B · retenu dans la suite</span><h3>Site unique ADUG</h3><p>Un site, un back-office, une base, trois espaces : Soutenir, Entreprises, Étudiants et alumni.</p><div class="scsum"><span class="status st-ok" id="scB-ok"></span><span class="status st-part" id="scB-part"></span><span class="status st-no" id="scB-no"></span></div></div>
+    </div>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Comparaison des scénarios">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="sc1" id="sct1"><svg class="ico"><use href="#i-check"/></svg>Exigences de la convention</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sc2" id="sct2"><svg class="ico"><use href="#i-cal"/></svg>Ce qui se passe en 2027</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sc3" id="sct3"><svg class="ico"><use href="#i-search"/></svg>Évaluation ANR</button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="sc1" aria-labelledby="sct1"><div class="matrix-wrap"><table class="matrix sctab" id="sctab1"></table></div></div>
+      <div class="tabpanel" role="tabpanel" id="sc2" aria-labelledby="sct2" hidden><div class="matrix-wrap"><table class="matrix sctab" id="sctab2"></table></div></div>
+      <div class="tabpanel" role="tabpanel" id="sc3" aria-labelledby="sct3" hidden><div class="matrix-wrap"><table class="matrix sctab" id="sctab3"></table></div></div>
+    </div>
+    <p class="src">Jalons et engagements issus du dossier ADUG ; formulations et caractère commun des jalons à confirmer dans la convention signée.</p>
+  </div>
+</section>
+
 <section class="slide" id="s-ecosysteme" data-title="Un site unique, trois espaces" data-group="8. Écosystème digital">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>8. Écosystème digital · la solution</span>
+      <span class="kicker"><span class="dot"></span>8. Écosystème digital · la solution retenue</span>
       <h2 class="title wide">Un site unique ADUG, trois espaces pour trois publics</h2>
       <p class="lead">Les publics de la FUG et de la DFPU sont les mêmes, et l'ANR additionne le chiffre d'affaires des deux volets. La solution est donc <b>un seul site : un site, un back-office, une base, un prestataire</b>. Trois espaces orientent chaque public dès la page d'accueil. Hébergé sur le serveur de l'UG en univ-guyane.fr, il réunit deux projets déjà portés, le site de la Fondation et le portail entreprises de la DFPU. Chaque entité anime son espace et garde son identité.</p>
       <span class="hint"><span class="pulse"></span>Touchez un espace ou le back-office pour voir qui l'utilise et ce qu'il apporte</span>
@@ -1256,10 +1301,10 @@ p{margin:0}
   </div>
 </section>
 
-<section class="slide" id="s-trajectoire" data-title="Socle 2026, ouverture 2027" data-group="8. Écosystème digital">
+<section class="slide" id="s-trajectoire" data-title="Socle 2026, ouverture 2027" data-group="9. Budget">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>8. Écosystème digital</span>
+      <span class="kicker"><span class="dot"></span>9. Budget · la trajectoire</span>
       <h2 class="title wide">Basique en 2026, solide pour 2027</h2>
       <p class="lead">La trajectoire commence par ce qui produit des résultats en quelques semaines, avec des outils existants. Chaque étape se finance sur les lignes prévues par ADUG et se justifie par les résultats de la précédente.</p>
     </div>
@@ -1283,10 +1328,10 @@ p{margin:0}
   </div>
 </section>
 
-<section class="slide" id="s-dep2026" data-title="Dépenses 2026" data-group="8. Écosystème digital">
+<section class="slide" id="s-dep2026" data-title="Dépenses 2026" data-group="9. Budget">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>8. Écosystème digital · tranche 1</span>
+      <span class="kicker"><span class="dot"></span>9. Budget · tranche 1</span>
       <h2 class="title wide">2026 : le socle qui produit des résultats avant l'évaluation</h2>
       <p class="lead">Ce qui se commande et se livre avant la fin de l'année, pour des premiers dons et des contacts entreprises mesurables. Les montants sont des fourchettes, à remplacer par les devis issus de la consultation.</p>
     </div>
@@ -1297,10 +1342,10 @@ p{margin:0}
   </div>
 </section>
 
-<section class="slide" id="s-dep2027" data-title="Dépenses 2027" data-group="8. Écosystème digital">
+<section class="slide" id="s-dep2027" data-title="Dépenses 2027" data-group="9. Budget">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>8. Écosystème digital · tranche 2</span>
+      <span class="kicker"><span class="dot"></span>9. Budget · tranche 2</span>
       <h2 class="title wide">2027 : les espaces complets, engagés au vu des résultats</h2>
       <p class="lead">La tranche 2 est conditionnelle. Elle est engagée si la tranche 1 produit ses premiers résultats : dons en ligne, contacts entreprises qualifiés, newsletters envoyées. 2027 est l'année 4, décisive pour l'abondement.</p>
     </div>
@@ -1310,10 +1355,10 @@ p{margin:0}
   </div>
 </section>
 
-<section class="slide" id="s-autres" data-title="Outils, contenus, print" data-group="8. Écosystème digital">
+<section class="slide" id="s-autres" data-title="Outils, contenus, print" data-group="9. Budget">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>8. Écosystème digital · dépenses associées</span>
+      <span class="kicker"><span class="dot"></span>9. Budget · dépenses associées</span>
       <h2 class="title wide">Outils, contenus et print</h2>
       <p class="lead">Les outils sont nommés lorsque le choix est arrêté, pour chiffrer au plus juste ; le statut indique le degré d'engagement de chaque ligne. Les contenus et le print sont dimensionnés en petites quantités, au rythme des rendez-vous entreprises.</p>
     </div>
@@ -1339,10 +1384,10 @@ p{margin:0}
   </div>
 </section>
 
-<section class="slide" id="s-simulateur" data-title="Simulateur de budget" data-group="8. Écosystème digital">
+<section class="slide" id="s-simulateur" data-title="Simulateur de budget" data-group="9. Budget">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>8. Écosystème digital · simulateur</span>
+      <span class="kicker"><span class="dot"></span>9. Budget · simulateur</span>
       <h2 class="title wide">Simulateur de budget 2026-2027</h2>
       <p class="lead">Choisissez un scénario, retirez ou déplacez des lignes, ajustez le nombre de licences : les totaux se mettent à jour face à l'enveloppe 2026.</p>
     </div>
@@ -1366,10 +1411,10 @@ p{margin:0}
 </section>
 
 <!-- ============ 9. CALENDAR ============ -->
-<section class="slide" id="s-calendrier" data-title="Calendrier T4" data-group="9. Calendrier">
+<section class="slide" id="s-calendrier" data-title="Calendrier T4" data-group="10. Calendrier">
   <div class="wrap">
     <div class="head">
-      <span class="kicker"><span class="dot"></span>9. Calendrier</span>
+      <span class="kicker"><span class="dot"></span>10. Calendrier</span>
       <h2 class="title wide">Octobre à décembre 2026, mois par mois</h2>
       <p class="lead">Octobre installe le pilotage et lance la consultation, novembre construit le socle, décembre le met à l'épreuve avec la campagne de fin d'année. Les dépenses s'imputent d'abord sur les lignes prévues par ADUG.</p>
     </div>
@@ -1381,11 +1426,11 @@ p{margin:0}
 </section>
 
 <!-- ============ 9. SOCLE ============ -->
-<section class="slide" id="s-socle" data-title="Socle 2027 et questions" data-group="10. Socle 2027">
+<section class="slide" id="s-socle" data-title="Socle 2027 et questions" data-group="11. Socle 2027">
   <div class="qmark" aria-hidden="true">?</div>
   <div class="wrap">
     <div class="head">
-      <span class="kicker" style="color:var(--leaf)"><span class="dot"></span>10. Socle 2027</span>
+      <span class="kicker" style="color:var(--leaf)"><span class="dot"></span>11. Socle 2027</span>
       <h2 class="title wide">Ce qui est posé en 2026 prépare 2027, à condition de trancher quelques questions</h2>
       <p class="lead">Chaque action du trimestre est conçue pour être prolongée en 2027 sans être refaite. Pour finaliser, il manque des informations que seuls le pilotage du projet et la gouvernance détiennent.</p>
     </div>
@@ -1396,13 +1441,13 @@ p{margin:0}
         <div class="checks" id="checks"></div>
       </div>
     </div>
-    <div class="endsign"><span><b>FUG & DFPU – ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · octobre 2026</span></div>
+    <div class="endsign"><span><b>Stratégie Communication & Levée de Fonds FUG – Convention ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · octobre 2026</span></div>
   </div>
 </section>
 
     </main>
     <div class="bottombar">
-      <span class="sign"><svg class="leafmark"><use href="#i-leaf"/></svg><span>Stratégie Com FUG & DFPU – ADUG<span class="full"> · Feuille de route T4 2026</span></span></span>
+      <span class="sign"><svg class="leafmark"><use href="#i-leaf"/></svg><span>FUG & DFPU – ADUG<span class="full"> · Feuille de route T4 2026</span></span></span>
       <div class="pager">
         <button class="pbtn" id="prev" aria-label="Diapositive précédente"><svg><use href="#i-left"/></svg></button>
         <span class="count" id="count">1 / 12</span>
@@ -1992,6 +2037,48 @@ $$("#scen button").forEach(function(b){b.addEventListener("click",function(){SIM
 $("#envin").addEventListener("change",function(){SIM.env=Math.max(0,+this.value||0);store("fug-sim",SIM);simCalc()});
 $("#simreset").addEventListener("click",function(){SIM=JSON.parse(JSON.stringify(SDEF));store("fug-sim",SIM);simCalc()});
 simCalc();
+
+/* ---------- Scénarios ---------- */
+var SC_L={ok:["Couvert","st-ok"],part:["Partiel","st-part"],no:["Non couvert","st-no"],pos:["Possible","st-unk"]};
+var SC1=[
+ ["J1 · Collecte : 3 grands donateurs, 5 entreprises, 50 défiscalisations",["ok",""],["ok",""]],
+ ["J2 · Réponses aux appels à projets des fondations",["part","Pages projets seulement"],["ok","Pages projets et suivi des mécènes"]],
+ ["J3 · Magazine, conférences, radio",["ok",""],["ok",""]],
+ ["J9 · Suivi trimestriel du projet (commun)",["part","Indicateurs FUG seuls"],["ok","Tableau de bord consolidé"]],
+ ["J10 · Entreprises visitées (commun)",["part","Fichier FUG seul"],["ok","Base partagée FUG-DFPU"]],
+ ["J11 · 3 newsletters entreprises par an (commun)",["part","Envoi FUG seul"],["ok","Newsletter commune"]],
+ ["J12 · Club des Alumni, +10 % par an (commun)",["no","Aucun outil d'adhésion"],["ok","Adhésion en ligne dès 2026"]],
+ ["DFPU · Création d'un réseau d'étudiants",["no",""],["ok","Espace Étudiants et alumni en 2027"]],
+ ["Outil prévu : site et dons en ligne",["ok",""],["ok",""]],
+ ["Outil prévu : logiciel de gestion de la relation",["part","FUG seule, ou absent"],["ok","Partagé FUG-DFPU"]],
+ ["Outil prévu : financement participatif",["pos",""],["pos",""]],
+ ["Engagement : mettre en œuvre tous les moyens prévus",["part",""],["ok",""]],
+ ["Deux postes de communication coordonnés",["no","Outils distincts"],["ok","Outils et base communs"]]
+];
+var SC2=[
+ ["Portail entreprises DFPU","Développé à part : un deuxième outil","Espace Entreprises du même site"],
+ ["Bases de contacts","Deux bases, entreprises sollicitées deux fois","Une base, une relation par entreprise"],
+ ["Maintenance et abonnements","En double","Uniques, avec une clé de répartition"],
+ ["Club des Alumni","Reste à construire, sans outil","Amorcé dès 2026"]
+];
+var SC3=[
+ ["Critère de l'abondement à partir de l'année 4 : chiffre d'affaires des deux volets","Le site n'agit que sur le mécénat","Le site agit sur le mécénat et la formation continue"],
+ ["Jalons communs FUG-DFPU (J9 à J12)","Chaque entité rend compte séparément","Preuves consolidées pour le comité de pilotage"],
+ ["Coût 2026","6 000 à 15 000 €","Du même ordre, légèrement supérieur"]
+];
+(function(){
+  function cell(v,cls){return '<td'+(cls?' class="'+cls+'"':'')+'><span class="status '+SC_L[v[0]][1]+'">'+SC_L[v[0]][0]+'</span>'+(v[1]?'<small>'+v[1]+'</small>':'')+'</td>'}
+  var ca={ok:0,part:0,no:0,pos:0},cb={ok:0,part:0,no:0,pos:0};
+  var h='<thead><tr><th scope="col">Exigence ADUG</th><th scope="col">Scénario A · site FUG seul</th><th scope="col" class="colb">Scénario B · site unique ADUG</th></tr></thead><tbody>';
+  SC1.forEach(function(r){ca[r[1][0]]++;cb[r[2][0]]++;h+='<tr><th scope="row">'+r[0]+'</th>'+cell(r[1])+cell(r[2],"colb")+'</tr>'});
+  function sum(c){return c.ok+" couverts, "+c.part+" partiels, "+c.no+" non couverts"+(c.pos?", "+c.pos+" possible":"")}
+  h+='</tbody><tfoot><tr><th scope="row">Synthèse</th><td>'+sum(ca)+'</td><td class="colb">'+sum(cb)+'</td></tr></tfoot>';
+  $("#sctab1").innerHTML=h;
+  function simple(id,rows){$(id).innerHTML='<thead><tr><th scope="col"></th><th scope="col">Scénario A · site FUG seul</th><th scope="col" class="colb">Scénario B · site unique ADUG</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td class="colb">'+r[2]+'</td></tr>'}).join("")+'</tbody>'}
+  simple("#sctab2",SC2);simple("#sctab3",SC3);
+  function badges(p,c){$("#sc"+p+"-ok").textContent=c.ok?c.ok+" couverts":"";$("#sc"+p+"-part").textContent=c.part?c.part+" partiels":"";$("#sc"+p+"-no").textContent=c.no?c.no+" non couverts":""}
+  badges("A",ca);badges("B",cb);
+})();
 
 /* ---------- Calendar ---------- */
 var ET={pil:["Pilotage","e-pil","var(--navy)"],con:["Faire connaître","e-con","var(--amber)"],aim:["Faire aimer","e-aim","var(--leaf)"],agi:["Faire agir","e-agi","var(--green)"]};
