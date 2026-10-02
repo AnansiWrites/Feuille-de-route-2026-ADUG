@@ -819,6 +819,33 @@ p{margin:0}
 .jgrid .card-j{flex:none;width:100%}
 .jnote{font-size:14px;color:var(--ink);background:var(--mint);border-radius:12px;padding:10px 14px;margin-bottom:14px}
 .rh{font-size:17px;font-weight:800;margin-bottom:12px}
+.vn-wrap{padding:12px 16px}
+.vn{width:100%;max-width:560px;height:auto;display:block;margin:0 auto;font-family:"Montserrat",system-ui,sans-serif}
+.vn-t{font-size:17px;font-weight:800;fill:var(--ink)}
+.vn-s{font-size:13px;fill:var(--muted)}
+.vn-c{font-size:12px;font-weight:800;fill:var(--forest)}
+:root[data-theme="dark"] .vn-c{fill:var(--leaf)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .vn-c{fill:var(--leaf)}}
+.vcols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr);gap:16px;align-items:start}
+.vcol{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-l);padding:18px}
+.vcol h3{font-size:16px;font-weight:800;margin-bottom:10px}
+.vcol ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px;font-size:13.5px}
+.vcol.mid{background:var(--mint);border-color:transparent}
+.vcol .vsub{font-size:12px;font-weight:800;color:var(--green-ink);margin:10px 0 6px}
+.vcol .vsub:first-of-type{margin-top:0}
+.traj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.tj{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-l);padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.tj svg{width:150px;height:auto}
+.tj .tw{font-size:12px;font-weight:800;color:var(--green-ink)}
+.tj h3{font-size:16px;font-weight:800}
+.tj p{font-size:13.5px;color:var(--muted)}
+.rules{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rules div{background:var(--forest);color:#d7ede3;border-radius:14px;padding:12px 14px;font-size:13px}
+.rules b{display:block;color:#fff;font-size:14px;margin-bottom:2px}
+.s-val{background:rgba(255,192,0,.16);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--amber)}
+@media (max-width:1023px){.vcols,.traj{grid-template-columns:1fr}.rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.rules{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -1248,6 +1275,48 @@ p{margin:0}
     <p class="note">Découpage inspiré de la hiérarchie des effets (Lavidge et Steiner, 1961) : cognitif, affectif, conatif.</p>
   </div>
 </section>
+
+<section class="slide" id="s-voix" data-title="Une direction commune, deux voix" data-group="7. Communication">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><span class="dot"></span>7. Communication · l'organisation</span>
+      <h2 class="title wide">Mutualiser les fondations, différencier les voix</h2>
+      <p class="lead">Pendant les dix ans du projet, la communication de la FUG et de la DFPU est pilotée en commun : un socle partagé, des coproductions dès que le public est le même, et une voix propre à chaque entité. Ne plus travailler en silo ne veut pas dire effacer les identités : la coopération prépare l'autonomie au lieu de l'empêcher.</p>
+    </div>
+    <div class="panel vn-wrap">
+      <svg viewBox="0 0 520 250" class="vn" role="img" aria-label="Deux cercles qui se recoupent : la Fondation et la DFPU, avec un socle partagé et des coproductions à leur intersection">
+        <circle cx="200" cy="125" r="112" fill="var(--green)" fill-opacity=".14" stroke="var(--green)" stroke-width="2"/>
+        <circle cx="320" cy="125" r="112" fill="var(--teal)" fill-opacity=".14" stroke="var(--teal)" stroke-width="2"/>
+        <text x="138" y="120" text-anchor="middle" class="vn-t">Fondation</text>
+        <text x="138" y="140" text-anchor="middle" class="vn-s">volet Mécénat</text>
+        <text x="382" y="120" text-anchor="middle" class="vn-t">DFPU</text>
+        <text x="382" y="140" text-anchor="middle" class="vn-s">volet FPC</text>
+        <text x="260" y="114" text-anchor="middle" class="vn-c">Socle partagé</text>
+        <text x="260" y="131" text-anchor="middle" class="vn-c">et</text>
+        <text x="260" y="148" text-anchor="middle" class="vn-c">coproductions</text>
+      </svg>
+    </div>
+    <div class="vcols">
+      <div class="vcol"><h3>Propre à la Fondation</h3><ul><li>Campagnes de dons et financement participatif</li><li>Relation et reconnaissance des mécènes</li><li>Lemag'</li><li>Legs et successions</li></ul></div>
+      <div class="vcol mid"><h3>Partagé et coproduit</h3><p class="vsub">Socle, toujours commun</p><ul><li>Base de contacts et règles de consentement</li><li>Charte, mentions France 2030, banque d'images</li><li>Calendrier éditorial et tableau de bord ADUG</li><li>Newsletter entreprises (J11)</li></ul><p class="vsub">Coproductions, quand le public est le même</p><ul><li>Rendez-vous entreprises coordonnés</li><li>Événements avec la CCIG et le GPM, kit partenaires</li><li>Rentrée et diplomation : du réseau d'étudiants au Club des Alumni</li><li>Podcast sur les formations et les débouchés</li></ul></div>
+      <div class="vcol"><h3>Propre à la DFPU</h3><ul><li>Catalogue de formation (J6)</li><li>Campagnes de formation continue</li><li>Offres d'alternance</li><li>Réponses aux appels d'offres, salons d'orientation</li></ul></div>
+    </div>
+    <div class="traj">
+      <article class="tj"><svg viewBox="0 0 180 90" aria-hidden="true"><circle cx="72" cy="45" r="38" fill="var(--green)" fill-opacity=".18" stroke="var(--green)" stroke-width="1.5"/><circle cx="108" cy="45" r="38" fill="var(--teal)" fill-opacity=".18" stroke="var(--teal)" stroke-width="1.5"/></svg><span class="tw">2026</span><h3>Mutualiser</h3><p>Outils communs, base partagée, portail unique : démarrer vite et tenir les jalons communs.</p></article>
+      <article class="tj"><svg viewBox="0 0 180 90" aria-hidden="true"><circle cx="62" cy="45" r="38" fill="var(--green)" fill-opacity=".18" stroke="var(--green)" stroke-width="1.5"/><circle cx="118" cy="45" r="38" fill="var(--teal)" fill-opacity=".18" stroke="var(--teal)" stroke-width="1.5"/></svg><span class="tw">2027 à 2033</span><h3>Coordonner sous une direction commune</h3><p>Les outils se spécialisent, le socle reste partagé : pas de silos, deux voix distinctes.</p></article>
+      <article class="tj"><svg viewBox="0 0 180 90" aria-hidden="true"><circle cx="54" cy="45" r="38" fill="var(--green)" fill-opacity=".18" stroke="var(--green)" stroke-width="1.5"/><circle cx="126" cy="45" r="38" fill="var(--teal)" fill-opacity=".18" stroke="var(--teal)" stroke-width="1.5"/></svg><span class="tw">Après 2033</span><h3>Repositionner</h3><p>Chaque entité porte son volet, comme le prévoit le dossier, en s'appuyant sur le socle construit pendant le projet.</p></article>
+    </div>
+    <div class="rules">
+      <div><b>Un point mensuel</b>entre les deux chargées de communication, sur un calendrier partagé</div>
+      <div><b>Un interlocuteur à la fois</b>par entreprise : la base indique qui suit qui</div>
+      <div><b>Un pilote désigné</b>pour chaque coproduction</div>
+      <div><b>Un bilan trimestriel</b>présenté au comité de pilotage</div>
+    </div>
+    <p class="src">Après le financement France 2030, la prise en charge du volet Mécénat revient à la Fondation et celle du volet FPC à la DFPU (dossier ADUG, partie 4.3).</p>
+  </div>
+</section>
+
+
 
 <!-- ============ 8. ECOSYSTEME DIGITAL ============ -->
 <section class="slide" id="s-scenarios" data-title="Deux façons de démarrer" data-group="8. Écosystème digital">
@@ -2124,14 +2193,13 @@ mSet(0);
 ].forEach(function(g){$("#gainsbox").appendChild(el("article",{"class":"gcol"+g.c},'<div class="gh"><span>'+ico(g.i,"")+'</span><h3>'+g.t+'</h3></div><ul>'+g.l.map(function(x){return '<li>'+ico("i-check","")+'<span>'+x+'</span></li>'}).join("")+'</ul>'))});
 
 /* ---------- Budget : données ---------- */
-var TAGS={ret:["s-ret","Retenu"],pre:["s-pre","Préconisé"],con:["s-con","À consulter"]};
+var TAGS={ret:["s-ret","Retenu"],val:["s-val","À valider"],pre:["s-pre","Préconisé"],con:["s-con","À consulter"]};
 var CATS={num:"Écosystème numérique",out:"Outils",cont:"Contenus",print:"Print"};
 var LINES=[
  {id:"site",cat:"num",l:"Portail unique ADUG, tranche 1",d:"Accueil commun, espace Soutenir et don en ligne, formulaire Entreprises, adhésion alumni",st:"con",lo:6000,hi:15000,y:2026,j:"J1 J3 J12"},
  {id:"contenus",cat:"num",l:"Contenus des pages projets",d:"Textes et visuels",st:"con",lo:0,hi:3000,y:2026,j:"J1"},
- {id:"dons",cat:"num",l:"Don en ligne avec reçus fiscaux",d:"Abonnement annuel, intégré au site",st:"con",lo:1100,hi:4700,rec:true,y:2026,j:"J1"},
- {id:"crm",cat:"num",l:"Outil de gestion de la relation partagé",d:"Abonnement annuel, relié au back-office, FUG et DFPU",st:"con",lo:500,hi:2000,rec:true,y:2026,j:"J9 J10 J11"},
- {id:"crmset",cat:"num",l:"Paramétrage et import des fiches entreprises",d:"Environ 400 fiches",st:"con",lo:0,hi:1500,y:2026,j:"J10"},
+ {id:"eudoset",cat:"num",l:"Gestion de la relation et don en ligne : mise en place et formation",sol:"Eudonet + GiveXpert",d:"Sur devis, une fois : paramétrage, import des contacts, formation",st:"val",lo:8000,hi:8000,y:2026,j:"J1 J9 J10 J11"},
+ {id:"eudoabo",cat:"num",l:"Gestion de la relation et don en ligne : abonnement",sol:"Eudonet + GiveXpert",d:"Sur devis, par an, 2 utilisateurs, GiveXpert compris ; utilisateurs DFPU à chiffrer",st:"val",lo:2000,hi:2000,rec:true,y:2026,j:"J1 J9 J10 J11"},
  {id:"maint",cat:"num",l:"Maintenance et sécurité du site",d:"Hébergement sur le serveur de l'UG",st:"con",lo:400,hi:900,rec:true,start:2027,y:2027,j:""},
  {id:"portail",cat:"num",l:"Portail unique ADUG, tranche 2",d:"Espaces Entreprises et Étudiants-alumni complets, dans le même site",st:"con",lo:2000,hi:25000,y:2027,mov:true,j:"J10 J12"},
  {id:"dash",cat:"num",l:"Tableau de bord ADUG",d:"Indicateurs pour le comité de pilotage",st:"con",lo:0,hi:3000,y:2027,mov:true,j:"J9"},
@@ -2139,7 +2207,6 @@ var LINES=[
  {id:"canva",cat:"out",l:"Création graphique et banque d'images",sol:"Canva Pro",st:"ret",lo:110,hi:250,unit:true,q:3,rec:true,y:2026,j:"J3",b:"Par licence et par an"},
  {id:"notion",cat:"out",l:"Base documentaire et cartographie des événements",sol:"Notion Plus",st:"ret",lo:100,hi:120,unit:true,q:3,rec:true,y:2026,j:"J9",b:"Par membre et par an"},
  {id:"monday",cat:"out",l:"Suivi des tâches partagées FUG-DFPU",sol:"Monday",st:"ret",lo:324,hi:432,rec:true,y:2026,j:"J9",b:"3 sièges minimum, par an"},
- {id:"claude",cat:"out",l:"Assistant de rédaction IA",sol:"Claude Pro",st:"ret",lo:210,hi:250,unit:true,q:1,rec:true,y:2026,j:"",b:"Par licence et par an"},
  {id:"photos",cat:"cont",l:"Reportage photo au campus de Troubiran, Cayenne",d:"1 à 2 jours, droits cédés",st:"con",lo:800,hi:2500,y:2026,mov:true,j:"J1 J3"},
  {id:"videos",cat:"cont",l:"Trois vidéos courtes de promotion",d:"Tournage mutualisé",st:"con",lo:3500,hi:8000,y:2027,mov:true,j:"J1 J3"},
  {id:"broch",cat:"print",l:"Brochure FUG",d:"Petite série",st:"con",lo:250,hi:700,y:2026,j:"J1 J10"},
