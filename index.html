@@ -786,6 +786,39 @@ p{margin:0}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .step{opacity:1;transform:none}
 }
+
+/* ---------- Ajouts : horizon et tiers-lieu ---------- */
+.hz-wrap{padding:18px 20px}
+.hz{width:100%;height:auto;display:block;font-family:"Montserrat",system-ui,sans-serif}
+.hz-t{font-size:16px;font-weight:800;fill:var(--ink)}
+.hz-s{font-size:12.5px;fill:var(--muted)}
+.hz-f{font-size:12px;font-weight:600;fill:var(--green-ink)}
+.hz-bt{font-size:16px;font-weight:800;fill:#fff}
+.hz-bs{font-size:12.5px;fill:#d7ede3}
+.cycle{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;position:relative}
+.cycle::before{content:"";position:absolute;top:24px;left:8%;right:8%;height:3px;background:repeating-linear-gradient(90deg,var(--leaf) 0 12px,transparent 12px 20px)}
+.cycle li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px}
+.cycle .cb{width:48px;height:48px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:0 0 0 6px var(--bg)}
+.cycle h3{font-size:14px;font-weight:800;line-height:1.25}
+.cycle p{font-size:12px;color:var(--muted);line-height:1.35}
+.cycle-loop{display:flex;gap:12px;align-items:flex-start;background:var(--mint);color:var(--ink);border-radius:var(--radius-l);padding:14px 18px;font-size:14px}
+.cycle-loop svg{width:22px;height:22px;color:var(--green-ink);flex:none;margin-top:1px}
+.tl-h{font-size:17px;font-weight:800;margin-bottom:12px}
+.tl-row{display:flex;flex-direction:column;gap:8px;padding:10px 0;border-top:1px solid var(--line)}
+.tl-row:first-of-type{border-top:0;padding-top:0}
+.tl-row b{font-size:12.5px;color:var(--muted)}
+.tl-chips{display:flex;flex-wrap:wrap;gap:6px}
+.tl-chips .chip{white-space:normal}
+.tl-cond{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:14px}
+@media (max-width:1023px){.cycle{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:22px}.cycle::before{display:none}}
+@media (max-width:640px){.cycle{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.sccard.b .status.st-part{background:rgba(255,192,0,.28);color:#ffe08a}
+.sccard.b .status.st-unk{background:rgba(255,255,255,.14);color:#e3f1ea}
+.jgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;padding:4px 2px 8px}
+.jgrid .card-j{flex:none;width:100%}
+.jnote{font-size:14px;color:var(--ink);background:var(--mint);border-radius:12px;padding:10px 14px;margin-bottom:14px}
+.rh{font-size:17px;font-weight:800;margin-bottom:12px}
 </style>
 </head>
 <body>
@@ -836,7 +869,7 @@ p{margin:0}
   <aside class="sidebar" id="sidebar" aria-label="Sommaire">
     <div class="brand">
       <img src="data:image/png;base64,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" alt="Fondation Université de Guyane">
-      <p><strong>Feuille de route T4 2026</strong>La communication de la Fondation dans le projet ADUG</p>
+      <p><strong>Feuille de route T4 2026</strong>La communication du projet ADUG · volets Mécénat et FPC</p>
     </div>
     <ul class="nav" id="nav"></ul>
     <div class="side-foot">
@@ -937,19 +970,19 @@ p{margin:0}
   <div class="wrap">
     <div class="head">
       <span class="kicker"><span class="dot"></span>1. Ce que l'ANR attend</span>
-      <h2 class="title wide">Les jalons sur lesquels la Fondation sera évaluée</h2>
-      <p class="lead">Sept jalons concernent directement la Fondation : trois propres au volet Mécénat, quatre communs avec la DFPU. Chacun appelle une contribution de la communication.</p>
-      <span class="hint"><span class="pulse"></span>Survolez ou touchez une carte pour lire l'engagement tel qu'il est écrit dans le dossier ADUG</span>
+      <h2 class="title wide">Les douze jalons sur lesquels le projet sera évalué</h2>
+      <p class="lead">Trois jalons sont propres au volet Mécénat, cinq au volet Formation professionnelle et continue, quatre sont communs aux deux volets. Chacun appelle une contribution de la communication.</p>
+      <span class="hint"><span class="pulse"></span>Choisissez un volet, puis survolez ou touchez une carte pour lire l'engagement tel qu'il est écrit dans le dossier ADUG</span>
     </div>
-    <div class="carousel" data-carousel>
-      <div class="track" id="jtrack"></div>
-      <div class="car-ctrl">
-        <div class="dots" id="jdots"></div>
-        <div style="display:flex;gap:8px">
-          <button class="pbtn" data-car="-1" aria-label="Jalon précédent"><svg><use href="#i-left"/></svg></button>
-          <button class="pbtn" data-car="1" aria-label="Jalon suivant"><svg><use href="#i-right"/></svg></button>
-        </div>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Jalons par volet">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="jp1" id="jt1"><svg class="ico"><use href="#i-coin"/></svg>Volet Mécénat · 3</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="jp2" id="jt2"><svg class="ico"><use href="#i-cap"/></svg>Volet FPC · 5</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="jp3" id="jt3"><svg class="ico"><use href="#i-link"/></svg>Jalons communs · 4</button>
       </div>
+      <div class="tabpanel" role="tabpanel" id="jp1" aria-labelledby="jt1"><div class="jgrid" id="jg-Mécénat"></div></div>
+      <div class="tabpanel" role="tabpanel" id="jp2" aria-labelledby="jt2" hidden><div class="jgrid" id="jg-FPC"></div></div>
+      <div class="tabpanel" role="tabpanel" id="jp3" aria-labelledby="jt3" hidden><p class="jnote">Ces quatre jalons sont portés ensemble par les deux volets : ils se prouvent avec des outils, une base et un tableau de bord partagés.</p><div class="jgrid" id="jg-Commun"></div></div>
     </div>
   </div>
 </section>
@@ -976,7 +1009,7 @@ p{margin:0}
       </div>
       <div class="tabpanel" role="tabpanel" id="m2" aria-labelledby="mt2" hidden>
         <span class="hint" style="margin-bottom:14px"><span class="pulse"></span>Survolez ou touchez une carte pour lire la référence du dossier</span>
-        <div class="mflips"><button class="mflip" aria-label="Site web et dons en ligne. Référence : « Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter […] »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-web"/></svg>Site web et dons en ligne</span><p class="note">« Animation du site web » figure dans les missions du poste.</p><span class="status st-eng">À créer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter […] »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, missions du poste, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Logiciel de gestion de la relation (CRM). Référence : dossier ADUG, page 11"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg>Logiciel de gestion de la relation (CRM)</span><p class="note">Prévu dans les actions structurantes.</p><span class="status st-eng">À déployer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Mettre en œuvre un logiciel chargé des relations clientèle (CRM) »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, tableau des actions structurantes, page 11</span></span></span></button><button class="mflip" aria-label="Plateforme de financement participatif. Référence : « Le développement de cette plateforme de financement participatif permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg>Plateforme de financement participatif</span><p class="note">Dons défiscalisés, lien avec les diplômés.</p><span class="status st-unk">À confirmer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Le développement de cette plateforme de financement participatif permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Outil de documents partagés. Référence : à reporter"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Outil de documents partagés</span><p class="note">Pour rendre l'information du projet accessible à tous.</p><span class="status st-unk">À confirmer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">"Mettre en oeuvre d’un outil de gestion de documents partagés (page 11)"</span><span class="msrc">Dossier ADUG, tableau des actions structurantes, page 11</span></span></span></button></div>
+        <div class="mflips"><button class="mflip" aria-label="Site web et dons en ligne. Référence : « Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter […] »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-web"/></svg>Site web et dons en ligne</span><p class="note">« Animation du site web » figure dans les missions du poste.</p><span class="status st-eng">À créer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Gestion des réseaux sociaux de la Fondation ; animation du site web ; édition et mise en ligne de la Newsletter […] »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, missions du poste, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Logiciel de gestion de la relation (CRM). Référence : dossier ADUG, page 11"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-db"/></svg>Logiciel de gestion de la relation (CRM)</span><p class="note">Prévu dans les actions structurantes.</p><span class="status st-eng">À déployer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Mettre en œuvre un logiciel chargé des relations clientèle (CRM) »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, tableau des actions structurantes, page 11</span></span></span></button><button class="mflip" aria-label="Plateforme de financement participatif. Référence : « Le développement de cette plateforme de financement participatif permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg>Plateforme de financement participatif</span><p class="note">Dons défiscalisés, lien avec les diplômés.</p><span class="status st-unk">À confirmer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Le développement de cette plateforme de financement participatif permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Outil de documents partagés. Référence : à reporter"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-doc"/></svg>Outil de documents partagés</span><p class="note">Pour rendre l'information du projet accessible à tous.</p><span class="status st-unk">À confirmer</span><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">Citation à reporter depuis le dossier ADUG</span><span class="msrc">Dossier ADUG, tableau des actions structurantes, page 11</span></span></span></button></div>
       </div>
       <div class="tabpanel" role="tabpanel" id="m3" aria-labelledby="mt3" hidden>
         <div class="panel money" id="money">
@@ -989,7 +1022,7 @@ p{margin:0}
       </div>
       <div class="tabpanel" role="tabpanel" id="m4" aria-labelledby="mt4" hidden>
         <span class="hint" style="margin-bottom:14px"><span class="pulse"></span>Survolez ou touchez une carte pour lire la référence du dossier</span>
-        <div class="mflips"><button class="mflip" aria-label="Mécènes ciblés en priorité"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>Mécènes ciblés en priorité</span><div class="pubchips"><span class="chip">Fondations d'entreprises hors de Guyane</span><span class="chip">Entreprises locales</span><span class="chip">Grand public : particuliers, chercheurs, alumni</span></div><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Le volet Mécénat ciblera en priorité les fondations d'entreprises situées hors du territoire guyanais ainsi que les entreprises locales et le grand public (particuliers, chercheurs, alumni). »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Réseaux des partenaires du consortium"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg>Réseaux des partenaires du consortium</span><p class="note">La CCIG et le GPM animent un réseau d'acteurs économiques, relais naturel vers les entreprises.</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Créent un réseau d'acteurs avec rencontres régulières, cycle de conférences, groupes de travail thématiques autour des activités de la fondation. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, rôle de la CCIG et du GPM</span></span></span></button><button class="mflip" aria-label="Personnels de recherche"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-bulb"/></svg>Personnels de recherche</span><span class="pubbig" data-count="162">0</span><p class="note">personnels de recherche des six unités de l'UG, à sensibiliser et associer aux campagnes de financement participatif et aux projets de la Fondation</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">"Tous les chercheurs, enseignants-chercheurs et personnels d’appui des six unités de recherche de l’UG (soit un total de 162 personnels de recherche) ainsi que les étudiants de niveau Licence 3 et plus (soit un total d’environ 1000 étudiants) seront sensibilisés et impliqués dans le volet Mécénat afin qu’ils contribuent au lancement de campagnes de financement participatif et participent aux projets retenus ou proposés par la Fondation en préfiguration et ses donateurs. (page9)"</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG</span></span></span></button><button class="mflip" aria-label="Étudiants"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>Étudiants</span><span class="pubbig" data-count="1000">0</span><p class="note">étudiants de L3 et plus, à sensibiliser et associer aux campagnes de financement participatif et aux projets de la Fondation</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">"Tous les chercheurs, enseignants-chercheurs et personnels d’appui des six unités de recherche de l’UG (soit un total de 162 personnels de recherche) ainsi que les étudiants de niveau Licence 3 et plus (soit un total d’environ 1000 étudiants) seront sensibilisés et impliqués dans le volet Mécénat afin qu’ils contribuent au lancement de campagnes de financement participatif et participent aux projets retenus ou proposés par la Fondation en préfiguration et ses donateurs."</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG</span></span></span></button></div>
+        <div class="mflips"><button class="mflip" aria-label="Mécènes ciblés en priorité"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg>Mécènes ciblés en priorité</span><div class="pubchips"><span class="chip">Fondations d'entreprises hors de Guyane</span><span class="chip">Entreprises locales</span><span class="chip">Grand public : particuliers, chercheurs, alumni</span></div><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Le volet Mécénat ciblera en priorité les fondations d'entreprises situées hors du territoire guyanais ainsi que les entreprises locales et le grand public (particuliers, chercheurs, alumni). »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, volet Mécénat</span></span></span></button><button class="mflip" aria-label="Réseaux des partenaires du consortium"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-hand"/></svg>Réseaux des partenaires du consortium</span><p class="note">La CCIG et le GPM animent un réseau d'acteurs économiques, relais naturel vers les entreprises.</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq">« Créent un réseau d'acteurs avec rencontres régulières, cycle de conférences, groupes de travail thématiques autour des activités de la fondation. »</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG, rôle de la CCIG et du GPM</span></span></span></button><button class="mflip" aria-label="Personnels de recherche"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-bulb"/></svg>Personnels de recherche</span><span class="pubbig" data-count="162">0</span><p class="note">personnels de recherche des six unités de l'UG, à sensibiliser et associer aux campagnes de financement participatif et aux projets de la Fondation</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">Citation à reporter depuis le dossier ADUG</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG</span></span></span></button><button class="mflip" aria-label="Étudiants"><span class="mf-in"><span class="mf front"><span class="mh"><svg class="ico" aria-hidden="true"><use href="#i-cap"/></svg>Étudiants</span><span class="pubbig" data-count="1000">0</span><p class="note">étudiants de L3 et plus, à sensibiliser et associer aux campagnes de financement participatif et aux projets de la Fondation</p><span class="turn"><svg aria-hidden="true"><use href="#i-right"/></svg>Voir la référence du dossier</span></span><span class="mf back"><span class="lblj">Ce que dit le dossier ADUG</span><span class="mq miss">Citation à reporter depuis le dossier ADUG</span><span class="msrc"><svg aria-hidden="true"><use href="#i-doc"/></svg>Dossier ADUG</span></span></span></button></div>
       </div>
     </div>
   </div>
@@ -1040,10 +1073,10 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>2. Où en est-on</span>
       <h2 class="title wide">Octobre 2026 : fin de phase 1, le temps du bilan</h2>
-      <p class="lead">Si la convention a démarré fin 2023 ou début 2024, octobre 2026 se situe en fin de phase 1. La date exacte de démarrage reste à confirmer : elle fixe le calendrier de l'évaluation.</p>
+      <p class="lead">Le contrat attributif fixe le démarrage au 1<sup>er</sup> janvier 2024 et une phase 1 de 36 mois : elle s'achève le <b>31 décembre 2026</b>. Le compte rendu de fin de phase 1 est attendu dans les deux mois, les relevés de dépenses dans les trois mois. 2027, année 4, conditionne la suite du projet.</p>
     </div>
     <div class="road">
-      <svg viewBox="0 0 1000 150" id="roadsvg" role="img" aria-label="Frise des dix années du projet, position estimée en fin d'année 3">
+      <svg viewBox="0 0 1000 150" id="roadsvg" role="img" aria-label="Frise des dix années du projet, de 2024 à 2033 : octobre 2026, fin de l'année 3">
         <rect x="40" y="70" width="920" height="12" rx="6" fill="var(--line)"/>
         <rect x="40" y="70" width="0" height="12" rx="6" fill="var(--green)" id="roadfill"/>
         <rect x="40" y="96" width="276" height="26" rx="8" fill="var(--mint)"/>
@@ -1057,7 +1090,7 @@ p{margin:0}
         </g>
         <g id="pin" transform="translate(296 0)" opacity="0">
           <circle cx="0" cy="76" r="11" fill="var(--amber)" stroke="var(--surface)" stroke-width="4"/>
-          <text x="0" y="146" text-anchor="middle" font-size="12" font-weight="800" fill="var(--ink)" font-family="Montserrat, sans-serif">Octobre 2026 (hypothèse)</text>
+          <text x="0" y="146" text-anchor="middle" font-size="12" font-weight="800" fill="var(--ink)" font-family="Montserrat, sans-serif">Octobre 2026</text>
         </g>
       </svg>
       <div class="road-legend"><span><i style="background:var(--green)"></i>Chemin parcouru</span><span><i style="background:var(--line)"></i>Chemin à parcourir</span><span><i style="background:var(--amber)"></i>Point de décision</span></div>
@@ -1080,7 +1113,7 @@ p{margin:0}
         <div class="quests" id="quests"></div>
       </div>
     </div>
-    <p class="src">Sources : dossier ADUG (jalons et moyens), fiches projets Lemag' et Podcast (février 2026), état connu en septembre 2026.</p>
+    <p class="src">Sources : contrat attributif ANR-22-ASDR-0003 (articles 4, 5 et 7) et annexe 5, dossier ADUG (jalons et moyens), fiches projets Lemag' et Podcast (février 2026), état connu en octobre 2026.</p>
   </div>
 </section>
 
@@ -1094,7 +1127,7 @@ p{margin:0}
       <span class="hint"><span class="pulse"></span>Survolez ou touchez une carte pour voir la preuve attendue</span>
     </div>
     <div class="flips" id="flips"></div>
-    <p class="note">Preuves usuelles, à confirmer dans la convention attributive et l'accord de consortium.</p>
+    <p class="note">Preuves attendues au regard du contrat attributif (articles 7 et 8) et de l'accord de consortium.</p>
   </div>
 </section>
 
@@ -1104,15 +1137,34 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>3. Obligations</span>
       <h2 class="title wide">Pour chaque engagement, une réponse proposée</h2>
-      <p class="lead">Le dossier contient des engagements qui touchent directement la communication. Chacun appelle une réponse simple, et chaque point de vigilance une réponse proposée.</p>
+      <p class="lead">Le dossier contient, pour chaque volet, des engagements qui touchent directement la communication. Chacun appelle une réponse simple, et chaque point de vigilance une réponse proposée.</p>
     </div>
-    <h3 style="font-size:18px;font-weight:800">Les engagements du dossier et leur ouverture</h3>
-    <div class="pairs" id="pairs"></div>
-    <h3 style="font-size:18px;font-weight:800;margin-top:6px">Points de vigilance et réponses proposées</h3>
-    <div class="face2">
-      <div class="f2head"><span>Point de vigilance</span><span>Réponse proposée</span></div>
-      <div id="f2"></div>
+    <div data-tabs>
+      <div class="tabs" role="tablist" aria-label="Engagements par volet">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="rp1" id="rt1"><svg class="ico"><use href="#i-coin"/></svg>Volet Mécénat</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="rp2" id="rt2"><svg class="ico"><use href="#i-cap"/></svg>Volet FPC</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="rp3" id="rt3"><svg class="ico"><use href="#i-link"/></svg>Engagements communs</button>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="rp1" aria-labelledby="rt1">
+        <h3 class="rh">Engagements du dossier et réponses proposées</h3>
+        <div class="pairs" id="pairs-Mécénat"></div>
+        <h3 class="rh" style="margin-top:18px">Points de vigilance et réponses proposées</h3>
+        <div class="face2"><div class="f2head"><span>Point de vigilance</span><span>Réponse proposée</span></div><div id="f2-Mécénat"></div></div>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="rp2" aria-labelledby="rt2" hidden>
+        <h3 class="rh">Engagements du dossier et réponses proposées</h3>
+        <div class="pairs" id="pairs-FPC"></div>
+        <h3 class="rh" style="margin-top:18px">Points de vigilance et réponses proposées</h3>
+        <div class="face2"><div class="f2head"><span>Point de vigilance</span><span>Réponse proposée</span></div><div id="f2-FPC"></div></div>
+      </div>
+      <div class="tabpanel" role="tabpanel" id="rp3" aria-labelledby="rt3" hidden>
+        <h3 class="rh">Engagements du dossier et réponses proposées</h3>
+        <div class="pairs" id="pairs-Commun"></div>
+        <h3 class="rh" style="margin-top:18px">Points de vigilance et réponses proposées</h3>
+        <div class="face2"><div class="f2head"><span>Point de vigilance</span><span>Réponse proposée</span></div><div id="f2-Commun"></div></div>
+      </div>
     </div>
+    <p class="src">Sources : dossier ADUG (parties 1, 2.1, 2.3 et 3.2), addendum 2023 en réponse au jury, contrat attributif ANR-22-ASDR-0003 (article 8) et annexe 5.</p>
   </div>
 </section>
 
@@ -1198,16 +1250,16 @@ p{margin:0}
 </section>
 
 <!-- ============ 8. ECOSYSTEME DIGITAL ============ -->
-<section class="slide" id="s-scenarios" data-title="Deux scénarios comparés" data-group="8. Écosystème digital">
+<section class="slide" id="s-scenarios" data-title="Deux façons de démarrer" data-group="8. Écosystème digital">
   <div class="wrap">
     <div class="head">
       <span class="kicker"><span class="dot"></span>8. Écosystème digital · le choix</span>
-      <h2 class="title wide">Deux scénarios face aux exigences de la convention</h2>
-      <p class="lead">Deux options sont possibles pour le site : un site propre à la Fondation, ou un site unique partagé avec la DFPU. Leur coût en 2026 est du même ordre ; c'est leur couverture des engagements ADUG qui les distingue.</p>
+      <h2 class="title wide">Deux façons de démarrer, une même ambition</h2>
+      <p class="lead">Le projet peut démarrer avec un outil par volet, ou avec un portail commun aux deux volets. Leur coût en 2026 est du même ordre. Ce qui les distingue, c'est leur capacité à répondre ensemble aux engagements de la convention, puis à évoluer vers un écosystème de trois solutions connectées.</p>
     </div>
     <div class="sccards">
-      <div class="sccard"><span class="scl">Scénario A</span><h3>Site FUG seul</h3><p>Site institutionnel, pages projets, don en ligne. La DFPU développe son portail entreprises à part.</p><div class="scsum"><span class="status st-ok" id="scA-ok"></span><span class="status st-part" id="scA-part"></span><span class="status st-no" id="scA-no"></span></div></div>
-      <div class="sccard b"><span class="scl">Scénario B · retenu dans la suite</span><h3>Site unique ADUG</h3><p>Un site, un back-office, une base, trois espaces : Soutenir, Entreprises, Étudiants et alumni.</p><div class="scsum"><span class="status st-ok" id="scB-ok"></span><span class="status st-part" id="scB-part"></span><span class="status st-no" id="scB-no"></span></div></div>
+      <div class="sccard"><span class="scl">Scénario A</span><h3>Démarrage isolé</h3><p>Chaque volet se dote de son propre outil : un site pour le mécénat, un portail entreprises pour la formation continue. Deux bases de contacts, sans lien entre elles.</p><div class="scsum"><span class="status st-ok" id="scA-ok"></span><span class="status st-part" id="scA-part"></span><span class="status st-unk" id="scA-no"></span></div></div>
+      <div class="sccard b"><span class="scl">Scénario B · retenu dans la suite</span><h3>Démarrage mutualisé</h3><p>Un portail unique : un back-office, une base, trois entrées (Soutenir, Portail entreprises, Étudiants et alumni). Il est conçu pour se scinder ensuite en trois solutions connectées.</p><div class="scsum"><span class="status st-ok" id="scB-ok"></span><span class="status st-part" id="scB-part"></span><span class="status st-unk" id="scB-no"></span></div></div>
     </div>
     <div data-tabs>
       <div class="tabs" role="tablist" aria-label="Comparaison des scénarios">
@@ -1219,20 +1271,20 @@ p{margin:0}
       <div class="tabpanel" role="tabpanel" id="sc2" aria-labelledby="sct2" hidden><div class="matrix-wrap"><table class="matrix sctab" id="sctab2"></table></div></div>
       <div class="tabpanel" role="tabpanel" id="sc3" aria-labelledby="sct3" hidden><div class="matrix-wrap"><table class="matrix sctab" id="sctab3"></table></div></div>
     </div>
-    <p class="src">Jalons et engagements issus du dossier ADUG ; formulations et caractère commun des jalons à confirmer dans la convention signée.</p>
+    <p class="src">Jalons : dossier ADUG, partie 2.3. Règles d'évaluation : contrat attributif ANR-22-ASDR-0003 (articles 6, 7 et 10) et annexe 5.</p>
   </div>
 </section>
 
-<section class="slide" id="s-ecosysteme" data-title="Un site unique, trois espaces" data-group="8. Écosystème digital">
+<section class="slide" id="s-ecosysteme" data-title="Un portail unique, trois entrées" data-group="8. Écosystème digital">
   <div class="wrap">
     <div class="head">
       <span class="kicker"><span class="dot"></span>8. Écosystème digital · la solution retenue</span>
-      <h2 class="title wide">Un site unique ADUG, trois espaces pour trois publics</h2>
-      <p class="lead">Les publics de la FUG et de la DFPU sont les mêmes, et l'ANR additionne le chiffre d'affaires des deux volets. La solution est donc <b>un seul site : un site, un back-office, une base, un prestataire</b>. Trois espaces orientent chaque public dès la page d'accueil. Hébergé sur le serveur de l'UG en univ-guyane.fr, il réunit deux projets déjà portés, le site de la Fondation et le portail entreprises de la DFPU. Chaque entité anime son espace et garde son identité.</p>
+      <h2 class="title wide">Un portail unique ADUG, trois entrées pour trois publics</h2>
+      <p class="lead">Les publics de la FUG et de la DFPU sont les mêmes, et l'ANR additionne le chiffre d'affaires des deux volets. La solution est donc <b>un seul site : un site, un back-office, une base, un prestataire</b>. Trois espaces orientent chaque public dès la page d'accueil. Hébergé sur le serveur de l'UG en univ-guyane.fr, il réunit deux projets déjà portés, le site de la Fondation et le portail entreprises voulu par la DFPU. Chaque entité anime son entrée et garde son identité. C'est la première étape d'un écosystème de trois solutions connectées.</p>
       <span class="hint"><span class="pulse"></span>Touchez un espace ou le back-office pour voir qui l'utilise et ce qu'il apporte</span>
     </div>
     <div class="eco">
-      <div class="siteframe"><div class="sitebar"><i></i><i></i><i></i><span class="url">univ-guyane.fr · site unique ADUG</span></div><div class="siteinner"><p class="sitehome">Page d'accueil commune · menu à trois entrées</p>
+      <div class="siteframe"><div class="sitebar"><i></i><i></i><i></i><span class="url">univ-guyane.fr · portail unique ADUG</span></div><div class="siteinner"><p class="sitehome">Page d'accueil commune · menu à trois entrées</p>
         <div class="doors" id="doors"></div>
         <div class="pipes" aria-hidden="true"><span></span><span></span><span></span></div>
         <button class="spine" id="spine" aria-pressed="false"><svg aria-hidden="true"><use href="#i-db"/></svg><span><b>Un back-office et une base communs</b><small>Contenus, dons, contacts partagés et gestion de la relation, tableau de bord ADUG : tout est administré au même endroit</small></span></button>
@@ -1241,11 +1293,11 @@ p{margin:0}
     </div>
     <div class="matrix-wrap">
       <table class="matrix ecomx" id="ecomx">
-        <thead><tr><th scope="col" style="text-align:left">Espace du site</th><th scope="col">J1 Collecte</th><th scope="col">J2 Fondations</th><th scope="col">J3 Contenus</th><th scope="col">J9 Pilotage</th><th scope="col">J10 Entreprises</th><th scope="col">J11 Newsletter</th><th scope="col">J12 Alumni</th><th scope="col">Alternants</th><th scope="col">CA formation</th><th scope="col">CA mécénat</th><th scope="col">Indicateurs servis</th></tr></thead>
+        <thead><tr><th scope="col" style="text-align:left">Espace du site</th><th scope="col">J1 Collecte</th><th scope="col">J2 Fondations</th><th scope="col">J3 Contenus</th><th scope="col">J6 Catalogue</th><th scope="col">J7 Alternants</th><th scope="col">J8 Stagiaires</th><th scope="col">J9 Pilotage</th><th scope="col">J10 Entreprises</th><th scope="col">J11 Newsletter</th><th scope="col">J12 Alumni</th><th scope="col">CA formation</th><th scope="col">CA mécénat</th><th scope="col">Indicateurs servis</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
-    <p class="note">Toutes les pages portent la mention France 2030. L'espace Entreprises est la pièce maîtresse : c'est l'espace qui sert le plus d'indicateurs, et elle agit sur le chiffre d'affaires des deux volets, seul critère retenu par l'ANR pour l'abondement à partir de l'année 4.</p>
+    <p class="note">Toutes les pages portent la mention France 2030. Le portail entreprises est la pièce maîtresse : c'est l'entrée qui sert le plus d'indicateurs, et il agit sur le chiffre d'affaires des deux volets, sur lequel repose l'évaluation de l'année 4 (annexe 5).</p>
   </div>
 </section>
 
@@ -1266,7 +1318,7 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>8. Écosystème digital · l'expérience usager</span>
       <h2 class="title wide">Un parcours court pour chaque profil, jusqu'à l'indicateur ADUG</h2>
-      <p class="lead">Chaque parcours part d'un premier contact, entre dans l'un des trois espaces du site unique, mène à une action et alimente au moins un indicateur du projet. Un même contact peut changer de profil au fil du temps : étudiant, alternant, alumni, mentor, puis donateur.</p>
+      <p class="lead">Chaque parcours part d'un premier contact, entre par l'une des trois entrées du portail unique, mène à une action et alimente au moins un indicateur du projet. Un même contact peut changer de profil au fil du temps : étudiant, alternant, alumni, mentor, puis donateur.</p>
       <span class="hint"><span class="pulse"></span>Choisissez un profil pour isoler son parcours</span>
     </div>
     <div class="filters" id="pfilters" aria-label="Filtrer par profil"></div>
@@ -1300,15 +1352,104 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>8. Écosystème digital · les gains</span>
       <h2 class="title wide">Un investissement, trois bénéficiaires</h2>
-      <p class="lead">Le site unique sert la Fondation, la DFPU et le projet ADUG dans son ensemble. Chaque fonction mutualisée évite une dépense en double et consolide les indicateurs attendus par l'ANR.</p>
+      <p class="lead">Le portail unique sert la Fondation, la DFPU et le projet ADUG dans son ensemble. Chaque fonction mutualisée évite une dépense en double et consolide les indicateurs attendus par l'ANR.</p>
     </div>
     <div class="gains" id="gainsbox"></div>
     <div class="synstrip">
-      <div><b>1</b>site unique au lieu de trois outils séparés</div>
+      <div><b>1</b>portail unique pour démarrer, conçu pour devenir trois solutions connectées</div>
       <div><b>1</b>fiche par entreprise, partagée par la FUG et la DFPU</div>
       <div><b>10</b>indicateurs ADUG alimentés par les trois espaces et le back-office</div>
       <div><b>2</b>volets dont le chiffre d'affaires s'additionne pour l'abondement</div>
     </div>
+  </div>
+</section>
+
+<section class="slide" id="s-horizon" data-title="Vers trois solutions connectées" data-group="8. Écosystème digital">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><span class="dot"></span>8. Écosystème digital · l'horizon</span>
+      <h2 class="title wide">Du portail unique à trois solutions connectées</h2>
+      <p class="lead">Le portail unique est un point de départ, pas une limite. Construit sur une base de contacts commune et des modules séparables, il peut se scinder en trois solutions autonomes, chacune avec son identité, sans refaire le travail ni perdre les données. L'écosystème dépasse alors ce que la convention demande : les publics circulent d'une solution à l'autre, et chaque relation s'enrichit avec le temps.</p>
+    </div>
+    <div class="panel hz-wrap">
+      <svg viewBox="0 0 900 300" class="hz" role="img" aria-label="Trois solutions connectées à une base commune : le site de la Fondation, le portail entreprises et le tiers-lieu numérique">
+        <defs><marker id="hz-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="var(--green)"/></marker></defs>
+        <g stroke="var(--green)" stroke-width="2" fill="none">
+          <path d="M150 132V198" marker-end="url(#hz-ar)" marker-start="url(#hz-ar)"/>
+          <path d="M450 132V198" marker-end="url(#hz-ar)" marker-start="url(#hz-ar)"/>
+          <path d="M750 132V198" marker-end="url(#hz-ar)" marker-start="url(#hz-ar)"/>
+          <path d="M279 80H321" stroke-dasharray="5 4" marker-end="url(#hz-ar)" marker-start="url(#hz-ar)"/>
+          <path d="M579 80H621" stroke-dasharray="5 4" marker-end="url(#hz-ar)" marker-start="url(#hz-ar)"/>
+        </g>
+        <g>
+          <rect x="25" y="28" width="250" height="102" rx="16" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+          <text x="45" y="62" class="hz-t">Site de la Fondation</text>
+          <text x="45" y="86" class="hz-s">Projets, don en ligne, mécènes,</text>
+          <text x="45" y="104" class="hz-s">Lemag' et podcast</text>
+        </g>
+        <g>
+          <rect x="325" y="28" width="250" height="102" rx="16" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+          <text x="345" y="62" class="hz-t">Portail entreprises</text>
+          <text x="345" y="86" class="hz-s">Formations, alternance, mécénat,</text>
+          <text x="345" y="104" class="hz-s">rendez-vous</text>
+        </g>
+        <g>
+          <rect x="625" y="28" width="250" height="102" rx="16" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
+          <text x="645" y="62" class="hz-t">Tiers-lieu numérique</text>
+          <text x="645" y="86" class="hz-s">Étudiants et alumni : réseau,</text>
+          <text x="645" y="104" class="hz-s">Club, mentorat, témoignages</text>
+        </g>
+        <text x="160" y="170" class="hz-f">dons, adhésions</text>
+        <text x="460" y="170" class="hz-f">offres, rendez-vous</text>
+        <text x="740" y="170" text-anchor="end" class="hz-f">parcours, témoignages</text>
+        <rect x="120" y="202" width="660" height="78" rx="18" fill="var(--forest)"/>
+        <text x="450" y="236" text-anchor="middle" class="hz-bt">Une base commune</text>
+        <text x="450" y="260" text-anchor="middle" class="hz-bs">Une fiche par personne et par entreprise, consentements, historique de la relation</text>
+      </svg>
+      <p class="note" style="margin-top:8px">Les flèches pointillées marquent les passages d'une solution à l'autre : un alumni devient mentor ou donateur, une entreprise mécène recrute un alternant.</p>
+    </div>
+    <div class="stages">
+      <article class="stage-c now"><span class="when"><span>2026 · le socle</span><span class="chip">Quelques semaines</span></span><h3>Un portail unique</h3><div class="blk"><b>Ce qui est livré</b><ul><li>Trois entrées : Soutenir, Portail entreprises, Étudiants et alumni</li><li>Un back-office et une base communs</li><li>Adhésion au Club et inscription au réseau d'étudiants</li></ul></div><div class="unlock"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><span><b>Ce que ça débloque :</b> des preuves communes pour la fin de phase 1</span></div></article>
+      <article class="stage-c"><span class="when"><span>2027 · année 4</span><span class="chip">Quelques mois</span></span><h3>Les enrichissements</h3><div class="blk"><b>Ce qui est livré</b><ul><li>Portail entreprises complet : formations, offres, rendez-vous</li><li>Espace Étudiants et alumni animé</li><li>Tableau de bord consolidé des deux volets</li></ul></div><div class="unlock"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><span><b>Ce que ça débloque :</b> les résultats évalués sur l'ensemble du projet</span></div></article>
+      <article class="stage-c"><span class="when"><span>Horizon · après l'année 4</span><span class="chip">Par étapes</span></span><h3>Trois solutions connectées</h3><div class="blk"><b>Conditions de passage</b><ul><li>Des usages et des volumes qui justifient la séparation</li><li>Les résultats de l'année 4 et l'abondement</li><li>Un budget identifié pour chaque solution</li></ul></div><div class="unlock"><svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg><span><b>Ce que ça débloque :</b> un écosystème qui dépasse les attentes de la convention</span></div></article>
+    </div>
+    <p class="note">Le cahier des charges du portail exige une base exportable et des modules séparables : chaque solution peut prendre son autonomie sans refonte. Le calendrier de passage est à arrêter en comité de pilotage.</p>
+  </div>
+</section>
+
+<section class="slide" id="s-tierslieu" data-title="Le tiers-lieu numérique" data-group="8. Écosystème digital">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><span class="dot"></span>8. Écosystème digital · le tiers-lieu numérique</span>
+      <h2 class="title wide">Un espace où convergent tous ceux qui accompagnent les jeunes</h2>
+      <p class="lead">La convention demande au volet FPC de créer et d'animer un réseau d'étudiants, et au volet Mécénat d'animer le Club des Alumni. Aucun outil n'est encore prévu pour l'un ni pour l'autre. Un seul espace répond aux deux engagements : la même personne y entre étudiante et y reste alumni. <b>Son statut change, pas son espace.</b></p>
+    </div>
+    <ol class="cycle" aria-label="Le parcours dans le tiers-lieu, de l'étudiant à l'alumni">
+      <li><span class="cb">1</span><h3>Étudiant</h3><p>Réseau d'étudiants · volet FPC</p></li>
+      <li><span class="cb">2</span><h3>Alternant ou stagiaire</h3><p>Mise en relation avec les entreprises · DFPU</p></li>
+      <li><span class="cb">3</span><h3>Diplômé</h3><p>Adhésion au Club des Alumni · volet Mécénat</p></li>
+      <li><span class="cb">4</span><h3>Alumni</h3><p>Témoignages, Lemag', podcast</p></li>
+      <li><span class="cb">5</span><h3>Mentor ou recruteur</h3><p>Accompagne la promotion suivante</p></li>
+      <li><span class="cb">6</span><h3>Donateur ou stagiaire</h3><p>Soutient un projet, revient en formation continue</p></li>
+    </ol>
+    <div class="cycle-loop"><svg class="ico" aria-hidden="true"><use href="#i-sprout"/></svg><span><b>Chaque année, une nouvelle promotion entre dans le cycle.</b> La base s'enrichit d'elle-même, et une seule relation, suivie sur des années, sert les deux volets à chaque étape.</span></div>
+    <div class="grid-2">
+      <div class="panel">
+        <h3 class="tl-h">Ce qu'il réunit</h3>
+        <div class="tl-row"><b>Engagements ADUG</b><span class="tl-chips"><span class="chip">Réseau d'étudiants, années 2 à 10</span><span class="chip">J12 · Club des Alumni, +10 % par an</span><span class="chip">J7 · 15 alternants par promotion</span><span class="chip">1 000 étudiants de L3 et plus associés au mécénat</span><span class="chip">Alumni parmi les donateurs ciblés</span></span></div>
+        <div class="tl-row"><b>Acteurs qui convergent</b><span class="tl-chips"><span class="chip">Composantes de l'UG</span><span class="chip">DFPU</span><span class="chip">Fondation</span><span class="chip">Entreprises</span><span class="chip">CTG, CCIG, GPM</span><span class="chip">Associations étudiantes</span></span></div>
+      </div>
+      <div class="panel">
+        <h3 class="tl-h">Trois conditions pour qu'il tienne</h3>
+        <ol class="tl-cond">
+          <li><b>Les données.</b> Consentement à l'inscription, usages annoncés, durée de conservation, définis avec le délégué à la protection des données de l'UG.</li>
+          <li><b>L'animation.</b> Un tiers-lieu vit par ceux qui l'animent ; l'animation du réseau d'étudiants est prévue au volet FPC.</li>
+          <li><b>L'articulation.</b> Connecté au projet alumni déjà amorcé à l'UG, sans le doubler.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="cond"><svg aria-hidden="true"><use href="#i-cal"/></svg><span><b>En 2026,</b> le tiers-lieu démarre comme l'espace Étudiants et alumni du portail : inscription au réseau d'étudiants et adhésion au Club. <b>À l'horizon,</b> il devient une solution autonome, connectée à la base commune.</span></div>
+    <p class="src">Sources : dossier ADUG, parties 1, 2.3 et tableau 2 (« Création et animation d'un réseau d'étudiants »), contrat attributif ANR-22-ASDR-0003.</p>
   </div>
 </section>
 
@@ -1333,7 +1474,7 @@ p{margin:0}
       <div class="panel">
         <h3 style="font-size:16px;font-weight:800;margin-bottom:12px">Ce qui n'est pas prévu en 2026</h3>
         <div class="nope"><span class="chip">Application mobile sur mesure</span><span class="chip">Développements lourds avant les résultats</span><span class="chip">Fonctions sans public identifié</span></div>
-        <p class="note" style="margin-top:12px">Le Hub Campus n'est pas abandonné : ses besoins, contractuels (jalon 12, réseau d'étudiants), sont couverts par l'espace Étudiants et alumni du site unique. Ses fonctions avancées viennent à l'étape 3.</p>
+        <p class="note" style="margin-top:12px">Le tiers-lieu numérique n'est pas abandonné : ses besoins contractuels (réseau d'étudiants, jalon 12) sont couverts dès 2026 par l'espace Étudiants et alumni du portail. Il devient une solution autonome à l'horizon.</p>
       </div>
     </div>
   </div>
@@ -1400,13 +1541,13 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>9. Budget · simulateur</span>
       <h2 class="title wide">Simulateur de budget 2026-2027</h2>
-      <p class="lead">Choisissez un scénario, retirez ou déplacez des lignes, ajustez le nombre de licences : les totaux se mettent à jour face à l'enveloppe 2026.</p>
+      <p class="lead">Choisissez un scénario, retirez ou déplacez des lignes, ajustez le nombre de licences : les totaux se mettent à jour face à l'enveloppe 2026. L'enveloppe 2026 de 114 000 € réunit 38 000 € pour le volet Mécénat et 76 000 € pour le volet FPC ; le portail commun se répartit selon la même clé, un tiers et deux tiers, celle de la convention.</p>
     </div>
     <div class="simtop">
       <div class="panel simctl">
         <div><label>Scénario</label><div class="seg" id="scen"><button data-s="lo">Estimation basse</button><button data-s="mid">Médian</button><button data-s="hi">Estimation haute</button></div></div>
         <div><label for="envin">Enveloppe 2026 disponible (€)</label><input type="number" id="envin" min="0" step="500"></div>
-        <div><label>Consommation de l'enveloppe 2026</label><div class="envbar"><span id="envbar"></span></div><span class="envnote" id="envnote"></span></div>
+        <div><label>Consommation de l'enveloppe 2026</label><div class="envbar"><span id="envbar"></span></div><span class="envnote" id="envnote"></span><span class="envnote" id="envsplit"></span></div>
         <div><button class="reset" id="simreset">Réinitialiser le simulateur</button></div>
       </div>
       <div class="simtot">
@@ -1458,7 +1599,7 @@ p{margin:0}
 
     </main>
     <div class="bottombar">
-      <span class="sign"><svg class="leafmark"><use href="#i-leaf"/></svg><span>Com & Levée de Fonds FUG – ADUG<span class="full"> · Feuille de route T4 2026</span></span></span>
+      <span class="sign"><svg class="leafmark"><use href="#i-leaf"/></svg><span>FUG & DFPU – ADUG<span class="full"> · Feuille de route T4 2026</span></span></span>
       <div class="pager">
         <button class="pbtn" id="prev" aria-label="Diapositive précédente"><svg><use href="#i-left"/></svg></button>
         <span class="count" id="count">1 / 12</span>
@@ -1599,28 +1740,32 @@ var jal=[
    q:[["Jalon 2, indicateur","« Soumission de réponses aux AAP des grandes fondations » : « Nombre de mécènes et montant collectés par an »"],["Publics visés","« le volet « Mécénat » ciblera en priorité les fondations d'entreprises situées hors du territoire guyanais ainsi que les entreprises locales et le grand public (particuliers, chercheurs, alumni). »"]],src:"Dossier ADUG, parties 2.1 et 2.3"},
   {n:"3",v:"Mécénat",i:"i-book",t:"Magazine, conférences CCIG, émissions radio",c:"4 magazines, 9 conférences-débats et 36 émissions radio par an",m:"Production éditoriale : Lemag', Podcast, captations",
    q:[["Jalon 3, indicateur","« Réalisation magazine de la Fondation, conférences CCIG, émissions radio » : « 4 magazines, 9 conférences-débat, 36 émissions radio par an »"],["Réalisations antérieures","« une revue numérique trimestrielle de diffusion scientifique a été produite, ainsi qu'une émission radiophonique diffusée sur le réseau des radios universitaires en ligne. »"]],src:"Dossier ADUG, parties 1 et 2.3"},
+  {n:"4",v:"FPC",i:"i-cap",t:"Ouverture de nouvelles formations",c:"Un nouveau diplôme universitaire tous les deux ans",m:"Fiches formations, lancement des nouveaux DU",
+   q:[["Jalon 4, indicateur","« Ouverture de nouvelles formations » : « Un nouveau diplôme universitaire tous les deux ans »"],["Stratégie du volet FPC","« Ces personnels développeront la recherche de nouvelles ressources financières et contribueront au montage de nouvelles formations (DU) en s'adressant prioritairement aux entreprises, aux organismes paritaires collecteurs et aux pouvoirs publics. »"]],src:"Dossier ADUG, parties 1 et 2.3"},
+  {n:"5",v:"FPC",i:"i-doc",t:"Réponses aux appels d'offres",c:"2 réponses par an",m:"Références et supports pour les dossiers de réponse",
+   q:[["Jalon 5, indicateur","« Réponse aux appels d'offres » : « 2 par année »"],["Veille opérationnelle","« Une partie du chiffre d'affaires du volet FPC résultera de sa capacité à emporter des appels d'offres en matière de formation lancés par des opérateurs publics ou privés. »"]],src:"Dossier ADUG, partie 2.3"},
+  {n:"6",v:"FPC",i:"i-book",t:"Réalisation du catalogue de formation",c:"2 catalogues par an",m:"Catalogue imprimé et en ligne, mis à jour en continu",
+   q:[["Jalon 6, indicateur","« Réalisation catalogue de formation » : « 2 catalogues par an »"],["Missions du poste de communication FPC","« Réalise ou fait réaliser les supports et les actualiser : écrits, photos, fiches produits, catalogues, films, dossiers presse, campagne publicitaire, etc. »"]],src:"Dossier ADUG, parties 2.3 et 4.1"},
+  {n:"7",v:"FPC",i:"i-people",t:"Augmentation des apprentis et alternants",c:"+10 % au moins chaque année",m:"Offres d'alternance, mise en relation avec les entreprises",
+   q:[["Jalon 7, indicateur","« Augmentation des effectifs apprentis et alternants » : « 10% d'augmentation au moins chaque année »"],["Objectif par promotion","« Les dix-sept diplômes professionnels de l'UG et leurs équipes pédagogiques […] seront particulièrement mobilisés afin que le volume de leurs étudiant·e·s en contrat d'alternance soit significativement augmenté (avec un objectif d'au moins 15 étudiants en alternance par promotion). »"]],src:"Dossier ADUG, parties 1 et 2.3"},
+  {n:"8",v:"FPC",i:"i-target",t:"Augmentation des stagiaires en formation continue",c:"+10 % au moins chaque année",m:"Campagnes vers les salariés et les particuliers, demandes d'information suivies",
+   q:[["Jalon 8, indicateur","« Augmentation des effectifs stagiaires » : « 10% d'augmentation au moins chaque année »"],["Publics visés","« la stratégie de développement des ressources du volet «FPC» du projet s'appuiera principalement sur la demande des particuliers et des salariés du territoire qu'il va préalablement falloir appréhender. »"]],src:"Dossier ADUG, parties 1 et 2.3"},
   {n:"9",v:"Commun",i:"i-chart",t:"Suivi du projet et plans de gestion",c:"1 réunion par trimestre",m:"Tableau de bord et reporting",
    q:[["Jalon 9, indicateur","« Suivi de l'avancement du projet et mise en œuvre des plans de gestion » : « 1 réunion tous les trimestres – opérationnalité des plans »"],["Comité de pilotage","« Il valide chaque point stratégique de l'avancement du projet et surveille le bon déroulement du projet […] Il se réunira une fois par trimestre. »"]],src:"Dossier ADUG, parties 2.3 et 3.2"},
   {n:"10",v:"Commun",i:"i-hand",t:"Visites d'entreprises, interprofessions, chambres consulaires",c:"Nombre d'entreprises visitées",m:"Base de contacts partagée, supports de rendez-vous",
    q:[["Jalon 10, indicateur","« Visites des entreprises, interprofessions et chambres consulaires » : « Nombre d'entreprises visitées »"],["Rôle de la CCIG et du GPM","« Créent un réseau d'acteurs avec rencontres régulières, cycle de conférences, groupes de travail thématiques autour des activités de la fondation. »"]],src:"Dossier ADUG, parties 2.1 et 2.3"},
   {n:"11",v:"Commun",i:"i-mail",t:"Newsletter aux entreprises",c:"3 newsletters par an",m:"Newsletter commune FUG-DFPU",
    q:[["Jalon 11, indicateur","« Envoi de la Newsletter aux entreprises » : « 3 newsletters par an »"],["Missions du poste de communication","« Gestion des réseaux sociaux de la Fondation; animation du site web; édition et mise en ligne de la Newsletter, création de contenus et déploiement des campagnes de communication »"]],src:"Dossier ADUG, parties 2.3 et 4.1"},
-  {n:"12",v:"Commun",i:"i-people",t:"Animation du Club des Alumni",c:"+10 % d'adhérents par an",m:"Animation du réseau, Hub Campus",
+  {n:"12",v:"Commun",i:"i-people",t:"Animation du Club des Alumni",c:"+10 % d'adhérents par an",m:"Animation du réseau, espace Étudiants et alumni du portail",
    q:[["Jalon 12, indicateur","« Animation du Club des Alumni » : « Augmentation des adhérents de 10% par an »"],["Lien avec les diplômés","« Le développement de cette plateforme de financement participatif, permettra de répondre aux besoins de recherche de financement en interne et de lien avec les diplômés. Ce sera un moyen de favoriser le sentiment d'appartenance et d'augmenter le rayonnement de l'UG. »"],["Calendriers du projet","Mécénat : « Rencontre Club des Alumni », sur les dix ans. DFPU : « Création et animation d'un réseau d'étudiants »."]],src:"Dossier ADUG, parties 1 et 2.3, tableaux 1 et 2"}
 ];
-var track=$("#jtrack"),dots=$("#jdots");
-jal.forEach(function(j,i){
+jal.forEach(function(j){
   var cj=el("button",{"class":"card-j","aria-label":"Jalon "+j.n+" : "+j.t+". "+j.q.map(function(x){return x[0]+" : "+x[1]}).join(" ")},
-    '<span class="cj-in"><span class="cj-face front"><span class="top"><span class="num">'+j.n+'</span><span class="chip">'+ico(j.i,"ico")+'Volet '+j.v.toLowerCase()+'</span></span><h3>'+j.t+'</h3><span class="target">'+j.c+'</span><span class="com">'+ico("i-mega")+'<span><b>Rôle de la communication :</b> '+j.m+'</span></span><span class="turn">'+ico("i-doc","")+'Lire l\'engagement écrit</span></span>'+
+    '<span class="cj-in"><span class="cj-face front"><span class="top"><span class="num">'+j.n+'</span><span class="chip">'+ico(j.i,"ico")+({"Mécénat":"Volet Mécénat","FPC":"Volet FPC","Commun":"Jalon commun"})[j.v]+'</span></span><h3>'+j.t+'</h3><span class="target">'+j.c+'</span><span class="com">'+ico("i-mega")+'<span><b>Rôle de la communication :</b> '+j.m+'</span></span><span class="turn">'+ico("i-doc","")+'Lire l\'engagement écrit</span></span>'+
     '<span class="cj-face back">'+j.q.map(function(x){return '<span><span class="lblj">'+x[0]+'</span><span class="qt">'+x[1]+'</span></span>'}).join("")+'<span class="srcj">'+ico("i-book","")+j.src+'</span></span></span>');
   cj.addEventListener("click",function(){cj.classList.toggle("on")});
-  track.appendChild(cj);
-  var d=el("button",{"aria-label":"Aller au jalon "+j.n});d.addEventListener("click",function(){var c=track.children[i];track.scrollTo({left:c.offsetLeft-track.offsetLeft,behavior:reduce?"auto":"smooth"})});dots.appendChild(d);
+  document.getElementById("jg-"+j.v).appendChild(cj);
 });
-function upDots(){var cards=track.children,best=0,bd=1e9;for(var i=0;i<cards.length;i++){var d=Math.abs(cards[i].offsetLeft-track.offsetLeft-track.scrollLeft);if(d<bd){bd=d;best=i}}if(track.scrollLeft+track.clientWidth>=track.scrollWidth-4)best=cards.length-1;$$("button",dots).forEach(function(b,i){b.classList.toggle("on",i===best)})}
-track.addEventListener("scroll",function(){window.requestAnimationFrame(upDots)});upDots();
-$$("[data-car]").forEach(function(b){b.addEventListener("click",function(){var w=track.children[0].getBoundingClientRect().width+18;track.scrollBy({left:w*(+b.getAttribute("data-car")),behavior:reduce?"auto":"smooth"})})});
-hooks["s-jalons"]=upDots;
 
 /* ---------- October: road + quests ---------- */
 var ticks=$("#roadticks");
@@ -1637,7 +1782,10 @@ var QDEF=[
   {id:"q5",t:"36 émissions radio par an",e:"Podcast : 6 à 10 épisodes, format à requalifier auprès de l'ANR",s:"partiel"},
   {id:"q6",t:"9 conférences-débats CCIG par an",e:"À documenter",s:"confirmer"},
   {id:"q7",t:"3 newsletters entreprises par an",e:"À documenter",s:"confirmer"},
-  {id:"q8",t:"Club des Alumni, +10 % par an",e:"À documenter",s:"confirmer"},
+  {id:"q8",t:"Club des Alumni, +10 % par an",e:"Outil à créer : adhésion prévue dans le portail",s:"manquant"},
+  {id:"q11",t:"Réseau d'étudiants (volet FPC)",e:"Outil à créer : espace Étudiants et alumni du portail",s:"manquant"},
+  {id:"q12",t:"2 catalogues de formation par an",e:"À documenter",s:"confirmer"},
+  {id:"q13",t:"Apprentis, alternants et stagiaires : +10 % par an",e:"À documenter",s:"confirmer"},
   {id:"q9",t:"Collecte : 3 grands donateurs, 5 entreprises, 50 défiscalisations ; 0,24 M€ en année 3",e:"À documenter",s:"confirmer"},
   {id:"q10",t:"Deux postes de communication",e:"Poste FUG pourvu depuis septembre 2026 ; poste FPC à confirmer",s:"partiel"}
 ];
@@ -1684,20 +1832,29 @@ OBL.forEach(function(o,i){
 });
 
 /* ---------- Answers ---------- */
-var PAIRS=[
-  {q:"Aucun financement européen ne doit être sollicité pour ADUG",a:"Vérifier avant toute demande. La fiche Lemag' cite le FEDER et le FSE+ : orienter plutôt vers le mécénat, les fonds d'État et les apports prévus."},
-  {q:"Un plan de communication de la gouvernance sur toute la durée",a:"Une lettre interne trimestrielle, calée sur le comité de pilotage, pour informer les personnels de l'UG des avancées."},
-  {q:"La valorisation du projet via les sites des partenaires",a:"Un kit de contenus prêt à publier pour la CTG, la CCIG et le GPM : textes, visuels, chiffres clés."},
-  {q:"La mention du financement France 2030 sur les supports",a:"Un bloc de mentions intégré à tous les gabarits, dans la formulation exacte fixée par la convention."}
+var ENG=[
+  {v:"Mécénat",q:"Une communication soignée des valeurs, missions et projets de la Fondation, sensible à la RSE et à l'insertion territoriale",a:"Pages projets avec preuves d'impact, fiches projet imprimées reliées au portail, mise en avant des mécènes par cercles."},
+  {v:"Mécénat",q:"La CCIG et le GPM co-organisent des événements pour faire connaître la Fondation et créent un réseau d'acteurs",a:"Un calendrier d'événements partagé avec la CCIG et le GPM, et des supports prêts à l'emploi pour chaque rencontre."},
+  {v:"Mécénat",q:"Une plateforme de financement participatif, aussi pour garder le lien avec les diplômés",a:"Préparée dans le portail : pages projets avec jauge de collecte, reliées au Club des Alumni."},
+  {v:"FPC",q:"Donner une image de marque forte à l'offre de formation (réponse au jury, addendum 2023)",a:"Une identité commune pour l'offre de formation, déclinée sur le portail entreprises, le catalogue et les supports."},
+  {v:"FPC",q:"La CTG diffuse l'offre de formation dans ses réseaux et co-organise des événements sur la formation continue",a:"Un kit de diffusion remis à la CTG : fiches formations, visuels, calendrier des sessions."},
+  {v:"FPC",q:"Mobiliser les équipes pédagogiques (réserve n°3 du jury)",a:"Valoriser les enseignants et les formations : portraits, épisodes du podcast, témoignages d'alternants."},
+  {v:"Commun",q:"Aucun financement européen ne doit être sollicité pour ADUG",a:"Vérifier avant toute demande. La fiche Lemag' cite le FEDER et le FSE+ : orienter plutôt vers le mécénat, les fonds d'État et les apports prévus."},
+  {v:"Commun",q:"Un plan de communication de la gouvernance sur toute la durée",a:"Une lettre interne trimestrielle, calée sur le comité de pilotage, pour informer les personnels de l'UG des avancées."},
+  {v:"Commun",q:"La valorisation du projet via les sites des partenaires",a:"Un kit de contenus prêt à publier pour la CTG, la CCIG et le GPM : textes, visuels, chiffres clés."},
+  {v:"Commun",q:"La mention du soutien de l'ANR au titre de France 2030 sur tous les supports et sites (article 8)",a:"Un bloc de mentions intégré à tous les gabarits, avec la référence ANR-22-ASDR-0003."}
 ];
-PAIRS.forEach(function(p){$("#pairs").appendChild(el("div",{"class":"pair"},'<div class="q">'+ico("i-doc")+'<span>'+p.q+'</span></div><div class="a">'+ico("i-bulb")+'<span>'+p.a+'</span></div>'))});
-var F2=[
-  {r:"L'abondement de phase 2 (912 073 €) dépend de l'évaluation de fin de phase 1",s:"Un tableau de bord ADUG et un dossier de résultats prêts avant l'évaluation de fin de phase 1"},
-  {r:"La pérennisation des postes, communication comprise, en dépend également",s:"Des premiers dons en ligne et des indicateurs de collecte démontrables dès décembre 2026"},
-  {r:"Les apports prévus doivent être réalisés et documentés",s:"Mobiliser les lignes de communication déjà prévues et documenter leur usage"},
-  {r:"La confiance du consortium et des mécènes se construit sur des résultats",s:"Rendre visibles les premiers résultats, en réponse directe aux réserves du jury sur les prévisions de recettes"}
+var VIG=[
+  {v:"Mécénat",r:"La confiance des mécènes se construit sur des résultats ; le jury juge les prévisions de recettes optimistes",s:"Des premiers dons en ligne et des indicateurs de collecte démontrables dès décembre 2026"},
+  {v:"Mécénat",r:"Collecter dans un territoire peu industrialisé (risque identifié pour le jalon 1)",s:"Des supports pensés pour les fondations d'entreprises hors de Guyane autant que pour les entreprises locales"},
+  {v:"FPC",r:"Le manque de visibilité des formations existantes, risque identifié pour les jalons 7 et 8",s:"Catalogue en ligne, fiches formations et campagnes ciblées vers les salariés, les particuliers et les entreprises"},
+  {v:"FPC",r:"Le jury insiste sur le recrutement d'apprenants en nombre suffisant",s:"Des demandes d'information et des pré-inscriptions suivies sur le portail dès 2026, pour mesurer la demande"},
+  {v:"Commun",r:"L'abondement de phase 2 dépend de la fin de phase 1 et des résultats de l'année 4, évalués sur l'ensemble du projet",s:"Un tableau de bord consolidé des deux volets et un dossier de résultats prêts pour la fin de phase 1"},
+  {v:"Commun",r:"La pérennisation des postes, communication comprise, en dépend également",s:"Des résultats documentés pour chaque poste et chaque volet, trimestre après trimestre"},
+  {v:"Commun",r:"Les apports prévus doivent être réalisés et documentés",s:"Mobiliser les lignes de communication déjà prévues et documenter leur usage"}
 ];
-F2.forEach(function(f){$("#f2").appendChild(el("div",{"class":"f2row",style:"margin-bottom:10px"},'<div class="risk">'+ico("i-flag")+'<span>'+f.r+'</span></div><div class="arr">'+ico("i-arrow","")+'</div><div class="sol">'+ico("i-check")+'<span>'+f.s+'</span></div>'))});
+ENG.forEach(function(p){$("#pairs-"+p.v).appendChild(el("div",{"class":"pair"},'<div class="q">'+ico("i-doc")+'<span>'+p.q+'</span></div><div class="a">'+ico("i-bulb")+'<span>'+p.a+'</span></div>'))});
+VIG.forEach(function(f){$("#f2-"+f.v).appendChild(el("div",{"class":"f2row",style:"margin-bottom:10px"},'<div class="risk">'+ico("i-flag")+'<span>'+f.r+'</span></div><div class="arr">'+ico("i-arrow","")+'</div><div class="sol">'+ico("i-check")+'<span>'+f.s+'</span></div>'))});
 
 /* ---------- Matrix ---------- */
 var IMP=[
@@ -1814,26 +1971,26 @@ setCom(0);
 /* ---------- Écosystème digital ---------- */
 var DOORS=[
   {id:"don",i:"i-heart",t:"Espace Soutenir",w:"Pages projets et don en ligne · particuliers, alumni, personnels",tag:"Tranche 1 · 2026",tg:"tag-26",
-   por:"Rubrique du site unique, animée par la FUG",pro:["Particuliers et personnels de l'UG","Alumni","Petites entreprises qui donnent en ligne"],
+   por:"Rubrique du portail unique, animée par la FUG",pro:["Particuliers et personnels de l'UG","Alumni","Petites entreprises qui donnent en ligne"],
    act:["Donner en ligne et recevoir son reçu fiscal","Adhérer au Club des Alumni","Suivre les projets soutenus"],
    ind:["J1 · 50 défiscalisations","J12 · adhésions alumni","CA mécénat"],mis:"Collecte, fidélisation, transparence"},
-  {id:"ent",i:"i-hand",t:"Espace Entreprises",w:"Recruter, former, soutenir · dirigeants, RH, RSE",tag:"Formulaire 2026 · complet 2027",tg:"tag-26",
-   por:"Rubrique du site unique, animée par la FUG et la DFPU",pro:["Dirigeants de PME locales","RH et responsables RSE des grands groupes","Partenaires du consortium (CTG, CCIG, GPM)"],
+  {id:"ent",i:"i-hand",t:"Portail entreprises",w:"Recruter, former, soutenir · entrée voulue par la DFPU",tag:"Formulaire 2026 · complet 2027",tg:"tag-26",
+   por:"Entrée dédiée du portail commun, portée par la DFPU avec le volet Mécénat ; première brique destinée à devenir autonome",pro:["Dirigeants de PME locales","RH et responsables RSE des grands groupes","Partenaires du consortium (CTG, CCIG, GPM)"],
    act:["Financer une bourse ou un projet","Inscrire des salariés en formation continue","Déposer une offre de stage ou d'alternance","Flécher sa taxe d'apprentissage, recruter un diplômé"],
-   ind:["J1 · entreprises donatrices","J10 · entreprises visitées","J11 · newsletter","Alternants +10 %","CA formation","CA mécénat"],mis:"Mécénat, formation continue, insertion, partenariats"},
-  {id:"etu",i:"i-cap",t:"Espace Étudiants et alumni",w:"Offres et Club des Alumni · étudiants, alternants, diplômés",tag:"Adhésion 2026 · complet 2027",tg:"tag-26",
-   por:"Rubrique du site unique, animée par la DFPU et la FUG, en lien avec le projet alumni de l'UG",pro:["Étudiants et alternants","Jeunes diplômés","Alumni volontaires"],
-   act:["Consulter les offres déposées par les entreprises","Rejoindre le Club des Alumni à la diplomation","Devenir mentor, plus tard"],
-   ind:["J12 · +10 % d'alumni","Alternants +10 %","CA formation"],mis:"Insertion, réseau d'étudiants, sentiment d'appartenance"}
+   ind:["J1 · entreprises donatrices","J4 et J6 · formations et catalogue","J7 · alternants","J8 · stagiaires","J10 · entreprises visitées","J11 · newsletter","CA formation","CA mécénat"],mis:"Mécénat, formation continue, insertion, partenariats"},
+  {id:"etu",i:"i-cap",t:"Espace Étudiants et alumni",w:"Réseau d'étudiants et Club des Alumni · un seul parcours",tag:"Adhésion 2026 · complet 2027",tg:"tag-26",
+   por:"Entrée du portail commun, animée par la DFPU et la Fondation ; elle préfigure le tiers-lieu numérique",pro:["Étudiants et alternants","Jeunes diplômés","Alumni volontaires"],
+   act:["S'inscrire au réseau d'étudiants","Consulter les offres de stage et d'alternance","Rejoindre le Club des Alumni à la diplomation","Témoigner, devenir mentor, plus tard"],
+   ind:["Réseau d'étudiants","J7 · alternants +10 %","J12 · +10 % d'alumni","CA formation"],mis:"Insertion, réseau d'étudiants, sentiment d'appartenance"}
 ];
 var SPINE={t:"Le back-office et la base communs",por:"Partagés par la FUG et la DFPU · validés en comité de pilotage",pro:["Équipes de communication FUG et DFPU","Responsable mécénat, chargés de développement","Responsable du projet, gestion financière"],
   act:["Une fiche unique par entreprise et par contact","Des envois coordonnés, sans sur-sollicitation","Un tableau de bord qui remonte les indicateurs ADUG"],
   ind:["J1 · suivi des donateurs","J9 · pilotage trimestriel","J10","J11","Reporting ANR"],mis:"Pilotage, mémoire de la relation, conformité"};
 var ECOMX=[
-  {t:"Espace Soutenir",m:[1,1,1,0,0,0,1,0,0,1],k:"don"},
-  {t:"Espace Entreprises",m:[1,0,0,0,1,1,0,1,1,1],k:"ent"},
-  {t:"Espace Étudiants et alumni",m:[0,0,0,0,0,0,1,1,1,0],k:"etu"},
-  {t:"Back-office et base communs",m:[1,1,0,1,1,1,0,0,0,0],k:"spine"}
+  {t:"Espace Soutenir",m:[1,1,1,0,0,0,0,0,0,1,0,1],k:"don"},
+  {t:"Portail entreprises",m:[1,0,0,1,1,1,0,1,1,0,1,1],k:"ent"},
+  {t:"Espace Étudiants et alumni",m:[0,0,0,0,1,0,0,0,0,1,1,0],k:"etu"},
+  {t:"Back-office et base communs",m:[1,1,0,0,0,0,1,1,1,0,0,0],k:"spine"}
 ];
 function ecoShow(d,key){
   $$("#doors .door").forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.k===key))});
@@ -1856,7 +2013,7 @@ $("#spine").addEventListener("click",function(){ecoShow(SPINE,"spine")});
 $("#spine").addEventListener("mouseenter",function(){ecoShow(SPINE,"spine")});
 ECOMX.forEach(function(r){var tr=el("tr",{"data-k":r.k});tr.appendChild(el("th",{scope:"row"},r.t));var n=0;
   r.m.forEach(function(v){if(v)n++;tr.appendChild(el("td",null,'<span class="dotc'+(v?" y":"")+'" aria-label="'+(v?"sert cet indicateur":"ne sert pas cet indicateur")+'"></span>'))});
-  tr.appendChild(el("td",{"class":"score"},n+" / 10"));
+  tr.appendChild(el("td",{"class":"score"},n+" / 12"));
   tr.addEventListener("click",function(){if(r.k==="spine")ecoShow(SPINE,"spine");else ecoShow(DOORS.filter(function(d){return d.id===r.k})[0],r.k)});
   $("#ecomx tbody").appendChild(tr)});
 ecoShow(DOORS[1],"ent");
@@ -1885,7 +2042,7 @@ USERS.forEach(function(u){
 
 var STAGES=[
   {now:1,w:"Étape 1 · novembre et décembre 2026",r:"Quelques semaines",t:"Le socle",
-   l:["Site unique en ligne : accueil commun et espace Soutenir avec don en ligne","Espace Entreprises : formulaire unique, orienté vers la FUG ou la DFPU","Espace Étudiants et alumni : adhésion au Club des Alumni","Base de contacts partagée et newsletter commune"],
+   l:["Portail unique en ligne : accueil commun et espace Soutenir avec don en ligne","Espace Entreprises : formulaire unique, orienté vers la FUG ou la DFPU","Espace Étudiants et alumni : adhésion au Club des Alumni","Base de contacts partagée et newsletter commune"],
    c:"Outils existants ou peu coûteux, sur les lignes de communication prévues par ADUG",u:"Premiers dons et premiers contacts qualifiés, mesurables avant la fin de la phase 1"},
   {now:0,w:"Étape 2 · 2027",r:"Quelques mois",t:"Les espaces complets",
    l:["Espace Entreprises complet : offres, formations, mécénat","Espace Étudiants et alumni complet : offres et Club des Alumni","Financement participatif intégré au site"],
@@ -1970,18 +2127,19 @@ mSet(0);
 var TAGS={ret:["s-ret","Retenu"],pre:["s-pre","Préconisé"],con:["s-con","À consulter"]};
 var CATS={num:"Écosystème numérique",out:"Outils",cont:"Contenus",print:"Print"};
 var LINES=[
- {id:"site",cat:"num",l:"Site unique ADUG, tranche 1",d:"Accueil commun, espace Soutenir et don en ligne, formulaire Entreprises, adhésion alumni",st:"con",lo:6000,hi:15000,y:2026,j:"J1 J3 J12"},
+ {id:"site",cat:"num",l:"Portail unique ADUG, tranche 1",d:"Accueil commun, espace Soutenir et don en ligne, formulaire Entreprises, adhésion alumni",st:"con",lo:6000,hi:15000,y:2026,j:"J1 J3 J12"},
  {id:"contenus",cat:"num",l:"Contenus des pages projets",d:"Textes et visuels",st:"con",lo:0,hi:3000,y:2026,j:"J1"},
  {id:"dons",cat:"num",l:"Don en ligne avec reçus fiscaux",d:"Abonnement annuel, intégré au site",st:"con",lo:1100,hi:4700,rec:true,y:2026,j:"J1"},
  {id:"crm",cat:"num",l:"Outil de gestion de la relation partagé",d:"Abonnement annuel, relié au back-office, FUG et DFPU",st:"con",lo:500,hi:2000,rec:true,y:2026,j:"J9 J10 J11"},
  {id:"crmset",cat:"num",l:"Paramétrage et import des fiches entreprises",d:"Environ 400 fiches",st:"con",lo:0,hi:1500,y:2026,j:"J10"},
  {id:"maint",cat:"num",l:"Maintenance et sécurité du site",d:"Hébergement sur le serveur de l'UG",st:"con",lo:400,hi:900,rec:true,start:2027,y:2027,j:""},
- {id:"portail",cat:"num",l:"Site unique ADUG, tranche 2",d:"Espaces Entreprises et Étudiants-alumni complets, dans le même site",st:"con",lo:2000,hi:25000,y:2027,mov:true,j:"J10 J12"},
+ {id:"portail",cat:"num",l:"Portail unique ADUG, tranche 2",d:"Espaces Entreprises et Étudiants-alumni complets, dans le même site",st:"con",lo:2000,hi:25000,y:2027,mov:true,j:"J10 J12"},
  {id:"dash",cat:"num",l:"Tableau de bord ADUG",d:"Indicateurs pour le comité de pilotage",st:"con",lo:0,hi:3000,y:2027,mov:true,j:"J9"},
  {id:"brevo",cat:"out",l:"Newsletter entreprises",sol:"Brevo",st:"pre",lo:0,hi:162,rec:true,y:2026,j:"J11",b:"Offre gratuite à offre Standard annuelle"},
  {id:"canva",cat:"out",l:"Création graphique et banque d'images",sol:"Canva Pro",st:"ret",lo:110,hi:250,unit:true,q:3,rec:true,y:2026,j:"J3",b:"Par licence et par an"},
  {id:"notion",cat:"out",l:"Base documentaire et cartographie des événements",sol:"Notion Plus",st:"ret",lo:100,hi:120,unit:true,q:3,rec:true,y:2026,j:"J9",b:"Par membre et par an"},
  {id:"monday",cat:"out",l:"Suivi des tâches partagées FUG-DFPU",sol:"Monday",st:"ret",lo:324,hi:432,rec:true,y:2026,j:"J9",b:"3 sièges minimum, par an"},
+ {id:"claude",cat:"out",l:"Assistant de rédaction IA",sol:"Claude Pro",st:"ret",lo:210,hi:250,unit:true,q:1,rec:true,y:2026,j:"",b:"Par licence et par an"},
  {id:"photos",cat:"cont",l:"Reportage photo au campus de Troubiran, Cayenne",d:"1 à 2 jours, droits cédés",st:"con",lo:800,hi:2500,y:2026,mov:true,j:"J1 J3"},
  {id:"videos",cat:"cont",l:"Trois vidéos courtes de promotion",d:"Tournage mutualisé",st:"con",lo:3500,hi:8000,y:2027,mov:true,j:"J1 J3"},
  {id:"broch",cat:"print",l:"Brochure FUG",d:"Petite série",st:"con",lo:250,hi:700,y:2026,j:"J1 J10"},
@@ -2021,8 +2179,8 @@ hooks["s-autres"]=function(){animRng($("#s-autres"))};
 $$("#s-autres .tab").forEach(function(t){t.addEventListener("click",function(){setTimeout(function(){animRng($("#s-autres"))},30)})});
 
 /* ---------- Simulateur ---------- */
-var SDEF={scen:"mid",env:38000,lines:{}};
-var SIM=store("fug-sim")||JSON.parse(JSON.stringify(SDEF));if(!SIM.lines)SIM.lines={};
+var SDEF={scen:"mid",env:114000,lines:{}};
+var SIM=store("adug-sim")||JSON.parse(JSON.stringify(SDEF));if(!SIM.lines)SIM.lines={};
 function ls(L){var o=SIM.lines[L.id]||{};return {on:o.on!==false,y:o.y||L.y,q:o.q!=null?o.q:lq(L)}}
 function amt(L,q){var lo=L.lo*q,hi=L.hi*q;return SIM.scen==="lo"?lo:SIM.scen==="hi"?hi:(lo+hi)/2}
 (function(){var tb=$("#simbody"),last=null;
@@ -2031,7 +2189,7 @@ function amt(L,q){var lo=L.lo*q,hi=L.hi*q;return SIM.scen==="lo"?lo:SIM.scen==="
     tr.innerHTML='<td><input type="checkbox" data-f="on" aria-label="Inclure : '+L.l+'"></td><td>'+L.l+(L.sol?' · <b style="color:var(--green-ink)">'+L.sol+'</b>':'')+'</td><td>'+stTag(L.st)+'</td><td>'+(L.unit?'<input type="number" min="0" max="20" data-f="q" aria-label="Nombre de licences">':'<span class="note">–</span>')+'</td><td>'+((L.mov&&!L.rec)?'<select data-f="y" aria-label="Année"><option value="2026">2026</option><option value="2027">2027</option></select>':'<span class="note">'+(L.rec?"Annuel":L.y)+'</span>')+'</td><td class="num" data-c="26"></td><td class="num" data-c="27"></td>';
     tb.appendChild(tr);
     $$("[data-f]",tr).forEach(function(inp){inp.addEventListener("change",function(){var o=SIM.lines[L.id]||(SIM.lines[L.id]={}),f=inp.getAttribute("data-f");
-      if(f==="on")o.on=inp.checked;else if(f==="y")o.y=+inp.value;else o.q=Math.max(0,Math.min(20,+inp.value||0));store("fug-sim",SIM);simCalc()})})})})();
+      if(f==="on")o.on=inp.checked;else if(f==="y")o.y=+inp.value;else o.q=Math.max(0,Math.min(20,+inp.value||0));store("adug-sim",SIM);simCalc()})})})})();
 function simCalc(){var t26=0,t27=0,r27=0;
   $$("#scen button").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-s")===SIM.scen))});$("#envin").value=SIM.env;
   LINES.forEach(function(L){var s=ls(L),tr=$('#simbody tr[data-id="'+L.id+'"]'),a=amt(L,s.q),ys=yrs(L,s.y);
@@ -2040,53 +2198,62 @@ function simCalc(){var t26=0,t27=0,r27=0;
     tr.classList.toggle("off",!s.on);$('[data-c="26"]',tr).textContent=c26?eur(c26):"–";$('[data-c="27"]',tr).textContent=c27?eur(c27):"–"});
   $("#tot26").textContent=eur(t26);$("#tot27").textContent=eur(t27);$("#rec27").textContent="dont récurrent : "+eur(r27);$("#totall").textContent=eur(t26+t27);
   var env=+SIM.env||0,over=t26>env,bar=$("#envbar");bar.style.width=(env?Math.min(100,t26/env*100):100)+"%";bar.classList.toggle("over",over);
+  $("#envsplit").innerHTML='Clé de répartition : <b>volet Mécénat 1/3</b> · '+eur(t26/3)+' sur '+eur(env/3)+' · <b>volet FPC 2/3</b> · '+eur(t26*2/3)+' sur '+eur(env*2/3);
   $("#envnote").textContent=env?(over?"Dépassement de "+eur(t26-env):Math.round(t26/env*100)+" % engagés · reste disponible : "+eur(env-t26)):"";
   $("#simwarn").innerHTML=over?'<div class="simwarn">'+ico("i-alert","")+'<span>Le total 2026 dépasse l\'enveloppe disponible. Pistes : passer une ligne mobile en 2027, retirer une option, ou revenir au scénario bas.</span></div>':"";
 }
-$$("#scen button").forEach(function(b){b.addEventListener("click",function(){SIM.scen=b.getAttribute("data-s");store("fug-sim",SIM);simCalc()})});
-$("#envin").addEventListener("change",function(){SIM.env=Math.max(0,+this.value||0);store("fug-sim",SIM);simCalc()});
-$("#simreset").addEventListener("click",function(){SIM=JSON.parse(JSON.stringify(SDEF));store("fug-sim",SIM);simCalc()});
+$$("#scen button").forEach(function(b){b.addEventListener("click",function(){SIM.scen=b.getAttribute("data-s");store("adug-sim",SIM);simCalc()})});
+$("#envin").addEventListener("change",function(){SIM.env=Math.max(0,+this.value||0);store("adug-sim",SIM);simCalc()});
+$("#simreset").addEventListener("click",function(){SIM=JSON.parse(JSON.stringify(SDEF));store("adug-sim",SIM);simCalc()});
 simCalc();
 
 /* ---------- Scénarios ---------- */
-var SC_L={ok:["Couvert","st-ok"],part:["Partiel","st-part"],no:["Non couvert","st-no"],pos:["Possible","st-unk"]};
+var SC_L={ok:["Couvert","st-ok"],part:["Partiel","st-part"],no:["À organiser","st-unk"],pos:["Possible","st-unk"]};
 var SC1=[
  ["J1 · Collecte : 3 grands donateurs, 5 entreprises, 50 défiscalisations",["ok",""],["ok",""]],
- ["J2 · Réponses aux appels à projets des fondations",["part","Pages projets seulement"],["ok","Pages projets et suivi des mécènes"]],
+ ["J2 · Réponses aux appels à projets des fondations",["part","Suivi des mécènes dans un outil séparé"],["ok","Pages projets et suivi des mécènes"]],
  ["J3 · Magazine, conférences, radio",["ok",""],["ok",""]],
- ["J9 · Suivi trimestriel du projet (commun)",["part","Indicateurs FUG seuls"],["ok","Tableau de bord consolidé"]],
- ["J10 · Entreprises visitées (commun)",["part","Fichier FUG seul"],["ok","Base partagée FUG-DFPU"]],
- ["J11 · 3 newsletters entreprises par an (commun)",["part","Envoi FUG seul"],["ok","Newsletter commune"]],
- ["J12 · Club des Alumni, +10 % par an (commun)",["no","Aucun outil d'adhésion"],["ok","Adhésion en ligne dès 2026"]],
- ["DFPU · Création d'un réseau d'étudiants",["no",""],["ok","Espace Étudiants et alumni en 2027"]],
+ ["J4 · Un nouveau DU tous les deux ans",["ok","Fiches formations sur le portail"],["ok","Fiches formations sur le portail"]],
+ ["J5 · 2 réponses aux appels d'offres par an",["part","Hors outil : veille et réponses par l'équipe"],["part","Hors outil : références partagées pour les réponses"]],
+ ["J6 · 2 catalogues de formation par an",["ok","Catalogue en ligne"],["ok","Catalogue en ligne"]],
+ ["J7 · Apprentis et alternants, +10 % par an",["part","Offres sans lien avec les étudiants"],["ok","Offres reliées à l'espace Étudiants"]],
+ ["J8 · Stagiaires en formation continue, +10 % par an",["part","Entreprises suivies dans deux bases"],["ok","Entreprises mécènes et clientes dans une même base"]],
+ ["J9 · Suivi trimestriel du projet (commun)",["part","Indicateurs consolidés à la main"],["ok","Tableau de bord consolidé"]],
+ ["J10 · Entreprises visitées (commun)",["part","Deux fichiers d'entreprises"],["ok","Base partagée"]],
+ ["J11 · 3 newsletters entreprises par an (commun)",["part","Deux envois à coordonner"],["ok","Newsletter commune"]],
+ ["J12 · Club des Alumni, +10 % par an (commun)",["no","Outil à créer"],["ok","Adhésion en ligne dès 2026"]],
+ ["Volet FPC · Création d'un réseau d'étudiants",["no","Outil à créer"],["ok","Espace Étudiants et alumni"]],
  ["Outil prévu : site et dons en ligne",["ok",""],["ok",""]],
- ["Outil prévu : logiciel de gestion de la relation",["part","FUG seule, ou absent"],["ok","Partagé FUG-DFPU"]],
+ ["Outil prévu : logiciel de gestion de la relation",["part","Un outil par volet"],["ok","Partagé par les deux volets"]],
  ["Outil prévu : financement participatif",["pos",""],["pos",""]],
- ["Engagement : mettre en œuvre tous les moyens prévus",["part",""],["ok",""]],
- ["Deux postes de communication coordonnés",["no","Outils distincts"],["ok","Outils et base communs"]]
+ ["Deux postes de communication coordonnés",["no","Coordination à organiser"],["ok","Outils et base communs"]],
+ ["Caractère collectif du projet",["part","À démontrer par d'autres moyens"],["ok","Démontré par un outil commun"]]
 ];
 var SC2=[
- ["Portail entreprises DFPU","Développé à part : un deuxième outil","Espace Entreprises du même site"],
- ["Bases de contacts","Deux bases, entreprises sollicitées deux fois","Une base, une relation par entreprise"],
+ ["Portail entreprises voulu par la DFPU","Développé à part, avec sa propre base","Entrée dédiée du portail commun, première brique destinée à devenir autonome"],
+ ["Bases de contacts","Deux bases, entreprises sollicitées deux fois","Une base, une relation par entreprise : mécène, cliente, employeuse d'alternants"],
  ["Maintenance et abonnements","En double","Uniques, avec une clé de répartition"],
- ["Club des Alumni","Reste à construire, sans outil","Amorcé dès 2026"]
+ ["Réseau d'étudiants et Club des Alumni","Sans outil commun","Un même espace, un seul parcours de l'étudiant à l'alumni"],
+ ["Évolution vers trois solutions","Outils à reconnecter après coup","Prévue dès la conception : base commune, modules séparables"]
 ];
 var SC3=[
- ["Critère de l'abondement à partir de l'année 4 : chiffre d'affaires des deux volets","Le site n'agit que sur le mécénat","Le site agit sur le mécénat et la formation continue"],
- ["Jalons communs FUG-DFPU (J9 à J12)","Chaque entité rend compte séparément","Preuves consolidées pour le comité de pilotage"],
- ["Coût 2026","6 000 à 15 000 €","Du même ordre, légèrement supérieur"]
+ ["Année 4 (2027) : performance évaluée sur l'ensemble du périmètre du projet (annexe 5)","Chaque volet progresse avec son outil","Le portail sert à la fois le chiffre d'affaires mécénat et formation continue"],
+ ["Jalons communs J9 à J12","Preuves à consolider entre deux outils","Preuves consolidées pour le comité de pilotage"],
+ ["Caractère collectif du projet (contrat, articles 6 et 10)","À démontrer par d'autres moyens","Démontré par un outil commun"],
+ ["Coût 2026","Deux socles à financer","Un socle commun, réparti entre les deux volets"]
 ];
 (function(){
+  var HA="Scénario A · démarrage isolé",HB="Scénario B · démarrage mutualisé";
   function cell(v,cls){return '<td'+(cls?' class="'+cls+'"':'')+'><span class="status '+SC_L[v[0]][1]+'">'+SC_L[v[0]][0]+'</span>'+(v[1]?'<small>'+v[1]+'</small>':'')+'</td>'}
   var ca={ok:0,part:0,no:0,pos:0},cb={ok:0,part:0,no:0,pos:0};
-  var h='<thead><tr><th scope="col">Exigence ADUG</th><th scope="col">Scénario A · site FUG seul</th><th scope="col" class="colb">Scénario B · site unique ADUG</th></tr></thead><tbody>';
+  var h='<thead><tr><th scope="col">Exigence ADUG</th><th scope="col">'+HA+'</th><th scope="col" class="colb">'+HB+'</th></tr></thead><tbody>';
   SC1.forEach(function(r){ca[r[1][0]]++;cb[r[2][0]]++;h+='<tr><th scope="row">'+r[0]+'</th>'+cell(r[1])+cell(r[2],"colb")+'</tr>'});
-  function sum(c){return c.ok+" couverts, "+c.part+" partiels, "+c.no+" non couverts"+(c.pos?", "+c.pos+" possible":"")}
+  function sum(c){return c.ok+" couverts, "+c.part+" partiels"+(c.no?", "+c.no+" à organiser":"")+(c.pos?", "+c.pos+" possible":"")}
   h+='</tbody><tfoot><tr><th scope="row">Synthèse</th><td>'+sum(ca)+'</td><td class="colb">'+sum(cb)+'</td></tr></tfoot>';
   $("#sctab1").innerHTML=h;
-  function simple(id,rows){$(id).innerHTML='<thead><tr><th scope="col"></th><th scope="col">Scénario A · site FUG seul</th><th scope="col" class="colb">Scénario B · site unique ADUG</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td class="colb">'+r[2]+'</td></tr>'}).join("")+'</tbody>'}
+  function simple(id,rows){$(id).innerHTML='<thead><tr><th scope="col"></th><th scope="col">'+HA+'</th><th scope="col" class="colb">'+HB+'</th></tr></thead><tbody>'+rows.map(function(r){return '<tr><th scope="row">'+r[0]+'</th><td>'+r[1]+'</td><td class="colb">'+r[2]+'</td></tr>'}).join("")+'</tbody>'}
   simple("#sctab2",SC2);simple("#sctab3",SC3);
-  function badges(p,c){$("#sc"+p+"-ok").textContent=c.ok?c.ok+" couverts":"";$("#sc"+p+"-part").textContent=c.part?c.part+" partiels":"";$("#sc"+p+"-no").textContent=c.no?c.no+" non couverts":""}
+  function badges(p,c){$("#sc"+p+"-ok").textContent=c.ok?c.ok+" couverts":"";$("#sc"+p+"-part").textContent=c.part?c.part+" partiels":"";$("#sc"+p+"-no").textContent=c.no?c.no+" à organiser":""}
   badges("A",ca);badges("B",cb);
 })();
 
@@ -2099,15 +2266,15 @@ var ACTS=[
   {m:0,e:"pil",t:"État des lieux : indicateurs et consommation des lignes de communication",s:"FUG, DFPU, gestion financière",b:"Aucune",l:"Tableau de bord ADUG",im:"Deux à trois réunions avec le responsable du projet et la gestion financière pour réunir chiffres de collecte et dépenses.",ap:"Une photographie objective de la fin de phase 1 et des arguments chiffrés pour chaque arbitrage."},
   {m:0,e:"pil",t:"Coordination communication FUG-DFPU : charte, messages, calendrier commun",s:"FUG et DFPU",b:"Aucune",l:"Relevé de décisions",im:"Une réunion d'une heure et demie, puis une charte et un calendrier partagés.",ap:"Une seule voix face aux entreprises, des coûts partagés, aucun doublon."},
   {m:0,e:"agi",t:"Relais de la campagne de solde de la taxe d'apprentissage, jusqu'au 21 octobre",s:"UG, DFPU, entreprises",b:"Aucune",l:"Message aux entreprises",im:"Un message aux entreprises du réseau, en appui de la campagne portée par l'UG sur SOLTéA.",ap:"Des fonds fléchés vers les formations de l'UG plutôt que vers les fonds non répartis, et un premier contact avec de futurs mécènes."},
-  {m:0,e:"pil",t:"Consultation d'au moins trois prestataires pour le site unique et le don en ligne",s:"FUG, DFPU, service achats",b:"Aucune",l:"Devis comparables",im:"Un cahier des charges bâti sur le site unique en trois espaces, envoyé à plusieurs prestataires.",ap:"Des montants fermes pour remplacer les fourchettes du budget, et une commande possible en novembre."},
+  {m:0,e:"pil",t:"Consultation d'au moins trois prestataires pour le portail unique et le don en ligne",s:"FUG, DFPU, service achats",b:"Aucune",l:"Devis comparables",im:"Un cahier des charges bâti sur le portail unique en trois espaces, envoyé à plusieurs prestataires.",ap:"Des montants fermes pour remplacer les fourchettes du budget, et une commande possible en novembre."},
   {m:0,e:"pil",t:"Présentation de la note budgétaire et de la feuille de route au comité de pilotage",s:"Gouvernance",b:"Aucune",l:"Arbitrages actés",im:"Une note courte et une demande d'inscription à l'ordre du jour du comité.",ap:"Des arbitrages actés, qui débloquent les dépenses conditionnelles."},
-  {m:1,e:"agi",t:"Commande du site unique (tranche 1) et du don en ligne, contenus livrés",s:"Tranche 1 du site unique",b:"Dépenses de communication",l:"Bon de commande",im:"Textes et visuels prêts à la commande pour tenir le délai de réalisation ; vérifier le statut qui permet d'émettre des reçus.",ap:"Une mise en ligne possible avant la campagne de décembre."},
+  {m:1,e:"agi",t:"Commande du portail unique (tranche 1) et du don en ligne, contenus livrés",s:"Tranche 1 du portail unique",b:"Dépenses de communication",l:"Bon de commande",im:"Textes et visuels prêts à la commande pour tenir le délai de réalisation ; vérifier le statut qui permet d'émettre des reçus.",ap:"Une mise en ligne possible avant la campagne de décembre."},
   {m:1,e:"aim",t:"Reportage photo au campus de Troubiran, Cayenne",s:"Étudiants, équipes, projets",b:"Dépenses de communication",l:"Photothèque ADUG",im:"Une à deux journées de prise de vue, autorisations de droit à l'image préparées en amont.",ap:"Des images authentiques pour le site, les fiches projets et les réseaux sociaux."},
   {m:1,e:"agi",t:"Base de contacts entreprises partagée, environ 400 fiches",s:"FUG et DFPU",b:"Aucune, ou frais généraux",l:"Base qualifiée",im:"Réunir les fichiers FUG et DFPU, supprimer les doublons, identifier les décideurs.",ap:"Une relation unique par entreprise, sans sur-sollicitation, et une base pour le jalon 10."},
   {m:1,e:"con",t:"Newsletter entreprises commune n°1",s:"FUG et DFPU",b:"Aucune",l:"Envoi, jalon 11",im:"Quatre à cinq brèves (formation, mécénat, recherche), un outil d'envoi et la base partagée.",ap:"Le jalon 11 tenu pour les deux volets et une présence régulière auprès des entreprises."},
   {m:1,e:"pil",t:"Validation des briefs Lemag' et Podcast, alignés sur le jalon 3",s:"Chercheurs et entreprises",b:"Aucune",l:"Briefs validés",im:"Un atelier avec les porteurs pour remplir le modèle de brief.",ap:"Une ligne éditoriale arrêtée et des productions 2027 sans reprise ni surcoût."},
   {m:1,e:"aim",t:"Présence au Mois de la découverte des métiers de la CCI",s:"Étudiants, entreprises, CCIG",b:"Missions et déplacements",l:"Participation, contacts",im:"Une présence sur un ou deux temps forts, avec la brochure FUG, les fiches projets et les objets promotionnels déjà en stock.",ap:"Des contacts entreprises et étudiants, et une première utilisation concrète du stock existant."},
-  {m:2,e:"agi",t:"Mise en ligne du site unique : accueil, espace Soutenir et don en ligne",s:"Tranche 1 du site unique",b:"Dépenses de communication",l:"Page en ligne",im:"Recette du parcours donateur sur ordinateur et mobile, avant le Giving Tuesday si les délais le permettent.",ap:"Le premier outil qui transforme la visibilité en dons."},
+  {m:2,e:"agi",t:"Mise en ligne du portail unique : accueil, espace Soutenir et don en ligne",s:"Tranche 1 du portail unique",b:"Dépenses de communication",l:"Page en ligne",im:"Recette du parcours donateur sur ordinateur et mobile, avant le Giving Tuesday si les délais le permettent.",ap:"Le premier outil qui transforme la visibilité en dons."},
   {m:2,e:"agi",t:"Campagne de dons de fin d'année : Giving Tuesday, puis rappel de la déduction fiscale",s:"Alumni, personnels, entreprises",b:"Dépenses de communication",l:"Premiers dons en ligne",im:"Un message aux alumni, aux personnels et aux entreprises, puis deux ou trois relances jusqu'au 31 décembre.",ap:"Les premiers dons en ligne : un indicateur de collecte à présenter en fin de phase 1."},
   {m:2,e:"aim",t:"Newsletter entreprises commune n°2 : bilan de l'année",s:"FUG et DFPU",b:"Aucune",l:"Envoi, jalon 11",im:"Un bilan de l'année en quelques chiffres et quelques visages.",ap:"La fidélisation des entreprises et un deuxième envoi pour le jalon 11."},
   {m:2,e:"pil",t:"Bilan du trimestre et proposition de budget 2027 au comité de pilotage",s:"Gouvernance",b:"Aucune",l:"Budget 2027",im:"Consolider les indicateurs du trimestre et chiffrer 2027.",ap:"Un budget construit pour 2027, l'année 4 qui décide de l'abondement."}
@@ -2133,11 +2300,11 @@ kd.innerHTML='<div class="axis"></div><div class="span" style="left:'+pos(32)+';
   var d=el("div",{"class":"mark"+m[2]},'<span class="lab">'+m[1]+'</span><span class="pin"></span>');d.style.left=pos(m[0]);kd.appendChild(d)});
 
 /* ---------- Socle ---------- */
-var BR=[["Tableau de bord ADUG","Pilotage trimestriel, rapports ANR, dossier d'abondement"],["Site unique, tranche 1","Tranche 2 : espaces Entreprises et Étudiants-alumni complets, financement participatif"],["Base de contacts partagée","CRM commun, relation globale avec chaque entreprise"],["Briefs Lemag' et Podcast","Programmation 2027 alignée sur le jalon 3"],["Newsletter entreprises commune","Trois envois par an tenus dès janvier"],["Campagne de fin d'année","Premières données de collecte, donateurs à fidéliser"]];
+var BR=[["Tableau de bord ADUG","Pilotage trimestriel, rapports ANR, dossier d'abondement"],["Portail unique, tranche 1","Tranche 2 : espaces Entreprises et Étudiants-alumni complets, financement participatif"],["Base de contacts partagée","CRM commun, relation globale avec chaque entreprise"],["Briefs Lemag' et Podcast","Programmation 2027 alignée sur le jalon 3"],["Newsletter entreprises commune","Trois envois par an tenus dès janvier"],["Espace Étudiants et alumni","Réseau d'étudiants et Club des Alumni animés, puis tiers-lieu numérique autonome"],["Campagne de fin d'année","Premières données de collecte, donateurs à fidéliser"]];
 BR.forEach(function(b){$("#bridge").appendChild(el("div",{"class":"br"},'<b>'+b[0]+'</b>'+ico("i-arrow","")+'<span>'+b[1]+'</span>'))});
-var QU=["Date de démarrage de la convention et calendrier des phases","Convention attributive et accord de consortium : visibilité, rapports, évaluation, conditions de l'abondement","Rapports déjà remis à l'ANR","État des indicateurs : collecte, donateurs, conférences, newsletters, Club des Alumni","Consommation des lignes « dépenses de communication » et « agence de communication »","Statut juridique de la Fondation et constitution du fonds de dotation, qui conditionnent les reçus fiscaux","Éligibilité des outils numériques aux lignes de communication","Règle d'engagement des dépenses 2026 : commande engagée ou prestation livrée avant le 31 décembre","Clé de répartition FUG-DFPU pour la tranche 2 du site et l'outil de gestion de la relation","Outils existants à l'UG : offres de stages, projet alumni, services de la DNUM","Règles d'achat et de paiement : seuils de mise en concurrence, acomptes","Politique de l'UG sur les outils d'IA et les données personnelles","Dates des prochains comités de pilotage et de direction"];
-var qdone=store("fug-checks")||{};
-QU.forEach(function(q,i){var lab=el("label",{"class":"chk"});var inp=el("input",{type:"checkbox"});inp.checked=!!qdone[i];inp.addEventListener("change",function(){qdone[i]=inp.checked;store("fug-checks",qdone);qcount()});lab.appendChild(inp);lab.appendChild(el("span",null,q));$("#checks").appendChild(lab)});
+var QU=["Rapports annuels déjà remis à l'ANR (31 mars 2025 et 2026)","Masse salariale de la phase 1 : postes pourvus au regard de la masse prévue en année 3 (annexe 5)","Confirmation de l'enveloppe 2026 (38 000 € volet Mécénat, 76 000 € volet FPC), de sa ligne d'imputation et de la clé de répartition","État des indicateurs : collecte, donateurs, conférences, newsletters, Club des Alumni","Consommation des lignes « dépenses de communication » et « agence de communication »","Statut juridique de la Fondation et constitution du fonds de dotation, qui conditionnent les reçus fiscaux","Éligibilité des outils numériques aux lignes de communication","Règle d'engagement des dépenses 2026 : commande engagée ou prestation livrée avant le 31 décembre","Clé de répartition pour la tranche 2 du portail et l'outil de gestion de la relation","Outils existants à l'UG : offres de stages, projet alumni, services de la DNUM","Conditions de passage du portail unique à trois solutions connectées : calendrier et budget","Cadre des données du réseau d'étudiants et du Club des Alumni, avec le délégué à la protection des données","Règles d'achat et de paiement : seuils de mise en concurrence, acomptes","Politique de l'UG sur les outils d'IA et les données personnelles","Dates des prochains comités de pilotage et de direction"];
+var qdone=store("adug-checks")||{};
+QU.forEach(function(q,i){var lab=el("label",{"class":"chk"});var inp=el("input",{type:"checkbox"});inp.checked=!!qdone[i];inp.addEventListener("change",function(){qdone[i]=inp.checked;store("adug-checks",qdone);qcount()});lab.appendChild(inp);lab.appendChild(el("span",null,q));$("#checks").appendChild(lab)});
 function qcount(){var n=QU.filter(function(q,i){return qdone[i]}).length;$("#qcnt").textContent=n+" / "+QU.length+" obtenues"}
 qcount();
 
