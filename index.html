@@ -846,6 +846,9 @@ p{margin:0}
 @media (max-width:1023px){.vcols,.traj{grid-template-columns:1fr}.rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:640px){.rules{grid-template-columns:1fr}}
 
+.lvgs{display:flex;flex-direction:column;gap:10px}
+.lvg{display:flex;flex-direction:column;gap:6px}
+.lvl{font-size:12px;font-weight:800;color:var(--green-ink)}
 </style>
 </head>
 <body>
@@ -1140,7 +1143,7 @@ p{margin:0}
         <div class="quests" id="quests"></div>
       </div>
     </div>
-    <p class="src">Sources : contrat attributif ANR-22-ASDR-0003 (articles 4, 5 et 7) et annexe 5, dossier ADUG (jalons et moyens), fiches projets Lemag' et Podcast (février 2026), état connu en octobre 2026.</p>
+    <p class="src">Sources : contrat attributif ANR-22-ASDR-0003 (articles 4, 5 et 7) et annexe 5, dossier ADUG (jalons et moyens), fiches projets éditoriaux (février 2026), état connu en octobre 2026.</p>
   </div>
 </section>
 
@@ -1251,7 +1254,7 @@ p{margin:0}
         <div class="leg" id="netleg"></div>
       </div>
     </div>
-    <p class="note">La synergie la plus structurante est la relation globale avec l'entreprise : elle justifie une base de contacts et un espace Entreprises communs à la FUG et à la DFPU.</p>
+    <p class="note">La synergie la plus structurante est la relation globale avec l'entreprise : elle justifie une base de contacts et un portail entreprises communs à la FUG et à la DFPU.</p>
   </div>
 </section>
 
@@ -1261,13 +1264,13 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>7. Communication</span>
       <h2 class="title wide">Faire connaître, faire aimer, faire agir</h2>
-      <p class="lead">La communication accompagne chaque public du premier contact jusqu'à l'engagement, pour la Fondation, ses projets et ses partenaires.</p>
+      <p class="lead">La communication accompagne chaque public du premier contact jusqu'à l'engagement, pour les deux volets du projet : le mécénat et la formation professionnelle et continue.</p>
     </div>
     <div class="com">
       <div class="funnel" role="tablist" aria-label="Étapes de la communication">
         <button class="fl l1" role="tab" aria-selected="true" data-k="0"><svg><use href="#i-mega"/></svg>Faire connaître</button>
         <button class="fl l2" role="tab" aria-selected="false" data-k="1"><svg><use href="#i-heart"/></svg>Faire aimer</button>
-        <span class="broken"><svg><use href="#i-link"/></svg>Maillon à construire : site, don en ligne, gestion de la relation</span>
+        <span class="broken"><svg><use href="#i-link"/></svg>Maillon à construire : portail, don en ligne, gestion de la relation</span>
         <button class="fl l3" role="tab" aria-selected="false" data-k="2"><svg><use href="#i-target"/></svg>Faire agir</button>
       </div>
       <div class="panel com-panel" id="companel" aria-live="polite"></div>
@@ -1297,8 +1300,8 @@ p{margin:0}
       </svg>
     </div>
     <div class="vcols">
-      <div class="vcol"><h3>Propre à la Fondation</h3><ul><li>Campagnes de dons et financement participatif</li><li>Relation et reconnaissance des mécènes</li><li>Lemag'</li><li>Legs et successions</li></ul></div>
-      <div class="vcol mid"><h3>Partagé et coproduit</h3><p class="vsub">Socle, toujours commun</p><ul><li>Base de contacts et règles de consentement</li><li>Charte, mentions France 2030, banque d'images</li><li>Calendrier éditorial et tableau de bord ADUG</li><li>Newsletter entreprises (J11)</li></ul><p class="vsub">Coproductions, quand le public est le même</p><ul><li>Rendez-vous entreprises coordonnés</li><li>Événements avec la CCIG et le GPM, kit partenaires</li><li>Rentrée et diplomation : du réseau d'étudiants au Club des Alumni</li><li>Podcast sur les formations et les débouchés</li></ul></div>
+      <div class="vcol"><h3>Propre à la Fondation</h3><ul><li>Campagnes de dons et financement participatif</li><li>Relation et reconnaissance des mécènes</li><li>Publications éditoriales</li><li>Legs et successions</li></ul></div>
+      <div class="vcol mid"><h3>Partagé et coproduit</h3><p class="vsub">Socle, toujours commun</p><ul><li>Base de contacts et règles de consentement</li><li>Charte, mentions France 2030, banque d'images</li><li>Calendrier éditorial et tableau de bord ADUG</li><li>Newsletter entreprises (J11)</li></ul><p class="vsub">Coproductions, quand le public est le même</p><ul><li>Rendez-vous entreprises coordonnés</li><li>Événements avec la CCIG et le GPM, kit partenaires</li><li>Rentrée et diplomation : du réseau d'étudiants au Club des Alumni</li><li>Contenus audio sur les formations et les débouchés</li></ul></div>
       <div class="vcol"><h3>Propre à la DFPU</h3><ul><li>Catalogue de formation (J6)</li><li>Campagnes de formation continue</li><li>Offres d'alternance</li><li>Réponses aux appels d'offres, salons d'orientation</li></ul></div>
     </div>
     <div class="traj">
@@ -1362,7 +1365,7 @@ p{margin:0}
     </div>
     <div class="matrix-wrap">
       <table class="matrix ecomx" id="ecomx">
-        <thead><tr><th scope="col" style="text-align:left">Espace du site</th><th scope="col">J1 Collecte</th><th scope="col">J2 Fondations</th><th scope="col">J3 Contenus</th><th scope="col">J6 Catalogue</th><th scope="col">J7 Alternants</th><th scope="col">J8 Stagiaires</th><th scope="col">J9 Pilotage</th><th scope="col">J10 Entreprises</th><th scope="col">J11 Newsletter</th><th scope="col">J12 Alumni</th><th scope="col">CA formation</th><th scope="col">CA mécénat</th><th scope="col">Indicateurs servis</th></tr></thead>
+        <thead><tr><th scope="col" style="text-align:left">Entrée du portail</th><th scope="col">J1 Collecte</th><th scope="col">J2 Fondations</th><th scope="col">J3 Contenus</th><th scope="col">J6 Catalogue</th><th scope="col">J7 Alternants</th><th scope="col">J8 Stagiaires</th><th scope="col">J9 Pilotage</th><th scope="col">J10 Entreprises</th><th scope="col">J11 Newsletter</th><th scope="col">J12 Alumni</th><th scope="col">CA formation</th><th scope="col">CA mécénat</th><th scope="col">Indicateurs servis</th></tr></thead>
         <tbody></tbody>
       </table>
     </div>
@@ -1374,7 +1377,7 @@ p{margin:0}
   <div class="wrap">
     <div class="head">
       <span class="kicker"><span class="dot"></span>8. Écosystème digital</span>
-      <h2 class="title wide">Six profils d'usagers, un parcours chacun</h2>
+      <h2 class="title wide">Sept profils d'usagers, un parcours chacun</h2>
       <p class="lead">L'écosystème se construit à partir de ses usagers, pas de ses fonctionnalités. Chaque profil a un besoin simple, une porte d'entrée et un parcours court qui sert au moins un indicateur ADUG.</p>
       <span class="hint"><span class="pulse"></span>Survolez ou touchez un profil pour voir son parcours et ce qu'il rapporte au projet</span>
     </div>
@@ -1393,10 +1396,10 @@ p{margin:0}
     <div class="filters" id="pfilters" aria-label="Filtrer par profil"></div>
     <div class="lanes-wrap">
       <div class="lanes" id="lanes">
-        <div class="lane-h"><span>Profil</span><span>Premier contact</span><span>Espace du site</span><span>Action</span><span>Suite</span><span>Indicateur ADUG</span></div>
+        <div class="lane-h"><span>Profil</span><span>Premier contact</span><span>Entrée du portail</span><span>Action</span><span>Suite</span><span>Indicateur ADUG</span></div>
       </div>
     </div>
-    <div class="plegend"><span><i style="background:var(--green)"></i>Espace Soutenir</span><span><i style="background:var(--teal)"></i>Espace Entreprises</span><span><i style="background:var(--leaf)"></i>Espace Étudiants et alumni</span><span><i style="background:var(--forest)"></i>Back-office commun</span></div>
+    <div class="plegend"><span><i style="background:var(--green)"></i>Espace Soutenir</span><span><i style="background:var(--teal)"></i>Portail entreprises</span><span><i style="background:var(--leaf)"></i>Espace Étudiants et alumni</span><span><i style="background:var(--forest)"></i>Back-office commun</span></div>
     <div class="panel" id="pdetail" aria-live="polite"></div>
   </div>
 </section>
@@ -1406,7 +1409,7 @@ p{margin:0}
     <div class="head">
       <span class="kicker"><span class="dot"></span>8. Écosystème digital · les écrans</span>
       <h2 class="title wide">Ce que voit chaque profil</h2>
-      <p class="lead">Maquettes basse fidélité : elles illustrent le besoin fonctionnel à transmettre aux prestataires, pas le design final. Les cinq écrans appartiennent au même site. Les contenus et les chiffres affichés sont fictifs.</p>
+      <p class="lead">Maquettes basse fidélité : elles illustrent le besoin fonctionnel à transmettre aux prestataires, pas le design final. Les six écrans appartiennent au même portail. Les contenus et les chiffres affichés sont fictifs.</p>
     </div>
     <div class="tabs" id="mtabs" role="tablist" aria-label="Choisir un profil"></div>
     <div class="mock">
@@ -1427,7 +1430,7 @@ p{margin:0}
     <div class="synstrip">
       <div><b>1</b>portail unique pour démarrer, conçu pour devenir trois solutions connectées</div>
       <div><b>1</b>fiche par entreprise, partagée par la FUG et la DFPU</div>
-      <div><b>10</b>indicateurs ADUG alimentés par les trois espaces et le back-office</div>
+      <div><b>12</b>jalons ADUG alimentés par les trois espaces et le back-office</div>
       <div><b>2</b>volets dont le chiffre d'affaires s'additionne pour l'abondement</div>
     </div>
   </div>
@@ -1454,7 +1457,7 @@ p{margin:0}
           <rect x="25" y="28" width="250" height="102" rx="16" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
           <text x="45" y="62" class="hz-t">Site de la Fondation</text>
           <text x="45" y="86" class="hz-s">Projets, don en ligne, mécènes,</text>
-          <text x="45" y="104" class="hz-s">Lemag' et podcast</text>
+          <text x="45" y="104" class="hz-s">publications, contenus audio</text>
         </g>
         <g>
           <rect x="325" y="28" width="250" height="102" rx="16" fill="var(--surface)" stroke="var(--green)" stroke-width="2"/>
@@ -1497,7 +1500,7 @@ p{margin:0}
       <li><span class="cb">1</span><h3>Étudiant</h3><p>Réseau d'étudiants · volet FPC</p></li>
       <li><span class="cb">2</span><h3>Alternant ou stagiaire</h3><p>Mise en relation avec les entreprises · DFPU</p></li>
       <li><span class="cb">3</span><h3>Diplômé</h3><p>Adhésion au Club des Alumni · volet Mécénat</p></li>
-      <li><span class="cb">4</span><h3>Alumni</h3><p>Témoignages, Lemag', podcast</p></li>
+      <li><span class="cb">4</span><h3>Alumni</h3><p>Témoignages, publications, contenus audio</p></li>
       <li><span class="cb">5</span><h3>Mentor ou recruteur</h3><p>Accompagne la promotion suivante</p></li>
       <li><span class="cb">6</span><h3>Donateur ou stagiaire</h3><p>Soutient un projet, revient en formation continue</p></li>
     </ol>
@@ -1599,7 +1602,7 @@ p{margin:0}
       </div>
       <div class="tabpanel" role="tabpanel" id="ot3" aria-labelledby="ott3" hidden>
         <div class="rng" id="rngprint"></div>
-        <p class="note" style="margin-top:12px">Format modulaire : une brochure FUG stable, et des fiches projets recto-verso imprimées à la demande, avec un QR code vers la page projet. Une version PDF est envoyée après chaque rendez-vous.</p>
+        <p class="note" style="margin-top:12px">Format modulaire : une brochure stable par volet, et des fiches projets recto-verso imprimées à la demande, avec un QR code vers la page projet. Une version PDF est envoyée après chaque rendez-vous.</p>
       </div>
     </div>
   </div>
@@ -1807,7 +1810,7 @@ var jal=[
    q:[["Jalon 1, indicateur","« Nombre d'entreprises donatrices & montants collectés : 3 grands donateurs, 5 entreprises locales et 50 défiscalisations grand public en 3 ans »"],["Stratégie de collecte","« La politique de collecte de fonds mise en œuvre localement s'adressera à tout type de mécènes (entreprises, grand public) et intègrera la création d'une plateforme de financement participatif offrant la possibilité à l'ensemble des dons d'être défiscalisés. »"]],src:"Dossier ADUG, parties 1 et 2.3"},
   {n:"2",v:"Mécénat",i:"i-doc",t:"Réponses aux appels à projets des grandes fondations",c:"Nombre de mécènes et montants collectés par an",m:"Dossiers et supports de candidature",
    q:[["Jalon 2, indicateur","« Soumission de réponses aux AAP des grandes fondations » : « Nombre de mécènes et montant collectés par an »"],["Publics visés","« le volet « Mécénat » ciblera en priorité les fondations d'entreprises situées hors du territoire guyanais ainsi que les entreprises locales et le grand public (particuliers, chercheurs, alumni). »"]],src:"Dossier ADUG, parties 2.1 et 2.3"},
-  {n:"3",v:"Mécénat",i:"i-book",t:"Magazine, conférences CCIG, émissions radio",c:"4 magazines, 9 conférences-débats et 36 émissions radio par an",m:"Production éditoriale : Lemag', Podcast, captations",
+  {n:"3",v:"Mécénat",i:"i-book",t:"Magazine, conférences CCIG, émissions radio",c:"4 magazines, 9 conférences-débats et 36 émissions radio par an",m:"Production éditoriale : magazine, contenus audio, captations",
    q:[["Jalon 3, indicateur","« Réalisation magazine de la Fondation, conférences CCIG, émissions radio » : « 4 magazines, 9 conférences-débat, 36 émissions radio par an »"],["Réalisations antérieures","« une revue numérique trimestrielle de diffusion scientifique a été produite, ainsi qu'une émission radiophonique diffusée sur le réseau des radios universitaires en ligne. »"]],src:"Dossier ADUG, parties 1 et 2.3"},
   {n:"4",v:"FPC",i:"i-cap",t:"Ouverture de nouvelles formations",c:"Un nouveau diplôme universitaire tous les deux ans",m:"Fiches formations, lancement des nouveaux DU",
    q:[["Jalon 4, indicateur","« Ouverture de nouvelles formations » : « Un nouveau diplôme universitaire tous les deux ans »"],["Stratégie du volet FPC","« Ces personnels développeront la recherche de nouvelles ressources financières et contribueront au montage de nouvelles formations (DU) en s'adressant prioritairement aux entreprises, aux organismes paritaires collecteurs et aux pouvoirs publics. »"]],src:"Dossier ADUG, parties 1 et 2.3"},
@@ -1847,8 +1850,8 @@ var QDEF=[
   {id:"q1",t:"Site web animé et dons défiscalisés en ligne",e:"Site en préparation : cahier des charges en cours",s:"manquant"},
   {id:"q2",t:"Plateforme de financement participatif",e:"À identifier",s:"confirmer"},
   {id:"q3",t:"Logiciel de gestion de la relation (CRM)",e:"À déployer ; environ 400 entreprises à qualifier",s:"manquant"},
-  {id:"q4",t:"4 magazines par an",e:"Fiche Lemag' 2026 : objectif de 3 numéros",s:"partiel"},
-  {id:"q5",t:"36 émissions radio par an",e:"Podcast : 6 à 10 épisodes, format à requalifier auprès de l'ANR",s:"partiel"},
+  {id:"q4",t:"4 magazines par an",e:"Production éditoriale 2026 : objectif à confirmer au regard du jalon 3",s:"partiel"},
+  {id:"q5",t:"36 émissions radio par an",e:"Contenus audio : format à requalifier auprès de l'ANR",s:"partiel"},
   {id:"q6",t:"9 conférences-débats CCIG par an",e:"À documenter",s:"confirmer"},
   {id:"q7",t:"3 newsletters entreprises par an",e:"À documenter",s:"confirmer"},
   {id:"q8",t:"Club des Alumni, +10 % par an",e:"Outil à créer : adhésion prévue dans le portail",s:"manquant"},
@@ -1907,8 +1910,8 @@ var ENG=[
   {v:"Mécénat",q:"Une plateforme de financement participatif, aussi pour garder le lien avec les diplômés",a:"Préparée dans le portail : pages projets avec jauge de collecte, reliées au Club des Alumni."},
   {v:"FPC",q:"Donner une image de marque forte à l'offre de formation (réponse au jury, addendum 2023)",a:"Une identité commune pour l'offre de formation, déclinée sur le portail entreprises, le catalogue et les supports."},
   {v:"FPC",q:"La CTG diffuse l'offre de formation dans ses réseaux et co-organise des événements sur la formation continue",a:"Un kit de diffusion remis à la CTG : fiches formations, visuels, calendrier des sessions."},
-  {v:"FPC",q:"Mobiliser les équipes pédagogiques (réserve n°3 du jury)",a:"Valoriser les enseignants et les formations : portraits, épisodes du podcast, témoignages d'alternants."},
-  {v:"Commun",q:"Aucun financement européen ne doit être sollicité pour ADUG",a:"Vérifier avant toute demande. La fiche Lemag' cite le FEDER et le FSE+ : orienter plutôt vers le mécénat, les fonds d'État et les apports prévus."},
+  {v:"FPC",q:"Mobiliser les équipes pédagogiques (réserve n°3 du jury)",a:"Valoriser les enseignants et les formations : portraits, contenus audio, témoignages d'alternants."},
+  {v:"Commun",q:"Aucun financement européen ne doit être sollicité pour ADUG",a:"Vérifier avant toute demande. Une fiche projet cite le FEDER et le FSE+ : orienter plutôt vers le mécénat, les fonds d'État et les apports prévus."},
   {v:"Commun",q:"Un plan de communication de la gouvernance sur toute la durée",a:"Une lettre interne trimestrielle, calée sur le comité de pilotage, pour informer les personnels de l'UG des avancées."},
   {v:"Commun",q:"La valorisation du projet via les sites des partenaires",a:"Un kit de contenus prêt à publier pour la CTG, la CCIG et le GPM : textes, visuels, chiffres clés."},
   {v:"Commun",q:"La mention du soutien de l'ANR au titre de France 2030 sur tous les supports et sites (article 8)",a:"Un bloc de mentions intégré à tous les gabarits, avec la référence ANR-22-ASDR-0003."}
@@ -1929,7 +1932,7 @@ VIG.forEach(function(f){$("#f2-"+f.v).appendChild(el("div",{"class":"f2row",styl
 var IMP=[
   {t:"Un tableau de bord ADUG à jour",m:[1,0,0,1]},
   {t:"Un dispositif de don en ligne avant le 31 décembre",m:[1,1,0,1]},
-  {t:"Lemag' et Podcast alignés sur les indicateurs",m:[1,1,0,0]},
+  {t:"Une production éditoriale alignée sur les indicateurs",m:[1,1,0,0]},
   {t:"Une mobilisation effective du consortium",m:[1,1,1,0]}
 ];
 var tb=$("#matrix tbody");
@@ -1978,7 +1981,7 @@ var EDGES=[
   {id:"e6",a:"etu",b:"alu",t:"res",l:"Diplomation : entrée dans le Club des Alumni"},
   {id:"e7",a:"alu",b:"fug",t:"fin",l:"Dons et parrainages de bourses"},
   {id:"e8",a:"alu",b:"etu",t:"res",l:"Mentorat des étudiants"},
-  {id:"e9",a:"cher",b:"fug",t:"cont",l:"Lemag', Podcast, conférences"},
+  {id:"e9",a:"cher",b:"fug",t:"cont",l:"Publications, contenus audio, conférences"},
   {id:"e10",a:"cons",b:"ent",t:"res",l:"Accès aux réseaux d'entreprises des partenaires"},
   {id:"e11",a:"cons",b:"fug",t:"res",l:"Événements co-organisés, conseil fiscal de la CCIG"},
   {id:"e12",a:"comm",b:"fug",t:"res",l:"Ambassadeurs des campagnes de financement participatif"},
@@ -1989,7 +1992,7 @@ var PROFILES=[
   {id:"all",n:"Tous les flux",i:"i-link",e:EDGES.map(function(e){return e.id}),s:["Choisissez un parcours pour isoler son circuit.","Survolez un flux pour lire ce qu'il transporte."]},
   {id:"ent",n:"Parcours entreprise",i:"i-hand",e:["e10","e3","e5","e1","e2"],s:["Le consortium ouvre ses réseaux d'entreprises","L'entreprise forme ses salariés et verse sa taxe d'apprentissage","Elle accueille stagiaires et alternants, puis recrute","Elle devient mécène de la Fondation","La Fondation la valorise, ce qui la fidélise"]},
   {id:"etu",n:"Parcours étudiant à alumni",i:"i-cap",e:["e4","e5","e6","e8","e7"],s:["L'étudiant suit une formation en alternance","Il rencontre les entreprises : stage, alternance, emploi","Diplômé, il rejoint le Club des Alumni","Il devient mentor des étudiants suivants","Il soutient la Fondation par un don ou un parrainage"]},
-  {id:"cher",n:"Parcours chercheur",i:"i-bulb",e:["e9","e2","e1"],s:["Les travaux de recherche nourrissent Lemag' et le Podcast","La Fondation les porte auprès des entreprises","La recherche devient un argument de mécénat affecté"]},
+  {id:"cher",n:"Parcours chercheur",i:"i-bulb",e:["e9","e2","e1"],s:["Les travaux de recherche nourrissent les publications et les contenus audio","La Fondation les porte auprès des entreprises","La recherche devient un argument de mécénat affecté"]},
   {id:"duo",n:"Vue FUG-DFPU",i:"i-people",e:["e13","e1","e3","e11","e14"],s:["La FUG et la DFPU partagent une base de contacts et une newsletter","Une même entreprise est mécène pour l'une, cliente pour l'autre","Le consortium relaie les deux offres","Une seule relation, pas de sur-sollicitation"]}
 ];
 var svg=$("#netsvg");
@@ -2027,12 +2030,19 @@ setProfile(0);
 
 /* ---------- Communication ---------- */
 var COM=[
-  {t:"Faire connaître",o:"La Fondation, ses projets et ses partenaires sont identifiés",p:"Entreprises, grand public, partenaires institutionnels et internationaux",l:["Site web","Lemag'","Podcast","Réseaux sociaux","Relations presse","Conférences CCIG","Mention France 2030"],k:"Jalon 3 (4 magazines, 9 conférences, 36 émissions) ; audiences"},
-  {t:"Faire aimer",o:"Créer confiance et adhésion",p:"Mécènes potentiels, alumni, personnels de l'UG",l:["Portraits de boursiers","Portraits de chercheurs","Preuves d'impact","Transparence de gestion","Événements","Communication interne"],k:"Jalon 12 (+10 % d'alumni par an) ; fidélisation des mécènes"},
-  {t:"Faire agir",o:"Obtenir un engagement concret",p:"Entreprises, particuliers, alumni, étudiants",l:["Page de don","Financement participatif","Offres de mécénat","Rendez-vous de prospection","Taxe d'apprentissage","Offres d'alternance"],k:"Jalon 1 (donateurs, entreprises, défiscalisations) ; chiffre d'affaires mécénat ; alternants",a:"Maillon manquant aujourd'hui : site, don en ligne, CRM et financement participatif. C'est la priorité du trimestre."}
+  {t:"Faire connaître",o:"Le projet, la Fondation et l'offre de formation de l'UG sont identifiés",p:"Entreprises, salariés et particuliers, grand public, partenaires institutionnels",
+   l:{m:["Publications éditoriales de la Fondation","Relations presse","Rencontres avec les décideurs économiques"],f:["Catalogue et fiches formations","Salons et forums d'orientation","Relais de la CTG"],c:["Portail","Réseaux sociaux","Contenus audio et vidéo","Newsletter entreprises","Mention France 2030"]},
+   k:"J3, J6, J11 ; audiences"},
+  {t:"Faire aimer",o:"Créer confiance et adhésion",p:"Mécènes, entreprises clientes, alumni, étudiants, personnels de l'UG",
+   l:{m:["Portraits de boursiers","Preuves d'impact","Transparence de gestion","Reconnaissance des mécènes"],f:["Témoignages d'alternants et de stagiaires","Valorisation des équipes pédagogiques","Réussite des diplômés"],c:["Réseau d'étudiants et Club des Alumni","Événements","Communication interne"]},
+   k:"J12 ; fidélisation des mécènes et des entreprises clientes"},
+  {t:"Faire agir",o:"Obtenir un engagement concret",p:"Entreprises, salariés, particuliers, alumni, étudiants",
+   l:{m:["Page de don","Financement participatif","Offres de mécénat"],f:["Inscriptions en formation continue","Offres d'alternance","Réponses aux appels d'offres"],c:["Rendez-vous entreprises coordonnés","Questionnaire d'orientation entreprises"]},
+   k:"J1, J5, J7, J8, J10 ; chiffre d'affaires mécénat et formation",a:"Maillon manquant aujourd'hui : portail, don en ligne et gestion de la relation partagée. C'est la priorité du trimestre."}
 ];
 function setCom(i){$$(".fl").forEach(function(b){b.setAttribute("aria-selected",String(+b.dataset.k===i))});var c=COM[i];
-  $("#companel").innerHTML='<h3>'+c.t+'</h3><div class="rowx"><b>Objectif</b><span>'+c.o+'</span></div><div class="rowx"><b>Publics prioritaires</b><span>'+c.p+'</span></div><div class="rowx"><b>Leviers</b><span class="levers">'+c.l.map(function(x){return'<span class="chip">'+x+'</span>'}).join("")+'</span></div><div class="rowx" style="border:0"><b>Indicateurs ADUG</b><span>'+c.k+'</span></div>'+(c.a?'<div class="alert">'+ico("i-alert","")+'<span>'+c.a+'</span></div>':"");
+  function grp(lbl,arr){return '<div class="lvg"><span class="lvl">'+lbl+'</span><span class="levers">'+arr.map(function(x){return'<span class="chip">'+x+'</span>'}).join("")+'</span></div>'}
+  $("#companel").innerHTML='<h3>'+c.t+'</h3><div class="rowx"><b>Objectif</b><span>'+c.o+'</span></div><div class="rowx"><b>Publics prioritaires</b><span>'+c.p+'</span></div><div class="rowx"><b>Leviers</b><span class="lvgs">'+grp("Volet Mécénat",c.l.m)+grp("Volet FPC",c.l.f)+grp("Commun",c.l.c)+'</span></div><div class="rowx" style="border:0"><b>Indicateurs ADUG</b><span>'+c.k+'</span></div>'+(c.a?'<div class="alert">'+ico("i-alert","")+'<span>'+c.a+'</span></div>':"");
   var pnl=$("#companel");pnl.style.animation="none";void pnl.offsetWidth;pnl.style.animation="rise .35s ease"}
 $$(".fl").forEach(function(b){b.addEventListener("click",function(){setCom(+b.dataset.k)});b.addEventListener("mouseenter",function(){setCom(+b.dataset.k)})});
 setCom(0);
@@ -2088,14 +2098,16 @@ ECOMX.forEach(function(r){var tr=el("tr",{"data-k":r.k});tr.appendChild(el("th",
 ecoShow(DOORS[1],"ent");
 
 var USERS=[
-  {i:"i-hand",t:"Dirigeante ou dirigeant de PME locale",n:"Soutenir le territoire simplement, trouver des alternants, former ses équipes",d:"Espace Entreprises",
+  {i:"i-hand",t:"Dirigeante ou dirigeant de PME locale",n:"Soutenir le territoire simplement, trouver des alternants, former ses équipes",d:"Portail entreprises",
    p:["Découvre l'offre via la newsletter ou un événement CCIG","Dépose une offre d'alternance ou inscrit un salarié","Parraine une bourse ou rejoint le Club des Mécènes"],g:"Alternants, CA formation, J1 (entreprises locales)"},
   {i:"i-globe",t:"Responsable RSE d'un grand groupe ou d'une fondation d'entreprise",n:"Des projets à impact mesurable, une gouvernance rassurante",d:"Espaces Soutenir et Entreprises",
    p:["Consulte les projets et les preuves d'impact","Prend rendez-vous avec la responsable mécénat","Signe une convention de mécénat"],g:"J1 (grands donateurs), J2, CA mécénat"},
   {i:"i-cap",t:"Étudiante ou étudiant, alternante ou alternant",n:"Trouver un stage, une alternance, un premier emploi",d:"Espace Étudiants et alumni",
    p:["Consulte les offres déposées par les entreprises","Candidate et décroche une alternance","Rejoint le Club des Alumni à la diplomation"],g:"Alternants, réseau d'étudiants, futur J12"},
+  {i:"i-target",t:"Salarié ou particulier en formation continue",n:"Se former près de chez soi et faire reconnaître ses compétences",d:"Portail entreprises · catalogue",
+   p:["Découvre une formation dans le catalogue ou par son employeur","Demande une information ou se pré-inscrit en ligne","Suit la formation, puis rejoint le réseau"],g:"J8 (+10 % de stagiaires), CA formation"},
   {i:"i-people",t:"Alumni",n:"Garder le lien, aider les suivants, valoriser son parcours",d:"Espaces Étudiants-alumni et Soutenir",
-   p:["Adhère au Club des Alumni","Témoigne dans Lemag' ou le Podcast","Devient mentor ou donateur"],g:"J12 (+10 %), J1 (défiscalisations)"},
+   p:["Adhère au Club des Alumni","Témoigne dans les publications et les contenus audio","Devient mentor ou donateur"],g:"J12 (+10 %), J1 (défiscalisations)"},
   {i:"i-heart",t:"Particulier ou personnel de l'UG",n:"Soutenir un projet concret, en quelques clics",d:"Espace Soutenir",
    p:["Découvre un projet dans une publication","Donne en ligne et reçoit son reçu fiscal","Reçoit des nouvelles du projet soutenu"],g:"J1 (50 défiscalisations), CA mécénat"},
   {i:"i-db",t:"Équipes FUG et DFPU",n:"Une vision unique de chaque contact, moins de ressaisie",d:"Back-office commun",
@@ -2111,10 +2123,10 @@ USERS.forEach(function(u){
 
 var STAGES=[
   {now:1,w:"Étape 1 · novembre et décembre 2026",r:"Quelques semaines",t:"Le socle",
-   l:["Portail unique en ligne : accueil commun et espace Soutenir avec don en ligne","Espace Entreprises : formulaire unique, orienté vers la FUG ou la DFPU","Espace Étudiants et alumni : adhésion au Club des Alumni","Base de contacts partagée et newsletter commune"],
+   l:["Portail unique en ligne : accueil commun et espace Soutenir avec don en ligne","Portail entreprises : formulaire unique, orienté vers la FUG ou la DFPU","Espace Étudiants et alumni : adhésion au Club des Alumni","Base de contacts partagée et newsletter commune"],
    c:"Outils existants ou peu coûteux, sur les lignes de communication prévues par ADUG",u:"Premiers dons et premiers contacts qualifiés, mesurables avant la fin de la phase 1"},
   {now:0,w:"Étape 2 · 2027",r:"Quelques mois",t:"Les espaces complets",
-   l:["Espace Entreprises complet : offres, formations, mécénat","Espace Étudiants et alumni complet : offres et Club des Alumni","Financement participatif intégré au site"],
+   l:["Portail entreprises complet : offres, formations, mécénat","Espace Étudiants et alumni complet : offres et Club des Alumni","Financement participatif intégré au site"],
    c:"Investissement mutualisé FUG-DFPU, selon une clé de répartition validée",u:"Le chiffre d'affaires des deux volets pendant l'année 4, décisive pour l'abondement"},
   {now:0,w:"Étape 3 · 2028 et au-delà",r:"Plusieurs années",t:"Les fonctions avancées",
    l:["Mentorat, badges, CV vidéo","Bascule automatique du profil étudiant vers le profil alumni","Application mobile, si l'usage le justifie"],
@@ -2130,13 +2142,15 @@ hooks["s-trajectoire"]=function(){animateBars($("#ttv"))};
 /* ---------- Parcours filtrés ---------- */
 var PROF=[
  {k:"pme",i:"i-hand",n:"Dirigeant de PME",need:"Soutenir le territoire simplement, trouver des alternants, former ses équipes.",
-  c:[["Newsletter entreprises ou événement CCIG",""],["Espace Entreprises","de"],["Dépose une offre d'alternance ou inscrit un salarié",""],["Parraine une bourse ou rejoint le Club des mécènes","df"],["Alternants, CA formation, J1, J10","kpi-c"]]},
+  c:[["Newsletter entreprises ou événement CCIG",""],["Portail entreprises","de"],["Dépose une offre d'alternance ou inscrit un salarié",""],["Parraine une bourse ou rejoint le Club des mécènes","df"],["Alternants, CA formation, J1, J10","kpi-c"]]},
  {k:"rse",i:"i-globe",n:"Responsable RSE",need:"Des projets à impact mesurable et une gouvernance rassurante.",
   c:[["Rendez-vous de prospection, fiche projet remise",""],["Espace Soutenir : pages projets","df"],["Consulte les preuves d'impact, rencontre la responsable mécénat",""],["Signe une convention de mécénat","db"],["J1 grands donateurs, J2, CA mécénat","kpi-c"]]},
  {k:"etu",i:"i-cap",n:"Étudiant ou alternant",need:"Trouver un stage, une alternance, un premier emploi.",
   c:[["Campus, réseaux sociaux, enseignants",""],["Espace Étudiants et alumni","da"],["Consulte les offres des entreprises, candidate",""],["Diplômé, rejoint le Club des Alumni","da"],["Alternants, réseau d'étudiants, J12","kpi-c"]]},
+ {k:"fc",i:"i-target",n:"Stagiaire en formation continue",need:"Se former près de chez soi et faire reconnaître ses compétences.",
+  c:[["Catalogue, employeur, relais de la CTG",""],["Portail entreprises : fiche formation","de"],["Demande d'information, pré-inscription",""],["Suit la formation, rejoint le réseau","da"],["J8, CA formation","kpi-c"]]},
  {k:"alu",i:"i-people",n:"Alumni",need:"Garder le lien, aider les suivants, valoriser son parcours.",
-  c:[["Lemag', Podcast, newsletter",""],["Espaces Étudiants-alumni et Soutenir","da"],["Adhère au Club des Alumni, témoigne",""],["Devient mentor ou donateur","df"],["J12, J1 défiscalisations, J3","kpi-c"]]},
+  c:[["Publications, contenus audio, newsletter",""],["Espaces Étudiants-alumni et Soutenir","da"],["Adhère au Club des Alumni, témoigne",""],["Devient mentor ou donateur","df"],["J12, J1 défiscalisations, J3","kpi-c"]]},
  {k:"par",i:"i-heart",n:"Particulier ou personnel UG",need:"Soutenir un projet concret, en quelques clics.",
   c:[["Publication ou QR code d'une fiche projet",""],["Espace Soutenir : page projet","df"],["Donne en ligne, reçoit son reçu fiscal",""],["Reçoit des nouvelles du projet soutenu","db"],["J1 : 50 défiscalisations","kpi-c"]]},
  {k:"eq",i:"i-db",n:"Équipes FUG et DFPU",need:"Une vision unique de chaque contact, moins de ressaisie.",
@@ -2149,7 +2163,7 @@ function pSet(k){
   $$("#pfilters button").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-k")===k))});
   $$("#lanes .lane").forEach(function(l){var m=l.getAttribute("data-k")===k;l.classList.toggle("dim",k!=="all"&&!m);l.classList.toggle("hl",m)});
   var d=$("#pdetail");
-  if(k==="all"){d.innerHTML='<h3 style="font-size:18px;font-weight:800;margin-bottom:6px">Vue d\'ensemble</h3><p class="note" style="font-size:14px">Six profils, un site, trois espaces. Les espaces Soutenir et Entreprises concentrent les parcours qui alimentent la collecte ; le back-office commun relie tous les parcours et produit le reporting du comité de pilotage.</p>';return}
+  if(k==="all"){d.innerHTML='<h3 style="font-size:18px;font-weight:800;margin-bottom:6px">Vue d\'ensemble</h3><p class="note" style="font-size:14px">Sept profils, un site, trois espaces. Les espaces Soutenir et Entreprises concentrent les parcours qui alimentent la collecte ; le back-office commun relie tous les parcours et produit le reporting du comité de pilotage.</p>';return}
   var p=PROF.filter(function(x){return x.k===k})[0];
   d.innerHTML='<h3 style="font-size:18px;font-weight:800;margin-bottom:6px">'+p.n+'</h3><p class="note" style="font-size:14px;margin-bottom:12px"><b style="color:var(--ink)">Son besoin :</b> '+p.need+'</p><div class="pchain">'+p.c.slice(0,4).map(function(c){return '<div>'+c[0]+'</div>'}).join("")+'</div><div class="pgain">'+ico("i-target","")+'<span><b>Ce que ça rapporte à ADUG :</b> '+p.c[4][0]+'</span></div>';
 }
@@ -2165,11 +2179,14 @@ var MOCK=[
  {n:"Entreprise",i:"i-hand",url:"univ-guyane.fr/entreprises",nav:1,
   body:'<div class="wf-hero"><h5>Engager votre entreprise avec l\'Université de Guyane</h5><small>Un seul point de contact pour recruter, former et soutenir.</small></div><div class="wf-row"><div class="wf-card"><b>Recruter</b>Déposer une offre de stage ou d\'alternance<br><span class="wf-btn alt">Déposer une offre</span></div><div class="wf-card"><b>Former</b>Inscrire des salariés en formation continue<br><span class="wf-btn alt">Voir les formations</span></div><div class="wf-card"><b>Soutenir</b>Financer un projet, une bourse, du mécénat de compétences<br><span class="wf-btn alt">Voir les projets</span></div></div><div class="wf-card"><b>Être recontacté</b><div class="wf-field">Entreprise</div><div class="wf-field">Votre besoin : recruter, former ou soutenir</div><span class="wf-btn">Envoyer la demande</span></div>',
   side:["Un formulaire unique, orienté vers la FUG ou la DFPU selon le besoin","Les offres déposées apparaissent dans l'espace étudiants","Chaque demande crée ou enrichit la fiche de l'entreprise dans la base commune"],j:["J1","J10","CA formation"]},
+ {n:"Stagiaire en formation continue",i:"i-target",url:"univ-guyane.fr/entreprises/formations/du-management-de-projet",nav:1,
+  body:'<div class="wf-hero"><h5>DU Management de projet · formation continue</h5><small>120 heures · Cayenne et à distance · prochaine session en février</small></div><div class="wf-row"><div class="wf-card"><b>Programme</b><div class="wf-line"></div><div class="wf-line" style="width:70%"></div></div><div class="wf-card"><b>Prochaines sessions</b>Février · Septembre</div><div class="wf-card"><b>Financements</b>Employeur, OPCO, financement personnel</div></div><div class="wf-card"><b>Demander une information ou se pré-inscrire</b><div class="wf-field">Nom et prénom</div><div class="wf-field">Adresse e-mail</div><div class="wf-field">Statut : salarié, demandeur d\'emploi, particulier</div><span class="wf-btn">Envoyer ma demande</span></div>',
+  side:["Une fiche par formation, issue du catalogue (J6)","Une demande d'information ou une pré-inscription en un seul formulaire","Chaque demande alimente la base commune et le suivi du jalon 8"],j:["J6","J8","CA formation"]},
  {n:"Étudiant",i:"i-cap",url:"univ-guyane.fr/etudiants-alumni/offres",nav:2,
   body:'<div class="wf-top" style="margin-bottom:10px"><span class="on">Offres</span><span>Mentorat</span><span>Club des Alumni</span></div><div class="wf-row"><div class="wf-field">Contrat : alternance</div><div class="wf-field">Lieu : Cayenne</div><div class="wf-field">Domaine</div></div><div class="wf-card" style="margin-bottom:8px"><b>Alternance chargé(e) de projet environnement</b>Entreprise partenaire · Kourou · publiée il y a 3 jours<br><span class="wf-btn">Candidater</span></div><div class="wf-card" style="margin-bottom:8px"><b>Stage assistant(e) ressources humaines, 6 mois</b>Entreprise partenaire · Cayenne<br><span class="wf-btn">Candidater</span></div><div class="wf-card"><b>Contrat de professionnalisation en logistique</b>Entreprise partenaire · Dégrad des Cannes</div>',
   side:["Des offres déposées directement par les entreprises","Des filtres simples : type de contrat, lieu, domaine","À la diplomation, une invitation à rejoindre le Club des Alumni"],j:["J12","Réseau d'étudiants","Alternants"]},
  {n:"Alumni",i:"i-people",url:"univ-guyane.fr/etudiants-alumni/club",nav:2,
-  body:'<div class="wf-hero"><h5>Club des Alumni de l\'Université de Guyane</h5><small>Rester relié à son université et à ceux qui suivent.</small></div><div class="wf-row"><div class="wf-card"><b>Adhérer</b>Gratuit, en deux minutes<br><span class="wf-btn">Rejoindre le Club</span></div><div class="wf-card"><b>Devenir mentor</b>Accompagner un étudiant quelques heures par an<br><span class="wf-btn alt">Proposer son aide</span></div><div class="wf-card"><b>Témoigner</b>Partager son parcours dans Lemag\' ou le Podcast<br><span class="wf-btn alt">Proposer</span></div></div><div class="wf-card"><b>Prochaine rencontre du Club</b>Date et lieu à venir · inscription en ligne</div>',
+  body:'<div class="wf-hero"><h5>Club des Alumni de l\'Université de Guyane</h5><small>Rester relié à son université et à ceux qui suivent.</small></div><div class="wf-row"><div class="wf-card"><b>Adhérer</b>Gratuit, en deux minutes<br><span class="wf-btn">Rejoindre le Club</span></div><div class="wf-card"><b>Devenir mentor</b>Accompagner un étudiant quelques heures par an<br><span class="wf-btn alt">Proposer son aide</span></div><div class="wf-card"><b>Témoigner</b>Partager son parcours dans les publications de la Fondation<br><span class="wf-btn alt">Proposer</span></div></div><div class="wf-card"><b>Prochaine rencontre du Club</b>Date et lieu à venir · inscription en ligne</div>',
   side:["Adhésion en ligne, comptée pour le jalon 12","Mentorat et témoignages : de l'alumni au contributeur","Une passerelle naturelle vers le don et le parrainage"],j:["J12","J3"]},
  {n:"Équipe interne",i:"i-db",url:"Back-office commun · tableau de bord ADUG",nav:-1,
   body:'<div class="wf-kpis"><div><b>18</b>entreprises rencontrées</div><div><b>2 / 3</b>newsletters</div><div><b>41</b>dons en ligne</div><div><b>+6 %</b>adhérents alumni</div></div><div class="wf-card" style="margin-bottom:8px"><b>Fiche entreprise</b>Secteur, taille, décideurs · mécène : oui · cliente formation : 2 salariés · alternants : 1<div class="wf-line"></div><div class="wf-line" style="width:55%"></div></div><div class="wf-card"><b>Historique des échanges</b>Rendez-vous FUG · newsletter n°1 ouverte · offre d\'alternance déposée</div>',
@@ -2188,7 +2205,7 @@ mSet(0);
 
 /* ---------- Gains ---------- */
 [{c:"",i:"i-heart",t:"Pour la FUG",l:["Des dons en ligne avec reçus fiscaux, dès la campagne de fin d'année","Des projets présentables en rendez-vous et en ligne","Un fichier de donateurs et d'alumni qui se constitue","Des preuves chiffrées pour les jalons 1, 3 et 12"]},
- {c:"",i:"i-cap",t:"Pour la DFPU",l:["Des offres d'alternance déposées directement par les entreprises","Des inscriptions en formation continue captées sur l'espace Entreprises","Une relation entreprise enrichie par le mécénat","Un réseau d'étudiants et d'alumni structuré"]},
+ {c:"",i:"i-cap",t:"Pour la DFPU",l:["Des offres d'alternance déposées directement par les entreprises","Des inscriptions en formation continue captées sur l'portail entreprises","Une relation entreprise enrichie par le mécénat","Un réseau d'étudiants et d'alumni structuré"]},
  {c:" adug",i:"i-sprout",t:"Pour ADUG",l:["Une relation unique par entreprise, sans sur-sollicitation","Des coûts partagés et aucun outil en doublon","Des indicateurs consolidés pour chaque comité de pilotage","Le chiffre d'affaires cumulé des deux volets, critère de l'abondement à partir de l'année 4"]}
 ].forEach(function(g){$("#gainsbox").appendChild(el("article",{"class":"gcol"+g.c},'<div class="gh"><span>'+ico(g.i,"")+'</span><h3>'+g.t+'</h3></div><ul>'+g.l.map(function(x){return '<li>'+ico("i-check","")+'<span>'+x+'</span></li>'}).join("")+'</ul>'))});
 
@@ -2209,7 +2226,14 @@ var LINES=[
  {id:"monday",cat:"out",l:"Suivi des tâches partagées FUG-DFPU",sol:"Monday",st:"ret",lo:324,hi:432,rec:true,y:2026,j:"J9",b:"3 sièges minimum, par an"},
  {id:"photos",cat:"cont",l:"Reportage photo au campus de Troubiran, Cayenne",d:"1 à 2 jours, droits cédés",st:"con",lo:800,hi:2500,y:2026,mov:true,j:"J1 J3"},
  {id:"videos",cat:"cont",l:"Trois vidéos courtes de promotion",d:"Tournage mutualisé",st:"con",lo:3500,hi:8000,y:2027,mov:true,j:"J1 J3"},
- {id:"broch",cat:"print",l:"Brochure FUG",d:"Petite série",st:"con",lo:250,hi:700,y:2026,j:"J1 J10"},
+ {id:"catalogue26",cat:"print",l:"Catalogue de formation, édition 2027",d:"Conception et impression, versions en ligne et imprimée",st:"con",lo:800,hi:2500,y:2026,j:"J6"},
+ {id:"catalogue27",cat:"print",l:"Catalogue de formation, deux éditions",d:"Deux éditions par an, versions en ligne et imprimée",st:"con",lo:1600,hi:5000,y:2027,j:"J6"},
+ {id:"brochfc",cat:"print",l:"Brochure du volet FPC",d:"L'offre de formation présentée aux entreprises",st:"con",lo:250,hi:700,y:2026,j:"J8 J10"},
+ {id:"fichesfc",cat:"print",l:"Fiches formations",d:"Recto-verso, à la demande, QR code vers la fiche en ligne",st:"con",lo:150,hi:500,y:2026,j:"J6 J8"},
+ {id:"salons",cat:"print",l:"Kit salons et forums d'orientation",d:"Kakémonos, présentoirs, visuels",st:"con",lo:400,hi:1200,y:2026,mov:true,j:"J7 J8"},
+ {id:"campfc",cat:"cont",l:"Campagne de formation continue",d:"Publicité en ligne ciblée et visuels, sessions 2027",st:"con",lo:1000,hi:4000,y:2026,mov:true,j:"J8"},
+ {id:"vidalt",cat:"cont",l:"Vidéos de témoignages d'alternants et de stagiaires",d:"Tournage mutualisé avec les autres vidéos",st:"con",lo:1500,hi:4000,y:2027,mov:true,j:"J7 J8"},
+ {id:"broch",cat:"print",l:"Brochure du volet Mécénat",d:"Petite série",st:"con",lo:250,hi:700,y:2026,j:"J1 J10"},
  {id:"fiches",cat:"print",l:"Fiches projets recto-verso",d:"Moins de 30 exemplaires par projet, à la demande",st:"con",lo:100,hi:400,y:2026,j:"J1 J10"},
  {id:"poch",cat:"print",l:"Pochettes aux couleurs de la Fondation",d:"Pour les rendez-vous entreprises",st:"con",lo:150,hi:450,y:2026,j:"J10"},
  {id:"cartes",cat:"print",l:"Cartes de visite",d:"Équipes FUG et DFPU",st:"con",lo:60,hi:200,y:2026,j:""},
@@ -2330,6 +2354,9 @@ $$(".mflip").forEach(function(b){b.addEventListener("click",function(){b.classLi
 /* ---------- Calendar ---------- */
 var ET={pil:["Pilotage","e-pil","var(--navy)"],con:["Faire connaître","e-con","var(--amber)"],aim:["Faire aimer","e-aim","var(--leaf)"],agi:["Faire agir","e-agi","var(--green)"]};
 var ACTS=[
+  {m:0,e:"con",t:"Mise à jour du catalogue de formation 2027 (J6)",s:"DFPU, composantes",b:"Dépenses de communication",l:"Catalogue 2027",im:"Recenser les sessions 2027 avec les composantes, puis mettre en page les versions en ligne et imprimée.",ap:"Le premier des deux catalogues annuels, prêt pour les campagnes de début d'année."},
+  {m:1,e:"agi",t:"Campagne de formation continue pour les sessions 2027",s:"Salariés, particuliers, entreprises",b:"Dépenses de communication",l:"Demandes d'information",im:"Des messages ciblés vers les entreprises du réseau et les particuliers, renvoyant vers les fiches formations.",ap:"Des demandes d'information et des pré-inscriptions mesurables pour le jalon 8."},
+  {m:2,e:"con",t:"Préparation des salons et forums d'orientation du début 2027",s:"DFPU, composantes",b:"Print",l:"Kit salon",im:"Un kit réutilisable : kakémono, fiches formations, visuels pour les réseaux sociaux.",ap:"Une présence cohérente sur les salons, sans refaire les supports à chaque fois."},
   {m:0,e:"pil",t:"État des lieux : indicateurs et consommation des lignes de communication",s:"FUG, DFPU, gestion financière",b:"Aucune",l:"Tableau de bord ADUG",im:"Deux à trois réunions avec le responsable du projet et la gestion financière pour réunir chiffres de collecte et dépenses.",ap:"Une photographie objective de la fin de phase 1 et des arguments chiffrés pour chaque arbitrage."},
   {m:0,e:"pil",t:"Coordination communication FUG-DFPU : charte, messages, calendrier commun",s:"FUG et DFPU",b:"Aucune",l:"Relevé de décisions",im:"Une réunion d'une heure et demie, puis une charte et un calendrier partagés.",ap:"Une seule voix face aux entreprises, des coûts partagés, aucun doublon."},
   {m:0,e:"agi",t:"Relais de la campagne de solde de la taxe d'apprentissage, jusqu'au 21 octobre",s:"UG, DFPU, entreprises",b:"Aucune",l:"Message aux entreprises",im:"Un message aux entreprises du réseau, en appui de la campagne portée par l'UG sur SOLTéA.",ap:"Des fonds fléchés vers les formations de l'UG plutôt que vers les fonds non répartis, et un premier contact avec de futurs mécènes."},
@@ -2339,7 +2366,7 @@ var ACTS=[
   {m:1,e:"aim",t:"Reportage photo au campus de Troubiran, Cayenne",s:"Étudiants, équipes, projets",b:"Dépenses de communication",l:"Photothèque ADUG",im:"Une à deux journées de prise de vue, autorisations de droit à l'image préparées en amont.",ap:"Des images authentiques pour le site, les fiches projets et les réseaux sociaux."},
   {m:1,e:"agi",t:"Base de contacts entreprises partagée, environ 400 fiches",s:"FUG et DFPU",b:"Aucune, ou frais généraux",l:"Base qualifiée",im:"Réunir les fichiers FUG et DFPU, supprimer les doublons, identifier les décideurs.",ap:"Une relation unique par entreprise, sans sur-sollicitation, et une base pour le jalon 10."},
   {m:1,e:"con",t:"Newsletter entreprises commune n°1",s:"FUG et DFPU",b:"Aucune",l:"Envoi, jalon 11",im:"Quatre à cinq brèves (formation, mécénat, recherche), un outil d'envoi et la base partagée.",ap:"Le jalon 11 tenu pour les deux volets et une présence régulière auprès des entreprises."},
-  {m:1,e:"pil",t:"Validation des briefs Lemag' et Podcast, alignés sur le jalon 3",s:"Chercheurs et entreprises",b:"Aucune",l:"Briefs validés",im:"Un atelier avec les porteurs pour remplir le modèle de brief.",ap:"Une ligne éditoriale arrêtée et des productions 2027 sans reprise ni surcoût."},
+  {m:1,e:"pil",t:"Validation de la ligne éditoriale commune, alignée sur le jalon 3",s:"Chercheurs et entreprises",b:"Aucune",l:"Briefs validés",im:"Un atelier avec les porteurs pour remplir le modèle de brief.",ap:"Une ligne éditoriale arrêtée et des productions 2027 sans reprise ni surcoût."},
   {m:1,e:"aim",t:"Présence au Mois de la découverte des métiers de la CCI",s:"Étudiants, entreprises, CCIG",b:"Missions et déplacements",l:"Participation, contacts",im:"Une présence sur un ou deux temps forts, avec la brochure FUG, les fiches projets et les objets promotionnels déjà en stock.",ap:"Des contacts entreprises et étudiants, et une première utilisation concrète du stock existant."},
   {m:2,e:"agi",t:"Mise en ligne du portail unique : accueil, espace Soutenir et don en ligne",s:"Tranche 1 du portail unique",b:"Dépenses de communication",l:"Page en ligne",im:"Recette du parcours donateur sur ordinateur et mobile, avant le Giving Tuesday si les délais le permettent.",ap:"Le premier outil qui transforme la visibilité en dons."},
   {m:2,e:"agi",t:"Campagne de dons de fin d'année : Giving Tuesday, puis rappel de la déduction fiscale",s:"Alumni, personnels, entreprises",b:"Dépenses de communication",l:"Premiers dons en ligne",im:"Un message aux alumni, aux personnels et aux entreprises, puis deux ou trois relances jusqu'au 31 décembre.",ap:"Les premiers dons en ligne : un indicateur de collecte à présenter en fin de phase 1."},
@@ -2367,11 +2394,24 @@ kd.innerHTML='<div class="axis"></div><div class="span" style="left:'+pos(32)+';
   var d=el("div",{"class":"mark"+m[2]},'<span class="lab">'+m[1]+'</span><span class="pin"></span>');d.style.left=pos(m[0]);kd.appendChild(d)});
 
 /* ---------- Socle ---------- */
-var BR=[["Tableau de bord ADUG","Pilotage trimestriel, rapports ANR, dossier d'abondement"],["Portail unique, tranche 1","Tranche 2 : espaces Entreprises et Étudiants-alumni complets, financement participatif"],["Base de contacts partagée","CRM commun, relation globale avec chaque entreprise"],["Briefs Lemag' et Podcast","Programmation 2027 alignée sur le jalon 3"],["Newsletter entreprises commune","Trois envois par an tenus dès janvier"],["Espace Étudiants et alumni","Réseau d'étudiants et Club des Alumni animés, puis tiers-lieu numérique autonome"],["Campagne de fin d'année","Premières données de collecte, donateurs à fidéliser"]];
+var BR=[["Tableau de bord ADUG","Pilotage trimestriel, compte rendu de fin de phase 1, dossier d'abondement"],["Portail unique, tranche 1","Tranche 2 : portail entreprises et espace Étudiants et alumni complets, financement participatif"],["Base de contacts partagée","Gestion de la relation commune, une relation globale avec chaque entreprise"],["Ligne éditoriale commune","Programmation 2027 alignée sur le jalon 3"],["Catalogue de formation","Deux catalogues par an, en ligne et imprimés (J6)"],["Newsletter entreprises commune","Trois envois par an tenus dès janvier (J11)"],["Espace Étudiants et alumni","Réseau d'étudiants et Club des Alumni animés, puis tiers-lieu numérique autonome"],["Organisation de la communication","Un socle partagé, des coproductions, une voix propre à chaque volet"],["Campagne de fin d'année","Premières données de collecte, donateurs à fidéliser"]];
 BR.forEach(function(b){$("#bridge").appendChild(el("div",{"class":"br"},'<b>'+b[0]+'</b>'+ico("i-arrow","")+'<span>'+b[1]+'</span>'))});
-var QU=["Rapports annuels déjà remis à l'ANR (31 mars 2025 et 2026)","Masse salariale de la phase 1 : postes pourvus au regard de la masse prévue en année 3 (annexe 5)","Confirmation de l'enveloppe 2026 (38 000 € volet Mécénat, 76 000 € volet FPC), de sa ligne d'imputation et de la clé de répartition","État des indicateurs : collecte, donateurs, conférences, newsletters, Club des Alumni","Consommation des lignes « dépenses de communication » et « agence de communication »","Statut juridique de la Fondation et constitution du fonds de dotation, qui conditionnent les reçus fiscaux","Éligibilité des outils numériques aux lignes de communication","Règle d'engagement des dépenses 2026 : commande engagée ou prestation livrée avant le 31 décembre","Clé de répartition pour la tranche 2 du portail et l'outil de gestion de la relation","Outils existants à l'UG : offres de stages, projet alumni, services de la DNUM","Conditions de passage du portail unique à trois solutions connectées : calendrier et budget","Cadre des données du réseau d'étudiants et du Club des Alumni, avec le délégué à la protection des données","Règles d'achat et de paiement : seuils de mise en concurrence, acomptes","Politique de l'UG sur les outils d'IA et les données personnelles","Dates des prochains comités de pilotage et de direction"];
-var qdone=store("adug-checks")||{};
-QU.forEach(function(q,i){var lab=el("label",{"class":"chk"});var inp=el("input",{type:"checkbox"});inp.checked=!!qdone[i];inp.addEventListener("change",function(){qdone[i]=inp.checked;store("adug-checks",qdone);qcount()});lab.appendChild(inp);lab.appendChild(el("span",null,q));$("#checks").appendChild(lab)});
+var QU=[
+"Clôture de la phase 1 · Postes maintenus en 2027 au regard de la masse salariale de l'année 3, qui conditionne l'abondement (annexe 5)",
+"Clôture de la phase 1 · État des douze jalons, volet FPC compris, pour le compte rendu de fin de phase 1",
+"Clôture de la phase 1 · Consommation des lignes de communication et dépenses à engager avant le 31 décembre",
+"Clôture de la phase 1 · Confirmation de l'enveloppe 2026 (38 000 € volet Mécénat, 76 000 € volet FPC) et de la clé de répartition",
+"Organisation 2027 · Organisation de la communication des deux volets : périmètre, équipe, rattachement",
+"Organisation 2027 · Plan de formation des équipes, sur la ligne « formation du personnel » du budget",
+"Organisation 2027 · Dates des prochains comités de pilotage et de direction",
+"Outils · Historique des contrats d'outils déjà souscrits, avant tout nouvel engagement",
+"Outils · Calendrier et budget du passage du portail unique à trois solutions connectées",
+"Outils · Cadre des données du réseau d'étudiants et du Club des Alumni, avec le délégué à la protection des données",
+"Cadre juridique et financier · Statut juridique de la Fondation, qui conditionne les reçus fiscaux",
+"Cadre juridique et financier · Accord de consortium : transmission à l'ANR et actualisation éventuelle",
+"Cadre juridique et financier · Règles d'achat et de paiement : seuils de mise en concurrence, acomptes"];
+var qdone=store("adug-checks-v2")||{};
+QU.forEach(function(q,i){var lab=el("label",{"class":"chk"});var inp=el("input",{type:"checkbox"});inp.checked=!!qdone[i];inp.addEventListener("change",function(){qdone[i]=inp.checked;store("adug-checks-v2",qdone);qcount()});lab.appendChild(inp);lab.appendChild(el("span",null,q));$("#checks").appendChild(lab)});
 function qcount(){var n=QU.filter(function(q,i){return qdone[i]}).length;$("#qcnt").textContent=n+" / "+QU.length+" obtenues"}
 qcount();
 
