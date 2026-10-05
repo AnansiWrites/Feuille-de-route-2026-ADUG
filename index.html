@@ -849,6 +849,12 @@ p{margin:0}
 .lvgs{display:flex;flex-direction:column;gap:10px}
 .lvg{display:flex;flex-direction:column;gap:6px}
 .lvl{font-size:12px;font-weight:800;color:var(--green-ink)}
+.qtabs{flex-wrap:wrap;gap:8px}
+.qtabs .tab{font-size:13px;padding:8px 12px}
+.qtabs .qn{font-weight:700;opacity:.7;margin-left:2px}
+#s-socle .qtabs .tab[aria-selected="false"]{background:rgba(255,255,255,.1);color:#e3f1ea;border-color:rgba(255,255,255,.28)}
+#s-socle .qtabs .tab[aria-selected="false"]:hover{background:rgba(255,255,255,.18)}
+#s-socle .qtabs{border-bottom-color:rgba(255,255,255,.25)}
 </style>
 </head>
 <body>
@@ -1662,7 +1668,7 @@ p{margin:0}
       <div><h3 style="font-size:17px;font-weight:700;margin-bottom:12px">Du T4 2026 à 2027</h3><div class="bridge" id="bridge"></div></div>
       <div>
         <div class="qhead" style="margin-bottom:12px"><h3 style="font-size:17px;font-weight:700">Les questions à trancher</h3><span class="cnt" id="qcnt">0 / 13</span></div>
-        <div class="checks" id="checks"></div>
+        <div data-tabs><div class="tabs qtabs" role="tablist" aria-label="Questions par thème"><button class="tab" role="tab" aria-selected="true" aria-controls="qp1" id="qt1"><svg class="ico"><use href="#i-flag"/></svg>Clôture de la phase 1 <span class="qn" id="qn1"></span></button><button class="tab" role="tab" aria-selected="false" aria-controls="qp2" id="qt2"><svg class="ico"><use href="#i-people"/></svg>Organisation 2027 <span class="qn" id="qn2"></span></button><button class="tab" role="tab" aria-selected="false" aria-controls="qp3" id="qt3"><svg class="ico"><use href="#i-gear"/></svg>Outils <span class="qn" id="qn3"></span></button><button class="tab" role="tab" aria-selected="false" aria-controls="qp4" id="qt4"><svg class="ico"><use href="#i-shield"/></svg>Cadre juridique et financier <span class="qn" id="qn4"></span></button></div><div class="tabpanel" role="tabpanel" id="qp1" aria-labelledby="qt1"><div class="checks" id="checks1"></div></div><div class="tabpanel" role="tabpanel" id="qp2" aria-labelledby="qt2" hidden><div class="checks" id="checks2"></div></div><div class="tabpanel" role="tabpanel" id="qp3" aria-labelledby="qt3" hidden><div class="checks" id="checks3"></div></div><div class="tabpanel" role="tabpanel" id="qp4" aria-labelledby="qt4" hidden><div class="checks" id="checks4"></div></div></div>
       </div>
     </div>
     <div class="endsign"><span><b>FUG & DFPU – ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · octobre 2026</span></div>
@@ -2411,8 +2417,11 @@ var QU=[
 "Cadre juridique et financier · Accord de consortium : transmission à l'ANR et actualisation éventuelle",
 "Cadre juridique et financier · Règles d'achat et de paiement : seuils de mise en concurrence, acomptes"];
 var qdone=store("adug-checks-v2")||{};
-QU.forEach(function(q,i){var lab=el("label",{"class":"chk"});var inp=el("input",{type:"checkbox"});inp.checked=!!qdone[i];inp.addEventListener("change",function(){qdone[i]=inp.checked;store("adug-checks-v2",qdone);qcount()});lab.appendChild(inp);lab.appendChild(el("span",null,q));$("#checks").appendChild(lab)});
-function qcount(){var n=QU.filter(function(q,i){return qdone[i]}).length;$("#qcnt").textContent=n+" / "+QU.length+" obtenues"}
+var QG=["Clôture de la phase 1","Organisation 2027","Outils","Cadre juridique et financier"];
+function qgrp(q){var p=q.indexOf(" · "),g=q.slice(0,p);return {g:QG.indexOf(g),t:q.slice(p+3)}}
+QU.forEach(function(q,i){var x=qgrp(q);var lab=el("label",{"class":"chk"});var inp=el("input",{type:"checkbox"});inp.checked=!!qdone[i];inp.addEventListener("change",function(){qdone[i]=inp.checked;store("adug-checks-v2",qdone);qcount()});lab.appendChild(inp);lab.appendChild(el("span",null,x.t));$("#checks"+(x.g+1)).appendChild(lab)});
+function qcount(){var n=QU.filter(function(q,i){return qdone[i]}).length;$("#qcnt").textContent=n+" / "+QU.length+" obtenues";
+  QG.forEach(function(g,k){var tot=0,ok=0;QU.forEach(function(q,i){if(qgrp(q).g===k){tot++;if(qdone[i])ok++}});$("#qn"+(k+1)).textContent=ok+"/"+tot})}
 qcount();
 
 /* ---------- Start ---------- */
