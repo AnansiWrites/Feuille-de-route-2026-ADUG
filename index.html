@@ -462,6 +462,18 @@ p{margin:0}
 .qhead .cnt{background:var(--amber);color:#3a2a00;font-weight:800;font-size:13px;padding:5px 12px;border-radius:999px}
 .endsign{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;border-top:1px solid rgba(255,255,255,.2);padding-top:18px;font-size:14px;color:#cfe9dd}
 .endsign b{color:#fff;font-size:18px}
+.cover .author{font-size:13px;color:#cfe9dd;margin-top:18px;line-height:1.5}
+.fug-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.fug-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-m);padding:18px;display:flex;flex-direction:column;gap:10px}
+.fug-card h3{font-size:15px;font-weight:700;display:flex;gap:8px;align-items:center}
+.fug-card h3 .ico{width:18px;height:18px;color:var(--green);flex:none}
+.fug-card p{font-size:14px;color:var(--muted)}
+.fug-card .todo{font-size:13px;font-weight:600;color:var(--green-ink);border-top:1px dashed var(--line);padding-top:8px;margin-top:auto}
+.fug-time{display:flex;flex-wrap:wrap;gap:10px}
+.fug-time span{font-size:13px;background:var(--surface-2);border-radius:999px;padding:6px 12px}
+.fug-time b{color:var(--green-ink)}
+@media (max-width:980px){.fug-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.fug-grid{grid-template-columns:1fr}}
 .sidepanel h3{font-size:17px;font-weight:700;margin-bottom:12px}
 
 
@@ -938,6 +950,7 @@ p{margin:0}
         <div class="pill"><b>11,15 M€</b>de coût complet</div>
       </div>
       <button class="cta" data-next>Commencer la présentation <svg><use href="#i-arrow"/></svg></button>
+      <p class="author">Anaïse CONSTANT, chargée de communication et marketing<br>anaise.constant@univ-guyane.fr · 0694 28 08 78</p>
     </div>
     <div class="cover-art" aria-hidden="true">
       <svg viewBox="0 0 400 400">
@@ -997,7 +1010,7 @@ p{margin:0}
         <div class="bars-x" id="cabars-x"></div>
       </div>
     </div>
-    <p class="src">Sources : dossier ADUG, appel à projets ASDESR de France 2030 (présentation 2022, document administratif et financier et addendum 2023).</p>
+    <p class="src">Sources : dossier ADUG, appel à projets ASDESR de France 2030 (présentation 2022, document administratif et financier et addendum 2023), réunion de lancement du 15 janvier 2024, maquette financière ADUG 2024.</p>
   </div>
 </section>
 
@@ -1083,7 +1096,7 @@ p{margin:0}
       <div class="gov-node"><span class="badge">Alloue les ressources</span>
         <span class="gi"><svg><use href="#i-bank"/></svg></span>
         <h3>Comité de pilotage <span class="chip">Chaque trimestre</span></h3>
-        <p>Président, DGS, responsable de projet, pilotes FPC et Mécénat, VP Recherche, VP Formation.</p>
+        <p>Président de l'UG, un élu du CA, DGS, DAF, responsables de la DFPU et de la Fondation, responsable du projet.</p>
         <p>Valide l'avancement, identifie les besoins, recrute, communique et fait remonter au comité de direction.</p>
       </div>
       <div class="gov-link"></div>
@@ -1092,6 +1105,7 @@ p{margin:0}
         <h3>Responsable du projet</h3>
         <p>Pilote la mise en œuvre administrative, financière et juridique.</p>
         <p>Assure le reporting, le plan de projet et le plan de gestion des risques.</p>
+        <p class="note">Désignation à actualiser auprès de l'ANR pour la clôture de la phase 1.</p>
       </div>
       <div class="gov-link"></div>
       <div class="gov-split">
@@ -1224,6 +1238,45 @@ p{margin:0}
         <tbody></tbody>
       </table>
     </div>
+  </div>
+</section>
+
+
+<!-- ============ 4b. FUG ============ -->
+<section class="slide" id="s-fug" data-title="Enjeux propres à la Fondation" data-group="4. Enjeux">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker"><span class="dot"></span>4. Enjeux · volet Mécénat</span>
+      <h2 class="title wide">Les enjeux propres à la Fondation pour réussir la fin de phase 1</h2>
+      <p class="lead">Le volet Mécénat repose sur une fondation universitaire abritée par l'UG, sans personnalité morale. L'année 4 est évaluée sur <b>l'ensemble du périmètre du projet</b> (annexe 5) : les résultats des deux volets s'additionnent, et chaque avancée de la Fondation renforce le bilan commun.</p>
+    </div>
+    <div class="fug-time" aria-label="Repères de gouvernance de la Fondation">
+      <span><b>13 janvier 2026</b> · installation du Conseil de gestion et élection du Bureau</span>
+      <span><b>21 mai 2026</b> · statuts modifiés : siège des représentants de l'UG attaché à la fonction</span>
+      <span><b>T4 2026</b> · composition actualisée et réunion du Conseil</span>
+      <span><b>31 décembre 2026</b> · fin de la phase 1</span>
+    </div>
+    <div class="fug-grid">
+      <div class="fug-card"><h3><svg class="ico"><use href="#i-bank"/></svg>Une gouvernance en ordre de marche</h3>
+        <p>Le Conseil de gestion vote le budget, accepte les dons et décide des recrutements. Son Bureau est constitué : Tony Mirande, président ; Djamila Delannon, Olivier Mantez et Stéphane Lambert, vice-présidents, ce dernier trésorier ; Éric Lafontaine, secrétaire.</p>
+        <span class="todo">Acter les substitutions prévues par les statuts et réunir le Conseil avant le 31 décembre.</span></div>
+      <div class="fug-card"><h3><svg class="ico"><use href="#i-coin"/></svg>Des reçus fiscaux pour collecter</h3>
+        <p>Les dons défiscalisés sont au cœur du jalon 1 : 3 grands donateurs, 5 entreprises locales et 50 défiscalisations grand public. Le don en ligne n'a d'effet que si la Fondation peut émettre les reçus.</p>
+        <span class="todo">Confirmer le circuit des reçus fiscaux avec l'agence comptable avant la campagne de décembre.</span></div>
+      <div class="fug-card"><h3><svg class="ico"><use href="#i-hand"/></svg>Les fondateurs, premiers ambassadeurs</h3>
+        <p>La Brique de Guyane, Nofrayane, 2Ter Habitat et EDF SEI Guyane ont constitué une dotation de 184 000 €. Leurs réseaux sont le relais le plus direct vers les entreprises locales visées par le jalon 1.</p>
+        <span class="todo">Associer les fondateurs aux rendez-vous entreprises et à la campagne de fin d'année.</span></div>
+      <div class="fug-card"><h3><svg class="ico"><use href="#i-target"/></svg>Des résultats Mécénat documentés</h3>
+        <p>Trois jalons sont propres au volet : la collecte (J1), les réponses aux appels à projets des fondations (J2) et la production éditoriale (J3 : 4 magazines, 9 conférences-débats, 36 émissions radio par an).</p>
+        <span class="todo">Établir l'état de chaque jalon pour le compte rendu de fin de phase 1.</span></div>
+      <div class="fug-card"><h3><svg class="ico"><use href="#i-link"/></svg>Un lien ADUG-Fondation formalisé</h3>
+        <p>Dès la réunion de lancement du 15 janvier 2024, deux points étaient notés « à formaliser » : les liens entre le projet et la Fondation selon son statut, et la communication générale du projet avec l'apposition des logos.</p>
+        <span class="todo">Proposer une fiche de liaison et une charte de mentions communes au comité de pilotage.</span></div>
+      <div class="fug-card"><h3><svg class="ico"><use href="#i-sprout"/></svg>Préparer l'autonomie d'après 2033</h3>
+        <p>À l'issue du financement France 2030, la prise en charge du volet Mécénat revient à la Fondation (dossier ADUG, partie 4.3). La mutualisation pendant le projet construit les outils et la base dont elle aura besoin.</p>
+        <span class="todo">Concevoir chaque outil commun pour qu'il reste exploitable par la Fondation seule.</span></div>
+    </div>
+    <p class="src">Sources : compte rendu du Conseil de gestion du 13 janvier 2026, statuts de la Fondation (21 mai 2026) et délibération du CA de l'UG n°2026-018, réunion de lancement ADUG du 15 janvier 2024, dossier ADUG (parties 2.3 et 4.3) et annexe 5 du contrat attributif ANR-22-ASDR-0003.</p>
   </div>
 </section>
 
@@ -1667,11 +1720,11 @@ p{margin:0}
     <div class="grid-2">
       <div><h3 style="font-size:17px;font-weight:700;margin-bottom:12px">Du T4 2026 à 2027</h3><div class="bridge" id="bridge"></div></div>
       <div>
-        <div class="qhead" style="margin-bottom:12px"><h3 style="font-size:17px;font-weight:700">Les questions à trancher</h3><span class="cnt" id="qcnt">0 / 13</span></div>
+        <div class="qhead" style="margin-bottom:12px"><h3 style="font-size:17px;font-weight:700">Les questions à trancher</h3><span class="cnt" id="qcnt">0 / 16</span></div>
         <div data-tabs><div class="tabs qtabs" role="tablist" aria-label="Questions par thème"><button class="tab" role="tab" aria-selected="true" aria-controls="qp1" id="qt1"><svg class="ico"><use href="#i-flag"/></svg>Clôture de la phase 1 <span class="qn" id="qn1"></span></button><button class="tab" role="tab" aria-selected="false" aria-controls="qp2" id="qt2"><svg class="ico"><use href="#i-people"/></svg>Organisation 2027 <span class="qn" id="qn2"></span></button><button class="tab" role="tab" aria-selected="false" aria-controls="qp3" id="qt3"><svg class="ico"><use href="#i-gear"/></svg>Outils <span class="qn" id="qn3"></span></button><button class="tab" role="tab" aria-selected="false" aria-controls="qp4" id="qt4"><svg class="ico"><use href="#i-shield"/></svg>Cadre juridique et financier <span class="qn" id="qn4"></span></button></div><div class="tabpanel" role="tabpanel" id="qp1" aria-labelledby="qt1"><div class="checks" id="checks1"></div></div><div class="tabpanel" role="tabpanel" id="qp2" aria-labelledby="qt2" hidden><div class="checks" id="checks2"></div></div><div class="tabpanel" role="tabpanel" id="qp3" aria-labelledby="qt3" hidden><div class="checks" id="checks3"></div></div><div class="tabpanel" role="tabpanel" id="qp4" aria-labelledby="qt4" hidden><div class="checks" id="checks4"></div></div></div>
       </div>
     </div>
-    <div class="endsign"><span><b>FUG & DFPU – ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · octobre 2026</span></div>
+    <div class="endsign"><span><b>FUG & DFPU – ADUG</b><br>Agir ensemble, changer l'avenir.</span><span>Feuille de route T4 2026 · mise à jour d'octobre 2026<br>Anaïse CONSTANT, chargée de communication et marketing</span></div>
   </div>
 </section>
 
@@ -1865,7 +1918,7 @@ var QDEF=[
   {id:"q12",t:"2 catalogues de formation par an",e:"À documenter",s:"confirmer"},
   {id:"q13",t:"Apprentis, alternants et stagiaires : +10 % par an",e:"À documenter",s:"confirmer"},
   {id:"q9",t:"Collecte : 3 grands donateurs, 5 entreprises, 50 défiscalisations ; 0,24 M€ en année 3",e:"À documenter",s:"confirmer"},
-  {id:"q10",t:"Deux postes de communication",e:"Poste FUG pourvu depuis septembre 2026 ; poste FPC à confirmer",s:"partiel"}
+  {id:"q10",t:"Deux postes de communication",e:"Postes FUG et DFPU pourvus ; coordination à formaliser",s:"partiel"}
 ];
 var ORDER=["confirmer","manquant","partiel","atteint"];
 var LAB={confirmer:["À confirmer","st-unk"],manquant:["À engager","st-eng"],partiel:["Partiel","st-part"],atteint:["Atteint","st-ok"]};
@@ -2377,6 +2430,8 @@ var ACTS=[
   {m:2,e:"agi",t:"Mise en ligne du portail unique : accueil, espace Soutenir et don en ligne",s:"Tranche 1 du portail unique",b:"Dépenses de communication",l:"Page en ligne",im:"Recette du parcours donateur sur ordinateur et mobile, avant le Giving Tuesday si les délais le permettent.",ap:"Le premier outil qui transforme la visibilité en dons."},
   {m:2,e:"agi",t:"Campagne de dons de fin d'année : Giving Tuesday, puis rappel de la déduction fiscale",s:"Alumni, personnels, entreprises",b:"Dépenses de communication",l:"Premiers dons en ligne",im:"Un message aux alumni, aux personnels et aux entreprises, puis deux ou trois relances jusqu'au 31 décembre.",ap:"Les premiers dons en ligne : un indicateur de collecte à présenter en fin de phase 1."},
   {m:2,e:"aim",t:"Newsletter entreprises commune n°2 : bilan de l'année",s:"FUG et DFPU",b:"Aucune",l:"Envoi, jalon 11",im:"Un bilan de l'année en quelques chiffres et quelques visages.",ap:"La fidélisation des entreprises et un deuxième envoi pour le jalon 11."},
+  {m:1,e:"pil",t:"Réunion du Conseil de gestion de la Fondation",s:"Bureau et Conseil de gestion",b:"Aucune",l:"Délibérations",im:"Porter à la connaissance du Conseil la composition actualisée, puis présenter le programme d'activité et les orientations budgétaires 2027.",ap:"Un Conseil en mesure de délibérer sur le budget, l'acceptation des dons et les recrutements."},
+  {m:2,e:"agi",t:"Fondateurs et membres du Conseil, relais de la campagne de fin d'année",s:"Fondateurs, Conseil de gestion",b:"Aucune",l:"Messages relayés",im:"Un kit court : message, visuel et lien de don, à diffuser dans leurs réseaux.",ap:"Une campagne portée par des voix reconnues du territoire, au service du jalon 1."},
   {m:2,e:"pil",t:"Bilan du trimestre et proposition de budget 2027 au comité de pilotage",s:"Gouvernance",b:"Aucune",l:"Budget 2027",im:"Consolider les indicateurs du trimestre et chiffrer 2027.",ap:"Un budget construit pour 2027, l'année 4 qui décide de l'abondement."}
 ];
 var MN=[["Octobre","Installer le pilotage"],["Novembre","Construire le socle"],["Décembre","Mettre à l'épreuve"]];
@@ -2415,7 +2470,10 @@ var QU=[
 "Outils · Cadre des données du réseau d'étudiants et du Club des Alumni, avec le délégué à la protection des données",
 "Cadre juridique et financier · Statut juridique de la Fondation, qui conditionne les reçus fiscaux",
 "Cadre juridique et financier · Accord de consortium : transmission à l'ANR et actualisation éventuelle",
-"Cadre juridique et financier · Règles d'achat et de paiement : seuils de mise en concurrence, acomptes"];
+"Cadre juridique et financier · Règles d'achat et de paiement : seuils de mise en concurrence, acomptes",
+"Organisation 2027 · Désignation du responsable du projet ADUG auprès de l'ANR",
+"Cadre juridique et financier · Composition actualisée du Conseil de gestion de la Fondation et date de sa prochaine réunion",
+"Cadre juridique et financier · Circuit d'émission des reçus fiscaux pour les dons à la Fondation"];
 var qdone=store("adug-checks-v2")||{};
 var QG=["Clôture de la phase 1","Organisation 2027","Outils","Cadre juridique et financier"];
 function qgrp(q){var p=q.indexOf(" · "),g=q.slice(0,p);return {g:QG.indexOf(g),t:q.slice(p+3)}}
